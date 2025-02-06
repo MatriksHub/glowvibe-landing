@@ -7,10 +7,31 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "15px",
+    },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '960px',
+      xl: '1200px',
+      "2xl": '1440px',
+      "3xl": '1920px',
+    },
+
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        gradient: "var(--gradient)",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        white: "var(--light)",
+        shade: "var(--shade)",
+        accent: {
+          DEFAULT: "var(--primary)",
+        }
       },
     },
   },

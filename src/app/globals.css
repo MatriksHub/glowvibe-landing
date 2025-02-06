@@ -2,9 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --primary: #140005;
+  --shade: #F5F5DC;
+  --secondary: #9C27B0;
+  --dark-shade: #110305;
+  --grey: #F0F7EE;
+  --dark: #000000;
+  --light: #ffffff;
+  
+  /* --background: linear-gradient(180deg, rgba(20,0,5,1) 0%, rgba(59,15,67,0.87718837535014) 3%, rgba(82,0,20,1) 100%); */
   --background: #ffffff;
   --foreground: #171717;
+
+  /* --background-moz: -moz-linear-gradient(180deg, rgba(20,0,5,1) 0%, rgba(59,15,67,0.87718837535014) 3%, rgba(82,0,20,1) 100%); */
+  /* --background-webkit: -webkit-linear-gradient(180deg, rgba(20,0,5,1) 0%, rgba(59,15,67,0.87718837535014) 3%, rgba(82,0,20,1) 100%); */
+}
+
+*, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +43,239 @@
 }
 
 body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  /* line-height: normal; */
+  font-family: "Outfit", !important;
+}
+
+li, ul {
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", !important;
+}
+
+img {
+  width: 100%;
+  height: auto !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: "Outfit", sans-serif !important;
+}
+
+p {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.notScrolled {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  /* background: var(--shade-color); */
+  background-color: transparent;
+  z-index: 20;
+}
+
+.notScrolled .logo {
+  font-size: 24px !important;
+  color: var(--primary);
+  text-transform: lowercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.notScrolled .logo:hover {
+  font-size: 32px;
+  color: var(--dark) !important;
+}
+
+.notScrolled nav a {
+  color: var(--dark);
+  font-size: 14px;
+  line-height: 19px;
+  /* letter-spacing: 1px; */
+  font-weight: 500;
+  margin: 0 15px;
+  text-transform: capitalize;
+  transition: all .3s ease-in;
+}
+
+.notScrolled nav a:hover {
+  color: var(--primary);
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+  /* text-transform: capitalize; */
+  transition: all .3s ease-in;
+}
+
+.notScrolled nav a:active {
+  color: var(--primary) !important;
+  font-size: 14px !important;
+  line-height: 19px !important;
+  font-weight: 700 !important;
+  /* border-bottom: solid 3px var(--primary-color) !important; */
+  /* padding-bottom: 4px; */
+}
+
+.notScrolled .nav-cta {
+  font-size: 12px;
+  line-height: 19px;
+  font-weight: 600;
+  letter-spacing: 0.85px;
+  /* border-radius: 5px; */
+  text-transform: capitalize;
+  color: var(--shade);
+  padding: 15px 20px;
+  transition: all ease-in-out .3s;
+}
+
+.notScrolled .nav-cta:hover {
+  font-size: 12px;
+  line-height: 19px;
+  font-weight: 600;
+  letter-spacing: 0.85px;
+  /* border-radius: 5px; */
+  text-transform: capitalize;
+  color: var(--shade);
+  padding: 15px 20px;
+  transition: all ease-in-out .3s;
+}
+
+.isScrolled {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  z-index: 20;
+  background: var(--light);
+  /* box-shadow: 1px 1px 5px 1px var(--neutral-color); */
+  /* color: var(--dark-color); */
+}
+
+.isScrolled .logo {
+  font-size: 24px !important;
+  color: var(--primary-color) !important;
+  text-transform: lowercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+}
+
+.isScrolled .logo:hover {
+  font-size: 24px;
+  color: var(--shade-color) !important;
+  
+}
+
+.isScrolled nav a {
+  color: var(--bright-color);
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin: 0 15px;
+  text-transform: capitalize;
+  transition: all .4s ease-in;
+}
+
+.isScrolled nav a:hover {
+  color: var(--primary-color);
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+  /* text-transform: capitalize; */
+}
+
+.isScrolled nav a:active {
+  color: var(--primary-color) !important;
+  font-size: 14px !important;
+  line-height: 19px !important;
+  font-weight: 700 !important;
+  border-bottom: solid 3px var(--primary-color) !important;
+  padding-bottom: 4px;
+}
+
+.isActiveLink {
+  color: var(--primary-color) !important;
+  font-size: 16px !important;
+  line-height: 19px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+.isNotActiveLink {
+  color: var(--dark-color) !important;
+  font-size: 16px !important;
+  line-height: 19px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+.isScrolled .nav-cta {
+  font-size: 12px;
+  line-height: 19px;
+  font-weight: 600;
+  letter-spacing: 0.85px;
+  /* border-radius: 5px; */
+  text-transform: capitalize;
+  color: var(--shade);
+  padding: 15px 20px;
+  transition: all ease-in-out .3s;
+}
+
+.isScrolled .nav-cta:hover {
+  font-size: 12px;
+  line-height: 19px;
+  font-weight: 600;
+  letter-spacing: 0.85px;
+  /* border-radius: 5px; */
+  text-transform: capitalize;
+  color: var(--shade);
+  padding: 15px 20px;
+}
+
+.hideMenuNav {
+  display: none;
+}
+
+.showMenuNav {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 70vh;
+  top: 0;
+  left: 0;
+  background: var(--light);
+  color: var(--shade) !important;
+  font-weight: 700;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
