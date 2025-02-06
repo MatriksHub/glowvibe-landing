@@ -49,7 +49,7 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--foreground);
+  /* color: var(--foreground); */
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -179,7 +179,7 @@ p {
 
 .isScrolled .logo {
   font-size: 24px !important;
-  color: var(--primary-color) !important;
+  color: var(--primary) !important;
   text-transform: lowercase;
   font-weight: 700;
   letter-spacing: 1px;
@@ -188,12 +188,12 @@ p {
 
 .isScrolled .logo:hover {
   font-size: 24px;
-  color: var(--shade-color) !important;
+  color: var(--primary) !important;
   
 }
 
 .isScrolled nav a {
-  color: var(--bright-color);
+  color: var(--dark);
   font-size: 14px;
   line-height: 19px;
   letter-spacing: 1px;
@@ -204,7 +204,7 @@ p {
 }
 
 .isScrolled nav a:hover {
-  color: var(--primary-color);
+  color: var(--primary);
   font-size: 14px;
   line-height: 19px;
   font-weight: 600;
@@ -212,16 +212,16 @@ p {
 }
 
 .isScrolled nav a:active {
-  color: var(--primary-color) !important;
+  color: var(--primary) !important;
   font-size: 14px !important;
   line-height: 19px !important;
   font-weight: 700 !important;
-  border-bottom: solid 3px var(--primary-color) !important;
+  border-bottom: solid 3px var(--primary) !important;
   padding-bottom: 4px;
 }
 
 .isActiveLink {
-  color: var(--primary-color) !important;
+  color: var(--primary) !important;
   font-size: 16px !important;
   line-height: 19px !important;
   font-weight: 700 !important;
@@ -229,7 +229,7 @@ p {
 }
 
 .isNotActiveLink {
-  color: var(--dark-color) !important;
+  color: var(--dark) !important;
   font-size: 16px !important;
   line-height: 19px !important;
   font-weight: 700 !important;
@@ -271,7 +271,7 @@ p {
   top: 0;
   left: 0;
   background: var(--light);
-  color: var(--shade) !important;
+  color: var(--dark) !important;
   font-weight: 700;
   z-index: 40;
   display: flex;

@@ -6,7 +6,7 @@ function Hero() {
   return (
     <div className='bg-shade min-h-[100ch] flex justify-center items-center lg:min-h-[100ch]'>
       <div className='container mx-auto'>
-        <div className='flex flex-col pt-[100px] pb-[0px] gap-10 h-screen justify-between items-center lg:flex-row lg:pt-[100px] lg:pb-[0px]'>
+        <div className='flex flex-col pt-[150px] pb-[50px] gap-10 h-screen justify-between items-center lg:flex-row lg:pt-[100px] lg:pb-[50px]'>
           <div className='flex flex-col justify-start gap-8 items-start lg:justify-start lg:items-start lg:gap-10'>
             <h1 className='text-[45px] w-[90%] leading-[52px] lg:text-[75px] lg:w-[80%] lg:leading-[85px] font-extrabold'>
               A safe and anonymous space
