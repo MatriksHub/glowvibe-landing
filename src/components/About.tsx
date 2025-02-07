@@ -38,11 +38,10 @@ function About() {
                 <li className='text-[18px] list-disc text-start leading-[27px] lg:text-[18px] lg:leading-[25px] font-400 w-full'>
                   Access to expert guidance should be <span className='font-bold text-primary'>easy, anonymous, and supportive.</span>
                 </li>
-
               </ul>
 
               <p className='text-[18px] text-start leading-[27px] lg:text-[18px] lg:leading-[25px] font-400 w-full'>
-                At GlowVibe, we believe knowledge is empowerment. Whether you're seeking advice, sharing personal experiences, or just curious, this platform offers a <span className='font-bold text-primary'>secure</span> and <span className='font-bold text-primary'>inclusive</span> environment where you can engage freely and confidently.
+                At GlowVibe, we believe knowledge is empowerment. Whether you are seeking advice, sharing personal experiences, or just curious, this platform offers a <span className='font-bold text-primary'>secure</span> and <span className='font-bold text-primary'>inclusive</span> environment where you can engage freely and confidently.
               </p>              
             </div>
           </div>
