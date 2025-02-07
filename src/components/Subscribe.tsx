@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Subscribe() {
   return (
-    <div className='bg-[#ffffff] h-[100vh] flex justify-center items-center p-10 lg:h-[90vh] lg:p-0' id='subscribe'>
+    <div className='bg-shade h-[80vh] flex justify-center items-center lg:h-[90vh] lg:p-10 lg:bg-[#ffffff]' id='subscribe'>
         <div className='bg-shade container mx-auto border-10 border-background rounded-md'>
             <div className=' flex flex-col gap-10 justify-center items-center py-10'>
                 <h1 className='text-dark text-center font-bold text-[28px] w-[100%] leading-[34px] lg:text-[44px] lg:text-center lg:leading-[48px] lg:w-[70%]'>
