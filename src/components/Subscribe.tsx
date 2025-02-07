@@ -5,8 +5,8 @@ export default function Subscribe() {
     <div className='bg-[#ffffff] h-auto flex justify-center items-center p-10 lg:h-[90vh] lg:p-0' id='subscribe'>
         <div className='bg-shade container mx-auto border-10 border-background rounded-lg'>
             <div className=' flex flex-col gap-10 justify-center items-center py-10'>
-                <h1 className='text-dark text-center font-bold text-[38px] w-[100%] leading-[44px] lg:text-[44px] lg:text-center lg:leading-[48px] lg:w-[70%]'>
-                    Be Among the First to Experience GlowVibe with a  30days <span className='text-primary font-extrabold'>FREE</span> Access to our premium plan!
+                <h1 className='text-dark text-center font-bold text-[28px] w-[100%] leading-[34px] lg:text-[44px] lg:text-center lg:leading-[48px] lg:w-[70%]'>
+                    Be the First to Experience GlowVibe when we launch. Get a 30days <span className='text-primary font-extrabold'>FREE</span> Access to our premium plan!
                 </h1>
 
                 <form className='flex flex-col gap-10 justify-center items-center w-[90%] lg:w-[50%]'>
