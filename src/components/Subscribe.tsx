@@ -4,20 +4,30 @@ import React, { useState } from 'react'
 
 export default function Subscribe() {
     const [email, setEmail] = useState('');
-    // const [status, setStatus] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
     
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault();
+        setLoading(true);
+        setMessage("");
 
-        // const response = await fetch('/api/subscribe', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({ email }),
-        // });
+        const response = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+        });
 
-        // const data: SubscribeResponse = await response.json();
-        // setStatus(data.success ? 'Subscribed!' : `Error: ${data.error}`);
-    }
+        const data = await response.json();
+        if (data.success) {
+            setMessage("Thank you for subscribing! Check your email.");
+            setEmail("");
+        } else {
+            setMessage("Error: " + data.error);
+        }
+
+        setLoading(false);
+    };
 
 
   return (
@@ -39,18 +49,20 @@ export default function Subscribe() {
                             id="email" 
                             value={email}
                             onChange={(event) => setEmail(event.target.value)}
-                            placeholder='Please enter your email address' className='p-4 w-[100%] bg-[#f9f9f9] rounded-md block' 
+                            placeholder='Please enter your email address' className='p-4 w-[100%] bg-[#f9f9f9] rounded-md block'
+                            required 
                         />
                     </div>
                     <div className='flex justify-center items-center w-[100%]'>
                         <button 
                             type='submit'
-                            className='bg-primary text-white p-4 rounded-md'
+                            className='bg-primary text-white p-4 rounded-md disabled:bg-gray-400'
+                            disabled={loading || !email}
                             >
-                            Join the Waitlist!
+                              {loading ? "Subscribing..." : "Join the Waitlist"}
                         </button>
                     </div>
-                    {/* {status && <p>{status}</p>} */}
+                    {message && <p className="mt-3 text-center">{message}</p>}
                 </form>
             </div>
         </div>

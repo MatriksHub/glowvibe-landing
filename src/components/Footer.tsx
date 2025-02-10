@@ -4,10 +4,10 @@ import { LuFacebook, LuInstagram, LuTwitter } from 'react-icons/lu'
 
 function Footer() {
   return (
-    <div className='bg-[#000000] text-[#fff] h-[70vh] flex justify-center items-center lg:h-[50vh]'>
+    <div className='bg-[#000000] text-[#fff] h-[80vh] flex justify-center items-center lg:h-[70vh]'>
       <div className='container mx-auto'>
-        <footer className="row-start-3 flex gap-10 flex-wrap items-center justify-center">
-          <div className='grid grid-cols-3 gap-20 lg:grid-cols-3'>
+        <footer className="flex flex-col gap-20 lg:gap-20 lg:justify-between lg:items-center">
+          <div className='grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-20'>
             <div className='flex flex-col gap-6'>
               <div>
                 <img 
@@ -15,7 +15,6 @@ function Footer() {
                   alt='glowvibe logo'
                   className='h-[50px] w-[150px]'
                 />
-              
               </div>
               <p>
                 Empowering Conversations, Breaking Stigmas.

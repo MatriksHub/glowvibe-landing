@@ -15,7 +15,7 @@ function About() {
 
             <div className='w-full flex flex-col gap-10 justify-center items-center p-4 lg:w-[50%]'>
               <p className='text-[18px] text-start leading-[27px] lg:text-[18px] lg:leading-[25px] font-400 w-full'>
-                GlowVibe is an innovative platform designed to provide a <span className='font-bold text-primary'>safe, anonymous, and inclusive</span> space for individuals to discuss <span className='font-bold text-primary'>sexual health</span> without fear of stigma or judgment.
+                GlowVibe is an innovative mobile platform designed to provide a <span className='font-bold text-primary'>safe, anonymous, and inclusive</span> space for individuals to discuss <span className='font-bold text-primary'>sexual health</span> without fear of stigma or judgment.
               </p>
             </div>
           </div>
