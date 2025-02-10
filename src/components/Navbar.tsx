@@ -36,7 +36,7 @@ const Navbar = () => {
                     <Link href="/" className='log' legacyBehavior>
                         {/* <a className='log'> */}
                             <img
-                                src='glowvibeBlack.png'
+                                src='glowvibeWhite.png'
                                 alt='glowvibe-logo'
                                 className='h-[50px] w-[200px]'
                                 // width={100}
@@ -74,7 +74,7 @@ const Navbar = () => {
                             <ul>
                                 <li>
                                     <Link href='#subscribe' legacyBehavior>
-                                        <a className='nav-cta bg-primary text-shade rounded-md text-[14px] px-6 py-3 font-bold'>
+                                        <a className='nav-cta bg-secondary text-light rounded-md text-[14px] px-6 py-3 font-bold'>
                                             Join the waitlist!
                                         </a>
                                     </Link>
@@ -91,9 +91,9 @@ const Navbar = () => {
                             className='HAMBURGER-ICON space-y-1.5 cursor-pointer'
                             onClick={() => setIsNavOpen((prev) => !prev)}
                         >
-                            <span className='block h-0.5 w-8 animate-pulse bg-[#000000]'></span>
-                            <span className='block h-0.5 w-7 animate-pulse bg-[#000000]'></span>
-                            <span className='block h-0.5 w-6 animate-pulse bg-[#000000]'></span>
+                            <span className='block h-0.5 w-8 animate-pulse bg-[#ffffff]'></span>
+                            <span className='block h-0.5 w-7 animate-pulse bg-[#ffffff]'></span>
+                            <span className='block h-0.5 w-6 animate-pulse bg-[#ffffff]'></span>
                         </div>
 
                         {/* NAV MENU */}

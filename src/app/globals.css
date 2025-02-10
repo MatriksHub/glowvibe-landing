@@ -180,7 +180,7 @@ p {
   align-items: center;
   padding: 0 10px;
   z-index: 20;
-  background: var(--light);
+  background: var(--primary);
   /* box-shadow: 1px 1px 5px 1px var(--neutral-color); */
   /* color: var(--dark-color); */
 }
@@ -251,7 +251,7 @@ p {
   letter-spacing: 0.85px;
   /* border-radius: 5px; */
   text-transform: capitalize;
-  color: var(--shade);
+  color: var(--light);
   padding: 15px 20px;
   transition: all ease-in-out .3s;
 }

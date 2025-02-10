@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
         }
 
         const emailResponse = await resend.emails.send({
-            from: "GlowVibe <noreply@yourdomain.com>",
+            from: "GlowVibe <noreply@glowvibeapp.com>",
             to: [email],
             subject: "Welcome to GlowVibe!",
             html: `
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
         });
 
         return NextResponse.json({ success: true, data: emailResponse });
-    } catch (error: any) {
-        return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ success: false, error: (error as Error).message }, { status: 500 });
     }
 }

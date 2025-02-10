@@ -31,16 +31,16 @@ export default function Subscribe() {
 
 
   return (
-    <div className='bg-shade h-[80vh] flex justify-center items-center lg:h-[90vh] lg:p-10 lg:bg-[#ffffff]' id='subscribe'>
-        <div className='bg-shade container mx-auto border-10 border-background rounded-md'>
+    <div className='bg-primary h-[80vh] flex justify-center items-center lg:h-[90vh] lg:p-10 lg:bg-[#ffffff]' id='subscribe'>
+        <div className='bg-primary container mx-auto border-10 border-background rounded-[50px]'>
             <div className=' flex flex-col gap-10 justify-center items-center py-10'>
-                <h1 className='text-dark text-center font-bold text-[28px] w-[100%] leading-[34px] lg:text-[44px] lg:text-center lg:leading-[48px] lg:w-[70%]'>
-                    Be the First to Experience GlowVibe when we launch. Get a 30 days <span className='text-primary font-extrabold'>FREE</span> Access to our premium plan!
+                <h1 className='text-white text-center font-bold text-[28px] w-[100%] leading-[34px] lg:text-[44px] lg:text-center lg:leading-[48px] lg:w-[70%]'>
+                    Be the First to Experience GlowVibe when we launch. Get a 30 days <span className='text-secondary font-extrabold'>FREE</span> Access to our premium plan!
                 </h1>
 
                 <form onSubmit={handleSubmit} className='flex flex-col gap-10 justify-center items-center w-[90%] lg:w-[50%]'>
                     <div className='flex flex-col gap-2 w-full'>
-                        <label htmlFor="email" className='text-dark text-[18px] block font-medium'>
+                        <label htmlFor="email" className='text-white text-[18px] block font-medium'>
                             Email
                         </label>
                         <input 
@@ -56,7 +56,7 @@ export default function Subscribe() {
                     <div className='flex justify-center items-center w-[100%]'>
                         <button 
                             type='submit'
-                            className='bg-primary text-white p-4 rounded-md disabled:bg-gray-400'
+                            className='bg-secondary text-white p-4 rounded-md disabled:bg-gray-400'
                             disabled={loading || !email}
                             >
                               {loading ? "Subscribing..." : "Join the Waitlist"}
