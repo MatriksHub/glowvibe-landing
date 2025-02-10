@@ -9,18 +9,20 @@ function Contact() {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
 
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
+
+
+const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    event.preventDefault();
 
     const response = await fetch('/api/send-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({ firstName, lastName, email, message }),
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, lastName, email, message } as FormData),
     });
 
-    const data = await response.json();
+    const data: ApiResponse = await response.json();
     setStatus(data.success ? 'Message sent!' : `Error: ${data.error}`);
-  }
+}
 
   return (
     <div className='bg-[#ffffff] min-h-[100ch] flex items-center justify-center lg:min-h-[100ch]'>
@@ -46,7 +48,7 @@ function Contact() {
                                     name="firstName" 
                                     id="firstName" 
                                     value={firstName}
-                                    onChange={(e) => setFirstName(e.target.value)}
+                                    onChange={(event) => setFirstName(event.target.value)}
                                     placeholder='Enter your frist name' className='p-4 w-[100%] bg-[#f9f9f9] rounded-md block'  
                                 />
                             </div>
@@ -61,7 +63,7 @@ function Contact() {
                                     name="lastName" 
                                     id="lastName" 
                                     value={lastName}
-                                    onChange={(e) => setLastName(e.target.value)}
+                                    onChange={(event) => setLastName(event.target.value)}
                                     placeholder='Enter your last name' className='p-4 w-[100%] bg-[#f9f9f9] rounded-md block' 
                                 />
                             </div>
@@ -78,7 +80,7 @@ function Contact() {
                                 name="email" 
                                 id="email" 
                                 value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={(event) => setEmail(event.target.value)}
                                 placeholder='Enter your email address' className='p-4 w-[100%] bg-[#f9f9f9] rounded-md block' 
                             />
                         </div>
@@ -94,7 +96,7 @@ function Contact() {
                                 name="message" 
                                 id="message" 
                                 value={message}
-                                onChange={(e) => setMessage(e.target.value)}
+                                onChange={(event) => setMessage(event.target.value)}
                                 placeholder='I would love to have a feature where I can...' 
                                 className='p-4 w-[100%] h-[150px] bg-[#f9f9f9] rounded-md block' 
                             />
