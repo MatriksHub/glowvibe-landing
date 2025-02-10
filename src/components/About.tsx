@@ -8,7 +8,7 @@ function About() {
           {/* about glow vibes */}
           <div className='flex flex-col justify-center items-center gap-4 lg:flex-row lg:justify-between lg:items-center'>
             <div className='w-full lg:w-[50%]'>
-              <h1 className='text-[57px] w-[70%] leading-[65px] lg:text-[57px] font-bold text-start'>
+              <h1 className='text-secondary text-[57px] w-[70%] leading-[65px] lg:text-[57px] font-bold text-start'>
                 What is GlowVibe?
               </h1>
             </div>
@@ -22,7 +22,7 @@ function About() {
             {/* why glow vibes */}
           <div className='flex flex-col justify-between items-center gap-4 lg:flex-row lg:justify-between lg:items-center'>
             <div className='w-full lg:w-[50%]'>
-              <h1 className='text-[57px] w-[70%] leading-[65px] lg:text-[57px] font-bold text-start text-primary'>
+              <h1 className='text-[57px] w-[70%] leading-[65px] lg:text-[57px] font-bold text-start text-secondary'>
                 💬 Why GlowVibe?
               </h1>
             </div>

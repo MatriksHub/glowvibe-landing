@@ -10,13 +10,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --primary: #140005;
+  --primary: #6E3879;
+  --shade: #F5F5DC;
+  --secondary: #Ad4196;
+  --grey: #F0F7EE;
+  --dark: #000000;
+  --light: #ffffff;
+  --accent: #Ad4196;
+
+  /* --primary: #140005;
   --shade: #F5F5DC;
   --secondary: #9C27B0;
   --dark-shade: #110305;
   --grey: #F0F7EE;
   --dark: #000000;
-  --light: #ffffff;
+  --light: #ffffff; */
   
   /* --background: linear-gradient(180deg, rgba(20,0,5,1) 0%, rgba(59,15,67,0.87718837535014) 3%, rgba(82,0,20,1) 100%); */
   --background: #ffffff;

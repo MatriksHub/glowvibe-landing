@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image';
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 
@@ -33,10 +34,17 @@ const Navbar = () => {
         <div className="container mx-auto">
             <div className='flex justify-between items-center'>
                 <div className=' md:flex-[2]'>
-                    <Link href="/" className='logo' legacyBehavior>
-                        <a className='logo'>
-                            GlowVibe
-                        </a>
+                    <Link href="/" className='log' legacyBehavior>
+                        {/* <a className='log'> */}
+                            <img
+                                src='glowvibeBlack.png'
+                                alt='glowvibe-logo'
+                                className='h-[50px] w-[200px]'
+                                // width={100}
+                                // height={100}
+                                // priority
+                            />
+                        {/* </a> */}
                     </Link>
                 </div>
                 <nav className='lg:flex-[4]'>
@@ -53,11 +61,11 @@ const Navbar = () => {
                                         About
                                     </Link>
                                 </li>
-                                <li  className='mx-3'>
+                                {/* <li  className='mx-3'>
                                     <Link href='/blog'>
                                         Blog
                                     </Link>
-                                </li>
+                                </li> */}
                                 <li  className='mx-3'>
                                     <Link href='/contact'>
                                         Contact
@@ -127,7 +135,7 @@ const Navbar = () => {
                                         </a>
                                     </Link>
                                 </li>
-                                <li className='my-[25px] capitalize' 
+                                {/* <li className='my-[25px] capitalize' 
                                     onClick={closeMobileClicked}
                                 >
                                     <Link href='/blog' legacyBehavior>
@@ -135,7 +143,7 @@ const Navbar = () => {
                                             Blog
                                         </a>
                                     </Link>
-                                </li>
+                                </li> */}
                                 
 
                                 <li className='my-[25px] capitalize' 
