@@ -9,3 +9,8 @@ interface ApiResponse {
     success: boolean;
     error?: string;
 }
+
+interface SubscribeResponse {
+    success: boolean;
+    error?: string;
+}

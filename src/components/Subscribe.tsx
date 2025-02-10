@@ -6,16 +6,16 @@ export default function Subscribe() {
     const [email, setEmail] = useState('');
     const [status, setStatus] = useState('');
     
-    const handleSubmit = async (e: any) => {
-        e.preventDefault();
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
+        event.preventDefault();
 
         const response = await fetch('/api/subscribe', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email }),
         });
 
-        const data = await response.json();
+        const data: SubscribeResponse = await response.json();
         setStatus(data.success ? 'Subscribed!' : `Error: ${data.error}`);
     }
 
@@ -38,7 +38,7 @@ export default function Subscribe() {
                             name="email" 
                             id="email" 
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(event) => setEmail(event.target.value)}
                             placeholder='Please enter your email address' className='p-4 w-[100%] bg-[#f9f9f9] rounded-md block' 
                         />
                     </div>
