@@ -4,19 +4,19 @@ import React, { useState } from 'react'
 
 export default function Subscribe() {
     const [email, setEmail] = useState('');
-    const [status, setStatus] = useState('');
+    // const [status, setStatus] = useState('');
     
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault();
 
-        const response = await fetch('/api/subscribe', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email }),
-        });
+        // const response = await fetch('/api/subscribe', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({ email }),
+        // });
 
-        const data: SubscribeResponse = await response.json();
-        setStatus(data.success ? 'Subscribed!' : `Error: ${data.error}`);
+        // const data: SubscribeResponse = await response.json();
+        // setStatus(data.success ? 'Subscribed!' : `Error: ${data.error}`);
     }
 
 
@@ -50,7 +50,7 @@ export default function Subscribe() {
                             Join the Waitlist!
                         </button>
                     </div>
-                    {status && <p>{status}</p>}
+                    {/* {status && <p>{status}</p>} */}
                 </form>
             </div>
         </div>

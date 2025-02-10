@@ -7,22 +7,22 @@ function Contact() {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [status, setStatus] = useState('');
+//   const [status, setStatus] = useState('');
 
 
 
-const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
-    event.preventDefault();
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
+        event.preventDefault();
 
-    const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ firstName, lastName, email, message } as FormData),
-    });
+        // const response = await fetch('/api/send-email', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({ firstName, lastName, email, message } as FormData),
+        // });
 
-    const data: ApiResponse = await response.json();
-    setStatus(data.success ? 'Message sent!' : `Error: ${data.error}`);
-}
+        // const data: ApiResponse = await response.json();
+        // setStatus(data.success ? 'Message sent!' : `Error: ${data.error}`);
+    }
 
   return (
     <div className='bg-[#ffffff] min-h-[100ch] flex items-center justify-center lg:min-h-[100ch]'>
@@ -37,7 +37,9 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<vo
                     <h6 className='text-[18px] text-start leading-[27px] lg:text-[18px] lg:leading-[25px] font-400 w-full'>
                         Have questions? We would love to here from you! 
                     </h6>
-                    <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full'>
+                    <form 
+                        onSubmit={handleSubmit} 
+                        className='flex flex-col gap-4 w-full'>
                         <div className='flex flex-col w-full gap-2 lg:flex-row lg:gap-4'>
                             <div>
                                 <label htmlFor="firstName" className='text-dark text-[18px] block font-medium'>
@@ -110,7 +112,7 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<vo
                                 Submit
                             </button>
                         </div>
-                        {status && <p>{status}</p>}
+                        {/* {status && <p>{status}</p>} */}
                     </form>
                 </div>
             </div>
