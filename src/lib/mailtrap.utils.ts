@@ -27,6 +27,6 @@ export const sendEmail = async (dto: SendEmailDto) => {
         to: recipients,
         subject,
         html: message,
-        text: 
+        text: message,
     })
 }

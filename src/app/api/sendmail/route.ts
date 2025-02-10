@@ -3,7 +3,7 @@ import { sendEmail } from "@/lib/mailtrap.utils"
 
 export async function POST() {
     const sender = {
-        name: 'My App',
+        name: 'Glowvibes',
         address: 'no-reply@example.com',
     }
 
