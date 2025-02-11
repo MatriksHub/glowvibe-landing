@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { LuFacebook, LuInstagram } from 'react-icons/lu'
+import { LuInstagram } from 'react-icons/lu'
 
 function Footer() {
   return (
@@ -61,16 +61,7 @@ function Footer() {
                 <div className='flex text-[30px] gap-4'>
                   <Link href='https://www.instagram.com/glowvibeapp/' target='_blank' rel='noreferrer'>
                     <LuInstagram />
-                  </Link>
-
-                  {/* <Link href='/'>
-                    <LuFacebook />
-                  </Link>
-                  
-                  <Link href='/'>
-                    <LuTwitter />
-                  </Link> */}
-                  
+                  </Link>                  
                 </div>
               </div>
 
