@@ -38,7 +38,7 @@ const Navbar = () => {
                             <img
                                 src='glowvibeWhite.png'
                                 alt='glowvibe-logo'
-                                className='h-[50px] w-[200px]'
+                                className='h-[50px] w-[150px]'
                                 // width={100}
                                 // height={100}
                                 // priority
@@ -102,7 +102,7 @@ const Navbar = () => {
                                 onClick={() => setIsNavOpen(false)}
                             >
                                 <svg
-                                    className='h-8 w-8 text-[#000000] animate-pulse'
+                                    className='h-8 w-8 text-[#ffffff] animate-pulse'
                                     viewBox='0 0 24 24'
                                     fill='none'
                                     stroke='currentColor'
@@ -115,8 +115,8 @@ const Navbar = () => {
                                 </svg>
                             </div>
 
-                            <ul className='MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]'>
-                                <li className='my-[25px] capitalize ' 
+                            <ul className='MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-center gap-10'>
+                                <li className='capitalize ' 
                                     onClick={closeMobileClicked}
                                 >
                                     <Link href='/' legacyBehavior>
@@ -125,7 +125,7 @@ const Navbar = () => {
                                         </a>
                                     </Link>
                                 </li>
-                                <li className='my-[25px] capitalize' 
+                                <li className='capitalize' 
                                     onClick={closeMobileClicked}
                                 >
                                     <Link href='#about' legacyBehavior>
@@ -134,7 +134,7 @@ const Navbar = () => {
                                         </a>
                                     </Link>
                                 </li>
-                                {/* <li className='my-[25px] capitalize' 
+                                {/* <li className=' capitalize' 
                                     onClick={closeMobileClicked}
                                 >
                                     <Link href='/blog' legacyBehavior>
@@ -145,7 +145,7 @@ const Navbar = () => {
                                 </li> */}
                                 
 
-                                <li className='my-[25px] capitalize' 
+                                <li className='capitalize' 
                                     onClick={closeMobileClicked}
                                 >
                                     <Link href='/contact' legacyBehavior>

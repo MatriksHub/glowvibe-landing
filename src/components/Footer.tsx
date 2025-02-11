@@ -5,10 +5,10 @@ import { LuFacebook, LuInstagram, LuTwitter } from 'react-icons/lu'
 
 function Footer() {
   return (
-    <div className='bg-[#000000] text-[#fff] h-[90vh] flex justify-center items-center lg:h-[70vh]'>
+    <div className='bg-[#000000] text-[#fff] h-[100ch] flex justify-center items-center lg:h-[70vh]'>
       <div className='container mx-auto'>
         <footer className="flex flex-col gap-20 lg:gap-20 lg:justify-between lg:items-center">
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 lg:gap-20'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-10 lg:grid-cols-4 lg:gap-20'>
             <div className='flex flex-col gap-6'>
               <div>
                 <img 
@@ -22,58 +22,81 @@ function Footer() {
               </p>
             </div>
 
-            {/* <div className='flex flex-col gap-6'>
-              <h3 className='font-bold'>
-                Contact Us:
-              </h3>
-              <p>
-                support@glowvibes.com
-              </p>
-            </div> */}
-
             <div className='flex flex-col gap-6'>
-              <h3 className='font-bold'>
-                Follow us on social media
+              <h3 className='font-bold text-primary'>
+                Quick Links
               </h3>
+              <ul className='flex flex-col items-start justify-start gap-6'>
+                <li className='capitalize'>
+                  <Link href='/' legacyBehavior>
+                    <a >
+                      Home
+                    </a>
+                  </Link>
+                </li>
+                <li className='capitalize'>
+                  <Link href='#about' legacyBehavior>
+                    <a target='_blank'>
+                      About
+                    </a>
+                  </Link>
+                </li>
 
-              <div className='flex text-[30px] gap-4'>
-                <Link href='/'>
-                  <LuInstagram />
-                </Link>
-
-                <Link href='/'>
-                  <LuFacebook />
-                </Link>
-                
-                <Link href='/'>
-                  <LuTwitter />
-                </Link>
-                
-              </div>
+                <li className='capitalize'>
+                  <Link href='/contact' legacyBehavior>
+                    <a target='_blank'>
+                      Contact
+                    </a>
+                  </Link>
+                </li>
+              </ul>
             </div>
+            
+            <div className='flex flex-col gap-6'>
+              <div className='flex flex-col gap-6'>
+                <h3 className='font-bold text-primary'>
+                  Follow us on social media
+                </h3>
 
-            <div className='flex flex-col gap-8'>
-              <h3 className='font-bold'>
-                Coming soon
-              </h3>
-              <div className='flex flex-row items-center gap-6'>
-                <Link href='/'>
-                  <Image 
-                    src='/GetItOnGooglePlay.png'
-                    alt='google store button'
-                    width={100}
-                    height={100}
-                  />
-                </Link>
+                <div className='flex text-[30px] gap-4'>
+                  <Link href='https://www.instagram.com/glowvibeapp/' target='_blank' rel='noreferrer'>
+                    <LuInstagram />
+                  </Link>
 
-                <Link href='/'>
-                  <Image 
-                    src='/App_Store_Badge.svg'
-                    alt='app store button'
-                    width={100}
-                    height={100}
-                  />
-                </Link>
+                  {/* <Link href='/'>
+                    <LuFacebook />
+                  </Link>
+                  
+                  <Link href='/'>
+                    <LuTwitter />
+                  </Link> */}
+                  
+                </div>
+              </div>
+
+              <div className='flex flex-col gap-8'>
+                <h3 className='font-bold text-primary'>
+                  Coming soon
+                </h3>
+                <div className='flex flex-row items-center gap-6'>
+                  <Link href='/'>
+                    <Image 
+                      src='/GetItOnGooglePlay.png'
+                      alt='google store button'
+                      width={100}
+                      height={100}
+                    />
+                  </Link>
+
+                  <Link href='/'>
+                    <Image 
+                      src='/App_Store_Badge.svg'
+                      alt='app store button'
+                      width={100}
+                      height={100}
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

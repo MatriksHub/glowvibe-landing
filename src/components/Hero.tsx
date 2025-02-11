@@ -13,15 +13,15 @@ function Hero() {
               A safe and anonymous space
             </h1>
 
-            <p className='text-white/50 text-[18px] w-[90%] leading-[27px] lg:text-[27px]  font-400 lg:w-[70%] lg:leading-[27px]'>
+            <p className='text-white text-[18px] w-[90%] leading-[27px] lg:text-[27px]  font-400 lg:w-[70%] lg:leading-[27px]'>
               to discuss sexual health, share experiences, and learn from experts—all while staying completely anonymous.
             </p>
 
             <div className='flex flex-col items-center lg:items-start gap-4'>
-              <div className='text-primary text-[18px] font-bold'>
-                <h1 className='text-white'>Coming soon on</h1>
+              <div className=''>
+                <h1 className='text-dark text-[18px] font-bold'>Coming soon on</h1>
               </div>
-              <div className='flex gap-8'>
+              <div className='w-full flex gap-8'>
                 <Link href='/'>
                   <Image 
                     src='/GetItOnGooglePlay.png'
@@ -46,9 +46,9 @@ function Hero() {
           {/* hero image */}
           <div className='w-full flex justify-center items-center lg:flex lg:w-[40%]'>
             <img
-              src='/348shots_so1.png'
+              src='/739shots_so1.png'
               alt='hero image'
-              className='h-[250px] w-[250px] lg:h-[350px] lg:w-[350px]' 
+              className='h-[250px] w-[300px] lg:h-[350px] lg:w-[350px]' 
             />
           </div>
         </div>
