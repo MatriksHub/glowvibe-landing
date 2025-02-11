@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { LuFacebook, LuInstagram, LuTwitter } from 'react-icons/lu'
+import { LuFacebook, LuInstagram } from 'react-icons/lu'
 
 function Footer() {
   return (
