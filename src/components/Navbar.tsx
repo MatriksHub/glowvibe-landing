@@ -65,11 +65,11 @@ const Navbar = () => {
                                         Blog
                                     </Link>
                                 </li> */}
-                                <li  className='mx-3'>
+                                {/* <li  className='mx-3'>
                                     <Link href='/contact'>
                                         Contact
                                     </Link>
-                                </li>
+                                </li> */}
                             </ul>
                             <ul>
                                 <li>
@@ -145,7 +145,7 @@ const Navbar = () => {
                                 </li> */}
                                 
 
-                                <li className='capitalize' 
+                                {/* <li className='capitalize' 
                                     onClick={closeMobileClicked}
                                 >
                                     <Link href='/contact' legacyBehavior>
@@ -153,7 +153,7 @@ const Navbar = () => {
                                             Contact
                                         </a>
                                     </Link>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </div>

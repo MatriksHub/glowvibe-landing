@@ -42,13 +42,13 @@ function Footer() {
                   </Link>
                 </li>
 
-                <li className='capitalize'>
+                {/* <li className='capitalize'>
                   <Link href='/contact' legacyBehavior>
                     <a target='_blank'>
                       Contact
                     </a>
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
             

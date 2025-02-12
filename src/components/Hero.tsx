@@ -5,7 +5,7 @@ import React from 'react'
 
 function Hero() {
   return (
-    <div className='bg-primary h-[120ch] flex justify-center items-center lg:h-[100ch]'>
+    <div className='bg-primary h-[150ch] flex justify-center items-center lg:h-[100ch]'>
       <div className='container mx-auto'>
         <div className='flex flex-col pt-[300px] pb-[20px] gap-20 h- justify-between items-center lg:flex-row lg:pt-[150px] lg:pb-[20px] lg:gap-20'>
           <div className='w-full flex flex-col justify-center gap-8 items-center text-center lg:justify-start lg:items-start lg:gap-10 lg:w-[80%] lg:text-start'>

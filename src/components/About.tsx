@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 function About() {
@@ -9,7 +10,8 @@ function About() {
           <div className='flex flex-col justify-center items-center gap-4 lg:flex-row lg:justify-between lg:items-center'>
             <div className='w-full lg:w-[50%]'>
               <h1 className='text-dark text-[45px] w-[70%] leading-[50px] lg:text-[57px] lg:leading-[65px] font-bold text-start'>
-                What is GlowVibe?
+                
+                ❔ What is GlowVibe?
               </h1>
             </div>
 
