@@ -3,7 +3,7 @@ import React from 'react'
 
 function About() {
   return (
-    <div className='bg-[#f9f9f9] min-h-[100ch] py-[120px] flex justify-center items-center lg:min-h-[100vh] lg:py-0' id="about">
+    <div className='bg-[#f9f9f9] h-[100ch] py-[120px] flex justify-center items-center lg:h-[100vh] lg:py-0' id="about">
       <div className='container mx-auto'>
         <div className='flex flex-col gap-10'>
           {/* about glow vibes */}

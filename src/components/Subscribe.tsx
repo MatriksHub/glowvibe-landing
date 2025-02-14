@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
 
 export default function Subscribe() {
     const [email, setEmail] = useState('');
@@ -12,7 +13,7 @@ export default function Subscribe() {
         setLoading(true);
         setMessage("");
 
-        const response = await fetch('/api/subscribe', {
+        const response = await fetch('/api/sentmail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email }),
@@ -21,9 +22,11 @@ export default function Subscribe() {
         const data = await response.json();
         if (data.success) {
             setMessage("Thank you for subscribing! Check your email.");
+            toast.success("Thank you for subscribing! Check your email.");
             setEmail("");
         } else {
             setMessage("Error: " + data.error);
+            toast.error("Error: " + data.error);
         }
 
         setLoading(false);
@@ -35,7 +38,7 @@ export default function Subscribe() {
         <div className='bg-primary container mx-auto border-10 border-background rounded-[50px]'>
             <div className=' flex flex-col gap-10 justify-center items-center py-10'>
                 <h1 className='text-white text-center font-bold text-[28px] w-[100%] leading-[34px] lg:text-[44px] lg:text-center lg:leading-[48px] lg:w-[70%]'>
-                    Be the First to Experience GlowVibe when we launch. Get a 30 days <span className='text-secondary font-extrabold'>FREE</span> Access to our premium plan!
+                    Be the First to Experience GlowVibe when we launch.
                 </h1>
 
                 <form onSubmit={handleSubmit} className='flex flex-col gap-10 justify-center items-center w-[90%] lg:w-[50%]'>

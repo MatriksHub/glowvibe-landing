@@ -10,7 +10,6 @@ export default function Home() {
     <div>
       <Hero />
       <About />
-      {/* <Features /> */}
       <Subscribe />
     </div>
   );
