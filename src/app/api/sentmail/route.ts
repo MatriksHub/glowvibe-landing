@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-// import WelcomeEmail from "@/components/WelcomeEmail";
-import React from "react";
 import { render } from "@react-email/render";
 import { WelcomeEmail } from "@/emails/WelcomeEmail";
 
@@ -26,7 +24,10 @@ export async function POST(req: NextRequest) {
         });
 
         return NextResponse.json({ success: true, data: emailResponse });
-    } catch (error: any) {
-        return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    } catch (error) {
+        if (error instanceof Error) {
+            return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+        }
+        return NextResponse.json({ success: false, error: "An unexpected error occured" }, { status: 500 });
     }
 }
