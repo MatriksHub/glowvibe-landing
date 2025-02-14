@@ -22,9 +22,9 @@ interface WelcomeEmailProps {
   links?: string[];
 }
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : '';
+// const baseUrl = process.env.VERCEL_URL
+//   ? `https://${process.env.VERCEL_URL}`
+//   : '';
 
 const PropDefaults: WelcomeEmailProps = {
   steps: [
@@ -86,9 +86,10 @@ export const WelcomeEmail = ({
         <Preview>Glowvibeapp Welcome</Preview>
         <Body className="bg-offwhite text-base font-sans">
           <Img
-            src={`${baseUrl}/static/emailheader2.jpg`}
+            // src={`${baseUrl}/static/emailheader2.jpg`}
+            src='https://res.cloudinary.com/dotw1n9qw/image/upload/v1739554226/snqtarmrcavpiaqoh6mw.jpg'
             width="100%"
-            height="75"
+            height="100%"
             alt="glowvibe logo"
             className="mx-auto my-20"
           />
