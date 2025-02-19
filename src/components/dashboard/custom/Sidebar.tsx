@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import {useState} from 'react';
 import { 
-  BanknoteIcon, ChevronLeftIcon, DollarSignIcon, HomeIcon, Settings, User2Icon, WrenchIcon 
+  BanknoteIcon, ChevronLeftIcon, HomeIcon, Settings, User2Icon, WrenchIcon 
 } from 'lucide-react';
 import Image from 'next/image';
 import { BiShield } from 'react-icons/bi';

@@ -1,6 +1,6 @@
 'use client'
 
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
@@ -19,13 +19,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const metadata: Metadata = {
-  title: "Glow Vibes",
-  description: "Anonymous Gist Platform for Sexual Health Education",
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
+// const metadata: Metadata = {
+//   title: "Glow Vibes",
+//   description: "Anonymous Gist Platform for Sexual Health Education",
+//   icons: {
+//     icon: "/favicon.ico",
+//   },
+// };
 
 export default function RootLayout({
   children,

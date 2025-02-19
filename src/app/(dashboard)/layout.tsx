@@ -1,6 +1,6 @@
 'use client'
 
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import Header from "@/components/dashboard/custom/Header";
 import Sidebar from "@/components/dashboard/custom/Sidebar";
 import Footer from "@/components/dashboard/custom/Footer";
@@ -18,10 +18,10 @@ import { useEffect, useState } from "react";
 //   subsets: ["latin"],
 // });
 
-const metadata: Metadata = {
-  title: "Glowvibeapp",
-  description: "Anonymous Gist Platform for Sexual Health Education",
-};
+// const metadata: Metadata = {
+//   title: "Glowvibeapp",
+//   description: "Anonymous Gist Platform for Sexual Health Education",
+// };
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

@@ -1,5 +1,4 @@
 
-import Link from "next/link"
 
 export default function page() {
   return (
@@ -10,7 +9,7 @@ export default function page() {
         <p className="text-xl font-bold tracking-tight text-foreground">Last Updated: 19th February, 2025</p>
 
         <p className="text-muted-foreground">
-          Welcome to GlowVibe! Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal data when you use our mobile application ("App"). By using GlowVibe, you agree to the terms outlined below.
+          Welcome to GlowVibe! Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal data when you use our mobile application (&quot;App&quot;). By using GlowVibe, you agree to the terms outlined below.
         </p>
 
         <div className="space-y-4">
@@ -35,7 +34,7 @@ export default function page() {
             <h2 className="text-xl font-bold">2. How We Use Your Information</h2>
             <ul className="text-muted-foreground pl-[40px] gap-4">
                 <li className="list-disc">
-                    To provide and improve the App's functionality.
+                    To provide and improve the App&apos;s functionality.
                 </li>
                 <li className="list-disc">
                     To moderate content and enforce community guidelines.

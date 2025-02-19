@@ -17,7 +17,7 @@ export default function page() {
             <h2 className="text-xl font-bold">1. Eligibility & Registration</h2>
             <ul className="text-muted-foreground pl-[40px] gap-4">
                 <li className="list-disc">
-                  You must be at least 18 years old (or meet your country's minimum age for digital services).
+                  You must be at least 18 years old (or meet your country&apos;s minimum age for digital services).
                 </li>
                 <li className="list-disc">
                   You are responsible for maintaining the confidentiality of your account.
@@ -61,7 +61,7 @@ export default function page() {
             <h2 className="text-xl font-bold">5. Limitation of Liability</h2>
             <ul className="text-muted-foreground pl-[40px] gap-4">
                 <li className="list-disc">
-                  GlowVibe is provided "as is." We are not responsible for user-generated content.
+                  GlowVibe is provided &quot;as is.&quot; We are not responsible for user-generated content.
                 </li>
                 <li className="list-disc">
                   We are not liable for any damages arising from your use of the App.
