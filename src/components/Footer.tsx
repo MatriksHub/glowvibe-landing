@@ -30,7 +30,7 @@ function Footer() {
                 Quick Links
               </h3>
               <ul className='flex flex-col items-start justify-start gap-6'>
-                <li className='capitalize'>
+                {/* <li className='capitalize'>
                   <Link href='/' legacyBehavior>
                     <a >
                       Home
@@ -41,6 +41,27 @@ function Footer() {
                   <Link href='#about' legacyBehavior>
                     <a target='_blank'>
                       About
+                    </a>
+                  </Link>
+                </li> */}
+                <li className='capitalize'>
+                  <Link href='/privacy-policy' legacyBehavior>
+                    <a target='_blank' className='text-white/50 text-[14px]'>
+                      Privacy Policy
+                    </a>
+                  </Link>
+                </li>
+                <li className='capitalize'>
+                  <Link href='/terms-of-use' legacyBehavior>
+                    <a target='_blank' className='text-white/50 text-[14px]'>
+                      Terms of use
+                    </a>
+                  </Link>
+                </li>
+                <li className='capitalize'>
+                  <Link href='/content-moderation-policy' legacyBehavior>
+                    <a target='_blank'className='text-white/50 text-[14px]'>
+                      Content Moderation Policy
                     </a>
                   </Link>
                 </li>
@@ -100,11 +121,11 @@ function Footer() {
                 </div>
             </div>
           </div>
-          <div className='flex flex-col gap-6 items-center justify-center'>
+          <div className='flex items-center justify-center'>
             <p>
               © 2025 GlowVibe inc. All rights reserved.
             </p>
-            <ul className='flex flex-row items-center justify-centr gap-6'>
+            {/* <ul className='flex flex-row items-center justify-centr gap-6'>
               <li className='capitalize'>
                 <Link href='/privacy-policy' legacyBehavior>
                   <a target='_blank' className='text-white/50 text-[12px] underline'>
@@ -126,7 +147,7 @@ function Footer() {
                   </a>
                 </Link>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </footer>
       </div>
