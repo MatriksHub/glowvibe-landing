@@ -130,11 +130,11 @@ export const WelcomeEmail = ({
             </Row>
 
             <Text className='text-base'>
-              By following us, you’ll be the first to know when we go live and get exclusive content, special launch perks, and insider access.
+              By following us, you will be the first to know when we go live and get exclusive content, special launch perks, and insider access.
             </Text>
 
             <Text className='text-base'>
-              If you have any questions or suggestions, feel free to reply to this email. We’d love to hear from you.
+              If you have any questions or suggestions, feel free to reply to this email. We would love to hear from you.
             </Text>
 
             <Text className='text-base'>
