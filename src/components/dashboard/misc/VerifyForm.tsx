@@ -23,7 +23,7 @@ export function VerifyForm({ className, ...props }: React.ComponentPropsWithoutR
     if (enteredCode === "123456") {
         toast.success("Verification successful!");
         localStorage.setItem("isAdmin", "true");
-        router.push("/overview");
+        router.push("/dashboard");
     } else {
         toast.error("Invalid verification code.");
     }

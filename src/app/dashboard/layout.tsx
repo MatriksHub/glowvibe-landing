@@ -6,7 +6,7 @@ import Sidebar from "@/components/dashboard/custom/Sidebar";
 import Footer from "@/components/dashboard/custom/Footer";
 import LoadingScreen from "@/components/dashboard/custom/LoadingScreen";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -23,7 +23,11 @@ import { useEffect, useState } from "react";
 //   description: "Anonymous Gist Platform for Sexual Health Education",
 // };
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export default function AdminLayout({ children }: LayoutProps) {
   const pathname = usePathname();
   const [loading, setLoading] = useState(false);
 

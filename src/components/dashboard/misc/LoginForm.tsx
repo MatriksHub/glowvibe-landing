@@ -6,8 +6,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { supabase } from "@/lib/supabase"
 import { toast } from "react-toastify"
+import { supabase } from "@/utils/supabase"
 
 export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRef<"div">) {
 
@@ -30,7 +30,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
 
       if (userData?.role === "admin") {
         toast.success("Login successful. Check your email for a verification code.");
-        router.push("/verify");
+        router.push("/auth/verify");
       } else {
         toast.error("Access denied. Only admins can log in.");
         await supabase.auth.signOut();

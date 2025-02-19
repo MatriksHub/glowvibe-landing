@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const isAdmin = pathname.startsWith('/confessions') || pathname.startsWith('/overview') || pathname.startsWith('/settings') || pathname.startsWith('/users') || pathname.startsWith('/revenue') || pathname.startsWith('/dashboard') || pathname.startsWith('/profile') || pathname.startsWith('/signin') || pathname.startsWith('/verify') || pathname.startsWith('/signup') || pathname.startsWith('/forgot') || pathname.startsWith('/reset') || pathname.startsWith('/404') || pathname.startsWith('/500') || pathname.startsWith('/403') || pathname.startsWith('/401') || pathname.startsWith('/400') || pathname.startsWith('/403') || pathname.startsWith('/401') || pathname.startsWith('/400') || pathname.startsWith('/500') || pathname.startsWith('/404') || pathname.startsWith('/signin') || pathname.startsWith('/signup') || pathname.startsWith('/forgot') || pathname.startsWith('/reset') || pathname.startsWith('/verify') || pathname.startsWith('/dashboard') || pathname.startsWith('/confessions') || pathname.startsWith('/overview') || pathname.startsWith('/settings') || pathname.startsWith('/users') || pathname.startsWith('/revenue') || pathname.startsWith('/profile');
+  const isAdmin = pathname.startsWith('/auth') || pathname.startsWith('/dashboard');
 
   return (
     <html lang="en">

@@ -3,7 +3,7 @@
 import React from 'react'
 // import AppStats from '@/components/dashboard/appstats'
 
-function page() {
+function OverviewPage() {
   return (
     <div>
       {/* <AppStats /> */}
@@ -11,4 +11,4 @@ function page() {
   )
 }
 
-export default page
+export default OverviewPage
