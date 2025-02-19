@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { supabase } from "@/lib/supabase"
-import { toast } from "sonner"
+import { toast } from "react-toastify"
 
 export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRef<"div">) {
 
