@@ -100,10 +100,33 @@ function Footer() {
                 </div>
             </div>
           </div>
-          <div className='flex items-center justify-center'>
+          <div className='flex flex-col gap-6 items-center justify-center'>
             <p>
               © 2025 GlowVibe inc. All rights reserved.
             </p>
+            <ul className='flex flex-row items-center justify-centr gap-6'>
+              <li className='capitalize'>
+                <Link href='/privacy-policy' legacyBehavior>
+                  <a target='_blank' className='text-white/50 text-[12px] underline'>
+                    Privacy Policy
+                  </a>
+                </Link>
+              </li>
+              <li className='capitalize'>
+                <Link href='/terms-of-use' legacyBehavior>
+                  <a target='_blank' className='text-white/50 text-[12px] underline'>
+                    Terms of use
+                  </a>
+                </Link>
+              </li>
+              <li className='capitalize'>
+                <Link href='/content-moderation-policy' legacyBehavior>
+                  <a target='_blank'className='text-white/50 text-[12px] underline'>
+                    Content Moderation Policy
+                  </a>
+                </Link>
+              </li>
+            </ul>
           </div>
         </footer>
       </div>

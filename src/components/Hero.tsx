@@ -14,7 +14,7 @@ function Hero() {
             </h1>
 
             <p className='text-white text-[18px] w-[90%] leading-[27px] lg:text-[27px]  font-400 lg:w-[70%] lg:leading-[32px]'>
-              to discuss sexual health, share experiences, and learn from experts—all while staying completely anonymous.
+              to express yourself, share experiences, and learn from experts—all while staying completely anonymous.
             </p>
 
             <div className='flex flex-col items-center lg:items-start gap-4'>
