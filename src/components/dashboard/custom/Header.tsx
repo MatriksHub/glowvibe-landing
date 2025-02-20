@@ -1,25 +1,19 @@
 'use client'
 
 
-import { supabase } from "@/utils/supabase";
-import { useRouter } from "next/navigation";
+import { useUser } from "@/context/UserContext";
 
 
 const Header = () => {
-  const router = useRouter();
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    localStorage.removeItem("isAdmin");
-    router.push("/login");
-  };
+  const { logout } = useUser();
  
   return (
     <header className="w-full h-[74px] p-[20px]">
       <div className="flex items-center justify-between pb-[20px] border-b border-b-shade" >
         <h1 className="text-xl font-bold"></h1>
         <div className="flex flex-row justify-center items-center content-center gap-4 ">
-          <button onClick={handleLogout} className="text-red-500 font-bold">
+          <button onClick={logout} className={`block w-full text-center py-2 rounded text-red-500 hover:text-red-600`}>
             Logout
           </button>
         </div>

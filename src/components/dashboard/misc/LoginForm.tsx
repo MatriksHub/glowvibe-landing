@@ -6,38 +6,56 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { toast } from "react-toastify"
-import { supabase } from "@/utils/supabase"
+// import { toast } from "react-toastify"
+// import { supabase } from "@/utils/supabase"
+import { useUser } from "@/context/UserContext"
+import { loginAction } from "@/app/auth/login/actions"
 
 export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRef<"div">) {
 
-  const [email, setEmail] = useState('');
+  const [formData, setFormData] = useState({ email: '', password: '' });
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const [error, setError] = useState('');
+  const { setUser } = useUser();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError('');
 
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-
-    if (error) {
-      toast.error(error.message);
-    } else {
-      // Check if user is an admin
-      const { data: userData } = await supabase.from("auth.users").select("role").eq("id", data.user?.id).single();
-
-      if (userData?.role === "admin") {
-        toast.success("Login successful. Check your email for a verification code.");
-        router.push("/auth/verify");
+    try {
+      const user = await loginAction(formData.email, formData.password);
+      setUser(user); // Set the user data in the context
+      router.push('/dashboard'); // Redirect on the client
+    } catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
       } else {
-        toast.error("Access denied. Only admins can log in.");
-        await supabase.auth.signOut();
+        setError('An unexpected error occurred.');
       }
+     } finally {
+        setLoading(false);
     }
+    // const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
-    setLoading(false);
+    // if (error) {
+    //   toast.error(error.message);
+    // } else {
+    //   // Check if user is an admin
+    //   const { data: userData } = await supabase.from("auth.users").select("role").eq("id", data.user?.id).single();
+
+    //   if (userData?.role === "admin") {
+    //     toast.success("Login successful. Check your email for a verification code.");
+    //     router.push("/auth/verify");
+    //   } else {
+    //     toast.error("Access denied. Only admins can log in.");
+    //     await supabase.auth.signOut();
+    //   }
+    // }
+
+    // setLoading(false);
   }
 
   return (
@@ -46,6 +64,12 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>
           <CardDescription>Enter your email below to login to your account</CardDescription>
+          {/* Error Message */}
+          {error && (
+            <p className="text-red-500 text-center mb-4 font-medium">
+              {error}
+            </p>
+          )}
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin}>
@@ -57,8 +81,9 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
                   type="email" 
                   placeholder="sandra@example.com" 
                   required 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value})}
+                  className="mt-1 w-full p-2 border border-gray-300 rounded focus:ring-purple-500 focus:border-purple-500 text-gray-700"
                 />
               </div>
               <div className="grid gap-2">
@@ -72,8 +97,9 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
                   id="password" 
                   type="password" 
                   required 
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={formData.password}
+                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  className="mt-1 w-full p-2 border border-gray-300 rounded focus:ring-purple-500 focus:border-purple-500 text-gray-700"
                 />
               </div>
               <Button 

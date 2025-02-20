@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import 'react-toastify/dist/ReactToastify.css';
 import {ToastContainer} from 'react-toastify'
 import { usePathname } from "next/navigation";
+import { UserProvider } from "@/context/UserContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,7 +45,7 @@ export default function RootLayout({
           {!isAdmin && <Navbar />}
           <ToastContainer position="top-center" limit={1} />
           <div>
-            {children}
+            <UserProvider>{children}</UserProvider>
           </div>
         </main>
         {!isAdmin && <Footer />}
