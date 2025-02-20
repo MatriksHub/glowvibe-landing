@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Suspense, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
-import { toast } from "react-toastify"
 import { useUser } from "@/context/UserContext"
 import { verifyAction } from "@/app/auth/verify/actions"
 

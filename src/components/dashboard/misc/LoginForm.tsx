@@ -14,7 +14,6 @@ import { loginAction } from "@/app/auth/login/actions"
 export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRef<"div">) {
 
   const [formData, setFormData] = useState({ email: '', password: '' });
-  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const [error, setError] = useState('');
