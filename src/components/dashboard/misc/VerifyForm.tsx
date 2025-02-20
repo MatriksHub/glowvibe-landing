@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Suspense, useState } from "react"
+import { useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useUser } from "@/context/UserContext"
 import { verifyAction } from "@/app/auth/verify/actions"
@@ -111,10 +111,10 @@ export function VerifyForm({ className, ...props }: React.ComponentPropsWithoutR
 }
 
 // Main component with Suspense boundary
-export default function VerifyPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <VerifyForm />
-    </Suspense>
-  );
-}
+// export default function VerifyPage() {
+//   return (
+//     <Suspense fallback={<div>Loading...</div>}>
+//       <VerifyForm />
+//     </Suspense>
+//   );
+// }
