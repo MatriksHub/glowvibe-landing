@@ -6,7 +6,7 @@ import { Confession } from '@/types/global';
 import { useEffect, useState } from 'react';
 
 
-function page() {
+function ConfessionPage() {
   const [confessions, setConfessions] = useState<Confession[]>([]);
 
   useEffect(() => {
@@ -46,4 +46,4 @@ function page() {
   )
 }
 
-export default page
+export default ConfessionPage

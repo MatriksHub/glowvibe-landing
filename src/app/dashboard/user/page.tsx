@@ -3,7 +3,7 @@
 import Maintenance from '@/components/dashboard/custom/Maintenance'
 import React from 'react'
 
-function page() {
+function UserPage() {
   return (
     <div>
       <Maintenance />
@@ -11,4 +11,4 @@ function page() {
   )
 }
 
-export default page
+export default UserPage
