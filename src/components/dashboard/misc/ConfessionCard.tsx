@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { approveConfession, deleteConfession } from "@/app/api/confessions/actions";
 
 interface ConfessionProps {
-  id: number;
+  id: any;
   username: string;
 //   created_at: string;
   confession?: string;
