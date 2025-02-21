@@ -1,14 +1,10 @@
-'use client'
-
 import Maintenance from '@/components/dashboard/custom/Maintenance'
 import React from 'react'
 
-function page() {
+export default function page() {
   return (
     <div>
       <Maintenance />
     </div>
   )
 }
-
-export default page

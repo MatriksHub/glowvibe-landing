@@ -35,7 +35,7 @@ export default function Sidebar() {
       </div>
 
       <nav className='flex flex-col space-y-2'>
-        <Link href='/overview'>
+        <Link href='/dashboard'>
           <SidebarItem 
             Icon={HomeIcon} 
             label="Overview" 
@@ -43,7 +43,7 @@ export default function Sidebar() {
           />
         </Link>
 
-        <Link href='/revenue'>
+        <Link href='/dashboard/revenue'>
           <SidebarItem 
             Icon={BanknoteIcon} 
             label="Revenue" 
@@ -59,7 +59,7 @@ export default function Sidebar() {
           />
         </Link> */}
 
-        <Link href='/users'>
+        <Link href='/dashboard/users'>
           <SidebarItem 
             Icon={WrenchIcon} 
             label="Users" 
@@ -67,7 +67,7 @@ export default function Sidebar() {
           />
         </Link>
 
-        <Link href='/confessions'>
+        <Link href='/dashboard/confession'>
           <SidebarItem 
             Icon={BiShield} 
             label="Confession Box" 
@@ -75,7 +75,7 @@ export default function Sidebar() {
           />
         </Link>
 
-        <Link href='/profile'>
+        <Link href='/dashboard/profile'>
           <SidebarItem 
             Icon={User2Icon} 
             label="Profile" 
@@ -83,7 +83,7 @@ export default function Sidebar() {
           />
         </Link>
 
-        <Link href='/settings'>
+        <Link href='dashboard//settings'>
             <SidebarItem 
                 Icon={Settings} 
                 label="Settings" 
