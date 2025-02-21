@@ -29,3 +29,17 @@ export async function deleteConfession(id: string) {
 
   return { success: true };
 }
+
+// Add Expert Answer
+export async function addExpertAnswer(id: string, answer: string) {
+  const { data, error } = await supabase
+    .from("confessions")
+    .update({ expert_advice: answer })
+    .eq("id", id);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
+}
