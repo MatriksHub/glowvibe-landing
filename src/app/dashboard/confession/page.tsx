@@ -78,10 +78,10 @@ function page() {
         <div className=' flex-1 bg-muted/50 lg:min-h-min'>
           <ScrollArea className='p-4'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-              {confessions.map((confession: any) => (
+              {confessions.map((confession) => (
                 <ConfessionCard 
                   key={confession.id} 
-                  { ...confession } 
+                   {...confession} 
                 />
               ))}
             </div>

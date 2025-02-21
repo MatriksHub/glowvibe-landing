@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 import { approveConfession, deleteConfession } from "@/app/api/confessions/actions";
 
 interface ConfessionProps {
-  id: string;
+  id: number;
   username: string;
 //   created_at: string;
   confession?: string;
-  approved: boolean;
+  approved?: boolean;
 }
 
 export default function ConfessionCard({ id, username,  confession = "", approved }: ConfessionProps) {
