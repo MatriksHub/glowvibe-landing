@@ -3,9 +3,16 @@
 import ConfessionCard from '@/components/dashboard/misc/ConfessionCard';
 // import { Card } from '@/components/ui/card'
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { useEffect, useState } from 'react';
 // import { useEffect, useState } from 'react';
 
-const confessions = [
+type Confession = {
+  id: number;
+  username: string;
+  confession: string;
+};
+
+const confessions: Confession[] = [
   {
     id: 1,
     username: "racksterly",
@@ -45,23 +52,23 @@ const confessions = [
   {
     id: 8,
     username: 'luppe pinchacho',
-    confession: "I feel like I’m living someone else’s life. I go to work, I smile, I function… but inside, I feel empty. I don’t even know what makes me happy anymore. I just exist, and I don’t know how to change that.",
+  const [confessions, setConfessions] = useState<Confession[]>([]);
   },
 ]
 
 
 function page() {
-  // const [confessions, setConfessions] = useState([]);
+  const [confessions, setConfessions] = useState<Confession[]>([]);
 
-  // useEffect(() => {
-  //   async function fetchConfessions() {
-  //     const response = await fetch("/api/confessions");
-  //     const data = await response.json();
-  //     setConfessions(data);
-  //     console.log(data)
-  //   }
-  //   fetchConfessions();
-  // }, []);
+  useEffect(() => {
+    async function fetchConfessions() {
+      const response = await fetch("/api/confessions");
+      const data = await response.json();
+      setConfessions(data);
+      console.log(data)
+    }
+    fetchConfessions();
+  }, []);
 
   return (
     <div className='flex flex-1 flex-col gap-4 py-4 pt-0'>
