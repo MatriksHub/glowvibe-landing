@@ -108,16 +108,16 @@ export default function ConfessionCard({ confess }: ConfessionCardProps) {
           </div>
         ) : (
           <div className="grid gap-2">
-            <h3 className="text-gray-700 font-600 text-[18px] capitalize">
+            <h3 className="text-gray-700 font-600 text-[16px] capitalize">
               {title}
             </h3>
-            <p className="text-gray-700 font-500 text-[16px] leading-normal ">
+            <p className="text-gray-700 font-500 text-[14px] leading-normal ">
               {expanded ? confession : truncatedText}
               
               {confession.length > 150 && (
                 <button 
                     onClick={() => setExpanded(!expanded)} 
-                    className="text-purple-500 ml-2 text-sm"
+                    className="text-purple-500 ml-2"
                 >
                   {expanded ? "Show Less" : "Read More"}
                 </button>
