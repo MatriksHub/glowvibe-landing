@@ -28,7 +28,7 @@ function ConfessionPage() {
         {/* scroll area */}
         <h1 className='text-3xl text-muted font-700'>Confessions</h1>
         <div className='flex-1 bg-muted/50'>
-          <ScrollArea className='h-[400px]'>
+          <ScrollArea className='h-[600px] lg:h-[400px]'>
             <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 xl:grid-cols-3'>
               {confessions.map((confess) => {
                 return (
