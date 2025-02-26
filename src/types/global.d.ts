@@ -19,6 +19,7 @@ export type Confession = {
     id: string; // Unique identifier
     user_id: string; // User who posted the confession
     username: string; // Anonymous username
+    title: string; // title of confession
     confession: string; // Confession text
     created_at: string; // Timestamp
     approved: boolean; // Approval status

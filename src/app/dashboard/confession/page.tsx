@@ -1,6 +1,6 @@
 'use client'
 
-import ConfessionCard from '@/components/dashboard/misc/ConfessionCard';
+import ConfessionCard from '@/components/dashboard/misc/confessions/ConfessionCard';
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Confession } from '@/types/global';
 import { useEffect, useState } from 'react';

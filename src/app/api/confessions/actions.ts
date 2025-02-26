@@ -31,10 +31,10 @@ export async function deleteConfession(id: string) {
 }
 
 // Add Expert Answer
-export async function addExpertAnswer(id: string, answer: string) {
+export async function addExpertAdvice(id: string, expert_advice: string) {
   const { data, error } = await supabase
     .from("confessions")
-    .update({ expert_advice: answer })
+    .update({ expert_advice: expert_advice })
     .eq("id", id);
 
   if (error) {
@@ -42,4 +42,18 @@ export async function addExpertAnswer(id: string, answer: string) {
   }
 
   return data;
+}
+
+// update confession
+export async function updateConfession(id: string, title: string, confession: string) {
+  const { error } = await supabase
+  .from("confessions")
+  .update({ title, confession})
+  .eq("id", id);
+
+  if (error) {
+    return { success: false, error: error.message };
+  }
+
+  return { success: true };
 }
