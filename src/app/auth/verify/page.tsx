@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 function page() {
   return (
-    <Suspense fallback={<div>Loading...</div>} className="max-h-screen flex justify-center items-center">
+    <Suspense fallback={<div>Loading...</div>}>
       <VerifyForm />
     </Suspense>
   )
