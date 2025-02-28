@@ -38,7 +38,7 @@ export function VerifyForm({ className, ...props }: React.ComponentPropsWithoutR
       if (err instanceof Error) {
         setError(err.message);
       } else {
-        setError('An unexpected error occurred.');
+        setError('An unexpected error occurred. Please try again');
       }
     } finally {
       setLoading(false); // Stop spinner
