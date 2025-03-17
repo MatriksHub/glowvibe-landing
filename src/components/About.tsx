@@ -4,7 +4,7 @@ import React from 'react'
 function About() {
   return (
     <div className='bg-[#f9f9f9] h-[100ch] py-[120px] flex justify-center items-center lg:h-[100vh] lg:py-0' id="about">
-      <div className='container mx-auto'>
+      <div className='container mx-auto max-w-[90%] px-4'>
         <div className='flex flex-col gap-10'>
           {/* about glow vibes */}
           <div className='flex flex-col justify-center items-center gap-4 lg:flex-row lg:justify-between lg:items-center'>

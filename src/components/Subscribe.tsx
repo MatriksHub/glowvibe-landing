@@ -35,7 +35,7 @@ export default function Subscribe() {
 
   return (
     <div className='bg-primary h-[80vh] flex justify-center items-center lg:h-[90vh] lg:p-10 lg:bg-[#ffffff]' id='subscribe'>
-        <div className='bg-primary container mx-auto border-10 border-background rounded-[50px]'>
+        <div className='bg-primary container mx-auto max-w-[90%] px-4 border-10 border-background rounded-[50px]'>
             <div className=' flex flex-col gap-10 justify-center items-center py-10'>
                 <h1 className='text-white text-center font-bold text-[28px] w-[100%] leading-[34px] lg:text-[44px] lg:text-center lg:leading-[48px] lg:w-[70%]'>
                     Be the First to Experience GlowVibe when we launch.

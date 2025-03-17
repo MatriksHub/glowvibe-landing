@@ -8,9 +8,10 @@ export async function registerAction(
   password: string,
   name: string
 ) {
+
   const supabase = await createClient();
 
-  const { error } = await supabase.auth.signUp({
+  const { error: regError } = await supabase.auth.signUp({
     email,
     password,
     options: {
@@ -18,9 +19,20 @@ export async function registerAction(
     },
   });
 
-  if (error) {
-    throw new Error('Registration failed: ' + error.message);
-  }
+  // if (error) {
+  //   throw new Error('Registration failed: ' + error.message);
+  // }
+
+  console.log(`regError: ${regError}`)
+
+  // const { error: roleError } = await supabase
+  // .from('profiles')
+  // .insert([{ 
+  //   id: data.user?.id, 
+  //   role: data.user?.user_role,
+  // }]);
+
+  // if (roleError) throw new Error(roleError.message);
 
   // Redirect to verification page
   redirect(`/auth/verify?email=${encodeURIComponent(email)}`);

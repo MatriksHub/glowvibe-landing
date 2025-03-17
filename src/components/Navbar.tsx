@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <div className={isScrolled ? 'isScrolled' : 'notScrolled'}>
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-[90%] px-4">
             <div className='flex justify-between items-center'>
                 <div className=' md:flex-[2]'>
                     <Link href="/" className='log' legacyBehavior>

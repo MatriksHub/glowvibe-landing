@@ -3,7 +3,6 @@
 // import type { Metadata } from "next";
 import Header from "@/components/dashboard/custom/Header";
 import Sidebar from "@/components/dashboard/custom/Sidebar";
-import Footer from "@/components/dashboard/custom/Footer";
 import LoadingScreen from "@/components/dashboard/custom/LoadingScreen";
 import { usePathname } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
@@ -46,9 +45,11 @@ export default function AdminLayout({ children }: LayoutProps) {
   return (
     <html>
       <body className="antialiased">
-        <main>
-          <div className="flex ">
-            <Sidebar />
+        <main className="lg:h-screen">
+          <div className="flex justify-between max-h-screen">
+            <div className="sticky h-screen flex-col top-0 hidden md:flex shrink-0 flex-grow max-w-[340px] border-r-[1.5px] border-grey-90 transition-all bg-gray-98 ">
+              <Sidebar />
+            </div>
             <div className="flex flex-col w-full">
               <Header />
               <div className="p-6 ">
@@ -56,7 +57,6 @@ export default function AdminLayout({ children }: LayoutProps) {
               </div>
             </div>
           </div>
-          <Footer />
         </main>
       </body>
     </html>

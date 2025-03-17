@@ -6,13 +6,10 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-// import { toast } from "react-toastify"
-// import { supabase } from "@/utils/supabase"
 import { useUser } from "@/context/UserContext"
 import { loginAction } from "@/app/auth/login/actions"
 
 export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRef<"div">) {
-
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -34,27 +31,9 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
       } else {
         setError('An unexpected error occurred.');
       }
-     } finally {
-        setLoading(false);
+    } finally {
+      setLoading(false);
     }
-    // const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-
-    // if (error) {
-    //   toast.error(error.message);
-    // } else {
-    //   // Check if user is an admin
-    //   const { data: userData } = await supabase.from("auth.users").select("role").eq("id", data.user?.id).single();
-
-    //   if (userData?.role === "admin") {
-    //     toast.success("Login successful. Check your email for a verification code.");
-    //     router.push("/auth/verify");
-    //   } else {
-    //     toast.error("Access denied. Only admins can log in.");
-    //     await supabase.auth.signOut();
-    //   }
-    // }
-
-    // setLoading(false);
   }
 
   return (

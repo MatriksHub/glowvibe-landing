@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
-import { registerAction } from "@/app/auth/curry/actions"
+import { registerAction } from "@/app/auth/signup/actions"
 
 export function SignupForm({ className, ...props }: React.ComponentPropsWithoutRef<"div">) {
 
@@ -154,4 +154,5 @@ export function SignupForm({ className, ...props }: React.ComponentPropsWithoutR
     </div>
   )
 }
+
 

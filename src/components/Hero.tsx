@@ -5,50 +5,54 @@ import React from 'react'
 
 function Hero() {
   return (
-    <div className='bg-primary h-[150ch] flex justify-center items-center lg:h-[100ch]'>
-      <div className='container mx-auto'>
-        <div className='flex flex-col pt-[300px] pb-[20px] gap-20 h- justify-between items-center lg:flex-row lg:pt-[150px] lg:pb-[20px] lg:gap-20'>
-          <div className='w-full flex flex-col justify-center gap-8 items-center text-center lg:justify-start lg:items-start lg:gap-10 lg:w-[80%] lg:text-start'>
-            <h1 className='text-white text-[55px] w-[90%] leading-[58px] lg:text-[75px] lg:w-[80%] lg:leading-[80px] font-extrabold'>
-              A safe and anonymous space
-            </h1>
+    <div className='bg-primary w-full h-full flex justify-center items-center lg:h-screen'>
+      <div className='container mx-auto max-w-[90%] flex justify-center items-center px-4 pt-28 pb-20 sm:pt-15 sm:pb-15 md:pt-36 md:pb-28 lg:py-32 4xl:max-w-[95%] 4xl:py-48'>
+        <div className='flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-0'>
+          <div className='text-center lg:text-start lg:w-1/2'>
+            <div className='grid gap-4 4xl:gap-8'>
+              <h1 className='text-white font-bold text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-tight lg:leading-tight 3xl:leading-snug 4xl:text-9xl'>
+                A safe and anonymous space
+              </h1>
 
-            <p className='text-white text-[18px] w-[90%] leading-[27px] lg:text-[27px]  font-400 lg:w-[70%] lg:leading-[32px]'>
-              to express yourself, share experiences, and learn from experts—all while staying completely anonymous.
-            </p>
+              <p className='text-white font-400 text-lg md:text-xl lg:text-2xl 4xl:text-5xl'>
+                to express yourself, share experiences, and learn from experts—all while staying completely anonymous.
+              </p>
 
-            <div className='flex flex-col items-center lg:items-start gap-4'>
-              <div className=''>
-                <h1 className='text-secondary text-[18px] font-bold'>Coming soon on</h1>
-              </div>
-              <div className='w-full flex gap-6'>
-                <Link href='/'>
-                  <Image 
-                    src='/GetItOnGooglePlay.png'
-                    alt='google store button'
-                    width={100}
-                    height={100}
-                  />
-                </Link>
+              <div className='mt-6 flex flex-col items-center lg:items-start gap-4 4xl:mt-16'>
+                <div className=''>
+                  <h1 className='text-secondary text-[18px] font-bold'>Coming soon on</h1>
+                </div>
+                <div className='w-full flex flex-row items-center justify-center gap-6 lg:justify-start'>
+                  <Link href='#'>
+                    <Image 
+                      src='/GetItOnGooglePlay.png'
+                      alt='google store button'
+                      width={120}
+                      height={100}
+                    />
+                  </Link>
 
-                <Link href='/'>
-                  <Image 
-                    src='/App_Store_Badge.svg'
-                    alt='app store button'
-                    width={100}
-                    height={100}
-                  />
-                </Link>
+                  <Link href='#'>
+                    <Image 
+                      src='/App_Store_Badge.svg'
+                      alt='app store button'
+                      width={120}
+                      height={100}
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
 
           {/* hero image */}
-          <div className='w-full h-full flex justify-center items-center lg:w-[40%]'>
-            <img
+          <div className=' flex justify-center items-center lg:w-1/2 lg:px-0'>
+            <Image
               src='/923shots_so.png'
               alt='hero image'
-              className='h-[250px] w-[300px] lg:h-[100%] lg:w-[100%]' 
+              width={200}
+              height={200}
+              className=' lg:w-3/4 4xl:w-3/4 4xl:w-3/4' 
             />
           </div>
         </div>

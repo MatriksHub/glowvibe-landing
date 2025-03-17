@@ -15,7 +15,11 @@ export async function verifyAction(email: string, code: string) {
     throw new Error('Invalid or expired verification code.');
   }
 
-  const { data: user, error: userError } = await supabase.auth.getUser();
+  const { 
+    data: user, 
+    error: userError 
+  } = await supabase.auth.getUser();
+  
   if (userError) throw new Error(userError.message);
 
   return {

@@ -20,15 +20,10 @@ function ConfessionPage() {
   }, []);
 
   return (
-    <div className='flex flex-1 flex-col gap-4 py-4 pt-0'>
-      <div className='grid auto-rows-min gap-4 lg:grid-cols-3'>
-      </div>
-
-      <div className='mt-4 space-y-4'>
-        {/* scroll area */}
-        <h1 className='text-3xl text-muted font-700'>Confessions</h1>
+    <div className='flex py-4 pt-0'>
+      <div className='space-y-4'>
         <div className='flex-1 bg-muted/50'>
-          <ScrollArea className='h-[600px] lg:h-[400px]'>
+          <ScrollArea className='h-[700px] lg:h-[400px]'>
             <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 xl:grid-cols-3'>
               {confessions.map((confess) => {
                 return (

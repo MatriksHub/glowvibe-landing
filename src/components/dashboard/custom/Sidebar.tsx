@@ -6,7 +6,7 @@ import {
   BanknoteIcon, ChevronLeftIcon, HomeIcon, Settings, User2Icon, WrenchIcon 
 } from 'lucide-react';
 import Image from 'next/image';
-import { BiShield } from 'react-icons/bi';
+import { BiNotification, BiShield } from 'react-icons/bi';
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
@@ -16,25 +16,26 @@ export default function Sidebar() {
   }
 
   return (
-    <div className={`flex flex-col min-h-screen px-4 bg-[#2e0536] text-white ${collapsed ? 'w-20' : 'w-64'} transition-width duration-300`}>
-      <div className='h-[74px] flex items-center justify-between mb-[20px]'>
+    <section className={`flex flex-col p-[20px] min-h-screen bg-[#2e0536]  text-white ${collapsed ? 'w-20' : 'w-64'} transition-width duration-300`}>
+      <div className='h-[70px] flex items-center justify-between pb-[15px] border-b-[1px] border-shade'>
         {!collapsed && 
           <Link href='/dashboard' legacyBehavior>
             <Image
               src='/glowvibewhite.png'
               alt='logo'
-              width={100}
+              width={150}
               height={50}
+              className='w-3/4'
             />
           </Link>
         }
 
         <button onClick={toggleSidebar} className='focus:outline-none'>
-          <ChevronLeftIcon className='w-6 h-6' />
+          <ChevronLeftIcon className='w-8 h-8 text-shade' />
         </button>
       </div>
 
-      <nav className='flex flex-col space-y-2'>
+      <nav className='flex flex-col mt-10 font-semibold space-y-2'>
         <Link href='/dashboard'>
           <SidebarItem 
             Icon={HomeIcon} 
@@ -50,14 +51,6 @@ export default function Sidebar() {
             collapsed={collapsed}           
           />
         </Link>
-
-        {/* <Link href='/expenses'>
-          <SidebarItem 
-            Icon={DollarSignIcon} 
-            label="Expenses" 
-            collapsed={collapsed} 
-          />
-        </Link> */}
 
         <Link href='/dashboard/users'>
           <SidebarItem 
@@ -75,6 +68,14 @@ export default function Sidebar() {
           />
         </Link>
 
+        <Link href='/dashboard/notifications'>
+          <SidebarItem 
+            Icon={BiNotification} 
+            label="Notifications" 
+            collapsed={collapsed} 
+          />
+        </Link>
+
         <Link href='/dashboard/profile'>
           <SidebarItem 
             Icon={User2Icon} 
@@ -85,13 +86,13 @@ export default function Sidebar() {
 
         <Link href='dashboard//settings'>
             <SidebarItem 
-                Icon={Settings} 
-                label="Settings" 
-                collapsed={collapsed} 
+              Icon={Settings} 
+              label="Settings" 
+              collapsed={collapsed} 
             />
         </Link>
       </nav>
-    </div>
+    </section>
   )
 }
 
@@ -103,8 +104,9 @@ interface SidebarItemProps {
 }
 
 const SidebarItem = ({ Icon, label, collapsed }: SidebarItemProps) => (
-  <div className="flex items-center space-x-2 text-[14px] active:border-l-4 active:border-white hover:border-l-4 border-[#fffffc] hover:text-[#fffffc] p-2">
-    <Icon className='w-4 h-4' />
+  <div className="flex items-center font-bold space-x-2 text-[14px] leading-[120%] active:border-l-2 active:border-secondary hover:border-l-2 border-secondary hover:text-secondary p-2"
+  >
+    <Icon className='w-6 h-6 text-white' />
     {!collapsed && <span>{label}</span>}
   </div>
 );
