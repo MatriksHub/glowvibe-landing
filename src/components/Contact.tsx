@@ -1,6 +1,10 @@
 'use client'
 
 import React, { useState } from 'react'
+import { Label } from './ui/label';
+import { Button } from './ui/button';
+import { Textarea } from './ui/textarea';
+import { Input } from './ui/input';
 
 function Contact() {
   const [firstName, setFirstName] = useState('');
@@ -40,77 +44,77 @@ function Contact() {
                     <form 
                         onSubmit={handleSubmit} 
                         className='flex flex-col gap-4 w-full'>
-                        <div className='flex flex-col w-full gap-2 lg:flex-row lg:gap-4'>
-                            <div>
-                                <label htmlFor="firstName" className='text-dark text-[18px] block font-medium'>
+                        <div className='flex flex-col w-full gap-4 lg:flex-row lg:gap-4'>
+                            <div className='grid gap-2 w-full'>
+                                <Label htmlFor="firstName" className='text-dark text-[18px] block font-medium'>
                                     First Name
-                                </label>
-                                <input 
+                                </Label>
+                                <Input 
                                     type="text" 
                                     name="firstName" 
                                     id="firstName" 
                                     value={firstName}
                                     onChange={(event) => setFirstName(event.target.value)}
-                                    placeholder='Enter your frist name' className='p-4 w-[100%] bg-[#f9f9f9] rounded-md block'  
+                                    placeholder='Enter your frist name' className='p-4 w-[100%]  block'  
                                 />
                             </div>
-                            <div>
-                                <label 
+                            <div className='grid gap-2 w-full'>
+                                <Label 
                                     htmlFor="lastname"
                                     className='text-dark text-[18px] block font-medium'>
                                     Last Name
-                                </label>
-                                <input 
+                                </Label>
+                                <Input 
                                     type="text" 
                                     name="lastName" 
                                     id="lastName" 
                                     value={lastName}
                                     onChange={(event) => setLastName(event.target.value)}
-                                    placeholder='Enter your last name' className='p-4 w-[100%] bg-[#f9f9f9] rounded-md block' 
+                                    placeholder='Enter your last name' className='' 
                                 />
                             </div>
                         </div>
 
-                        <div>
-                            <label 
+                        <div className='grid gap-2'>
+                            <Label 
                                 htmlFor="email" 
                                 className='text-dark text-[18px] block font-medium'>
                                     Email
-                            </label>
-                            <input 
+                            </Label>
+                            <Input 
                                 type="email" 
                                 name="email" 
                                 id="email" 
                                 value={email}
                                 onChange={(event) => setEmail(event.target.value)}
-                                placeholder='Enter your email address' className='p-4 w-[100%] bg-[#f9f9f9] rounded-md block' 
+                                placeholder='Enter your email address' className='p-4 block' 
                             />
                         </div>
 
-                        <div>
-                            <label 
+                        <div className='grid gap-2'>
+                            <Label
                                 htmlFor="message" 
                                 className='text-dark text-[18px] block font-medium'>
                                     Message
-                            </label>
-                            <textarea 
+                            </Label>
+                            <Textarea 
                                 typeof='text'
                                 name="message" 
                                 id="message" 
                                 value={message}
                                 onChange={(event) => setMessage(event.target.value)}
                                 placeholder='I would love to have a feature where I can...' 
-                                className='p-4 w-[100%] h-[150px] bg-[#f9f9f9] rounded-md block' 
+                                className='p-4 w-[100%] h-[150px] rounded-md block' 
                             />
                         </div>
 
                         <div>
-                            <button 
+                            <Button
                                 type='submit' 
-                                className='bg-primary rounded-md text-shade p-4'
+                                className='bg-secondary rounded-md text-primary p-4'
                             >
                                 Submit
-                            </button>
+                            </Button>
                         </div>
                         {/* {status && <p>{status}</p>} */}
                     </form>

@@ -27,12 +27,14 @@ export default {
   				DEFAULT: 'var(--primary)',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
+			neutral: 'var(--primary-shade)',
   			secondary: {
   				DEFAULT: 'var(--secondary)',
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
   			white: 'var(--light)',
   			shade: 'var(--shade)',
+			dark: 'var(--dark)',
   			accent: {
   				DEFAULT: 'var(--accent)',
   				foreground: 'hsl(var(--accent-foreground))'
