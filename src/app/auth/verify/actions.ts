@@ -1,30 +1,34 @@
 'use server';
 
-import { createClient } from '@/utils/supabase/server';
+import { supabaseClient } from '@/utils/supabase/client';
+import { createSupabaseServerClient } from '@/utils/supabase/server';
+import { redirect } from 'next/navigation';
+const supabase = await createSupabaseServerClient();
 
-export async function verifyAction(email: string, code: string) {
-  const supabase = await createClient();
-
-  const { error } = await supabase.auth.verifyOtp({
+export async function verifyAction(email: string, otp: string) {
+  const { data, error } = await supabase.auth.verifyOtp({
     email,
-    token: code,
-    type: 'signup',
+    token: otp,
+    type: 'email',
   });
 
-  if (error) {
+  if (error || !data?.user ) {
     throw new Error('Invalid or expired verification code.');
   }
 
-  const { 
-    data: user, 
-    error: userError 
-  } = await supabase.auth.getUser();
-  
-  if (userError) throw new Error(userError.message);
+  const user = data.user;
 
-  return {
-    uid: user.user.id,
-    email: user.user.email || '',
-    name: user.user?.user_metadata?.name || '',
-  };
+  const { error: roleError } = await supabaseClient
+    .from("profiles")
+    .select("isAdmin")
+    .eq("id", user.id)
+    .eq("isAdmin", true)
+    .single();
+
+  if (roleError) {
+    throw new Error("You are not authorized to view this page.");
+  }
+
+  // Redirect based on role
+    return redirect("/dashboard");
 }

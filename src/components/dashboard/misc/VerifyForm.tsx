@@ -32,7 +32,9 @@ export function VerifyForm({ className, ...props }: React.ComponentPropsWithoutR
 
     try {
       const user = await verifyAction(email, code.join(''));
+
       setUser(user);
+
       router.push('/dashboard');
     } catch (err) {
       if (err instanceof Error) {

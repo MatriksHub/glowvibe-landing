@@ -36,7 +36,7 @@ const Header = () => {
                   Welcome,
                 </p>
                 <h3 className="text-[16px] font-500">
-                  {/* {user?.name} */} Salim Talim
+                  {user?.username}
                 </h3>
               </div>
             </div>

@@ -1,18 +1,13 @@
 'use client'
 
+import Image from 'next/image';
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 
 
 const Navbar = () => {
-    // const [clicked, setClicked] = useState(false);
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-
-    // const handleClick = () => {
-    //     setClicked(!clicked);
-    // }
-
     const closeMobileClicked = () => setIsNavOpen(false);
 
     useEffect(() => {
@@ -34,16 +29,14 @@ const Navbar = () => {
             <div className='flex justify-between items-center'>
                 <div className=' md:flex-[2]'>
                     <Link href="/" className='log' legacyBehavior>
-                        {/* <a className='log'> */}
-                            <img
-                                src='glowvibeWhite.png'
-                                alt='glowvibe-logo'
-                                className='h-[50px] w-[150px]'
-                                // width={100}
-                                // height={100}
-                                // priority
-                            />
-                        {/* </a> */}
+                        <Image
+                            src='/glowvibeWhite.png'
+                            alt='glowvibe-logo'
+                            width={100}
+                            height={50}
+                            priority
+                            className='h-[50px] w-[120px]'
+                        />
                     </Link>
                 </div>
                 <nav className='lg:flex-[4]'>
@@ -60,22 +53,17 @@ const Navbar = () => {
                                         About
                                     </Link>
                                 </li>
-                                {/* <li  className='mx-3'>
-                                    <Link href='/blog'>
-                                        Blog
-                                    </Link>
-                                </li> */}
-                                {/* <li  className='mx-3'>
+                                <li  className='mx-3'>
                                     <Link href='/contact'>
                                         Contact
                                     </Link>
-                                </li> */}
+                                </li>
                             </ul>
                             <ul>
                                 <li>
-                                    <Link href='#subscribe' legacyBehavior>
+                                    <Link href='#download' legacyBehavior>
                                         <a className='nav-cta bg-secondary text-light rounded-md text-[14px] px-6 py-3 font-bold'>
-                                            Join the waitlist!
+                                            Get the App
                                         </a>
                                     </Link>
                                 </li>
@@ -102,7 +90,7 @@ const Navbar = () => {
                                 onClick={() => setIsNavOpen(false)}
                             >
                                 <svg
-                                    className='h-8 w-8 text-[#ffffff] animate-pulse'
+                                    className='h-8 w-8 text-[#000000] border-2 border-secondary rounded-md animate-pulse'
                                     viewBox='0 0 24 24'
                                     fill='none'
                                     stroke='currentColor'
@@ -120,7 +108,7 @@ const Navbar = () => {
                                     onClick={closeMobileClicked}
                                 >
                                     <Link href='/' legacyBehavior>
-                                        <a >
+                                        <a>
                                             Home
                                         </a>
                                     </Link>
@@ -134,18 +122,8 @@ const Navbar = () => {
                                         </a>
                                     </Link>
                                 </li>
-                                {/* <li className=' capitalize' 
-                                    onClick={closeMobileClicked}
-                                >
-                                    <Link href='/blog' legacyBehavior>
-                                        <a target='_blank'>
-                                            Blog
-                                        </a>
-                                    </Link>
-                                </li> */}
-                                
 
-                                {/* <li className='capitalize' 
+                                <li className='capitalize' 
                                     onClick={closeMobileClicked}
                                 >
                                     <Link href='/contact' legacyBehavior>
@@ -153,7 +131,16 @@ const Navbar = () => {
                                             Contact
                                         </a>
                                     </Link>
-                                </li> */}
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <Link href='#download' legacyBehavior>
+                                        <a className='nav-cta bg-secondary text-light rounded-md text-[14px] px-6 py-3 font-bold'>
+                                            Get the App
+                                        </a>
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </div>

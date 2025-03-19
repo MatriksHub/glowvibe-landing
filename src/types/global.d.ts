@@ -1,16 +1,22 @@
 interface FormData {
-    firstName: string;
-    lastName: string;
     email: string;
     message: string; 
 }
 
+interface ContactFormData {
+    firstName: string;
+    lastName: string;
+    message: string;
+    email: string;
+}
+
 interface User {
+    id: string;
     uid: string;
     email: string;
     username: string;
     push_token?: string;
-    role: "admin" | "user";
+    isAdmin: boolean;
 }
 
 interface ApiResponse {
@@ -31,7 +37,7 @@ export type Confession = {
     confession: string; // Confession text
     created_at: string; // Timestamp
     approved: boolean; // Approval status
-    expert_advice?: string | null; // Expert response
+    expert_answers?: string | null; // Expert response
 };
 
 export type ConfessionResponse = {
@@ -44,7 +50,7 @@ export type Notification = {
     id: string;
     title: string;
     body: string;
-    status: "draft" | "sent";
+    status: "sent" | "failed";
     created_at: string;
     sent_at: string | null;
     failed_count: number;
@@ -62,7 +68,7 @@ export type User = {
   
 export type SendNotificationResponse = {
     success: boolean;
-    tickets: any[];
+    tickets: string;
 };
   
   

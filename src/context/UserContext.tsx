@@ -1,19 +1,19 @@
 'use client'; // Add this at the top to make the file a client component
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { supabaseClient } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
+import { supabaseClient } from '@/utils/supabase/client';
 
 interface User {
-  uid: string;
+  id: string;
   email: string;
   username: string;
-  role: string;
+  isAdmin: boolean;
 }
 
 interface UserContextType {
   user: User | null;
-  setUser: (user: User | null) => void;
+  loading: boolean;
   logout: () => Promise<void>;
 }
 
@@ -22,13 +22,14 @@ const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [role, setRole] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-  
+
   useEffect(() => {
     const fetchUser = async () => {
-      const { data, error } = await supabase.auth.getUser();
+      setLoading(true);
+
+      const { data, error } = await supabaseClient.auth.getUser();
 
       if (error) {
         if (error.message === 'Auth session missing!') {
@@ -40,30 +41,28 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
         return;
       }
 
-      if (data?.user) {
-        setUser({
-          uid: data.user.id,
-          email: data.user.email!,
-          username: data.user.user_metadata?.username || '',
-          role: data.user.user_metadata?.role || 'user',
-        });
+      if (error || !data?.user) {
+        setUser(null);
+        setLoading(false);
+        return;
       }
 
-      const { data: roleData, error: roleError } = await supabase
-        .from('user_role')
-        .select('role')
+      const { data: profile, error: profileError } = await supabaseClient
+        .from('profiles')
+        .select("*")
         .eq('id', data?.user?.id)
+        .eq('isAdmin', true)
       .single();
       
-      setRole(roleData?.role || 'user');
-
-      // remove
-      if (roleError) {
-        console.error('Failed to fetch role:', roleError.message);
-        setRole(null);
+      if (profileError || !profile) {
+        setUser(null);
       } else {
-        console.log('User role:', roleData.role);
-        setRole(roleData.role);
+        setUser({
+          id: profile.id,
+          email: profile.email,
+          username: profile.username,
+          isAdmin: profile.isAdmin,
+        })
       }
 
       setLoading(false);
@@ -73,13 +72,13 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   const logout = async () => {
-    await supabase.auth.signOut();
+    await supabaseClient.auth.signOut();
     setUser(null);
     router.push('/auth/login');
   };
 
   return (
-    <UserContext.Provider value={{ user, setUser, logout }}>
+    <UserContext.Provider value={{ user, loading, logout }}>
       {children}
     </UserContext.Provider>
   );

@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { sendNotification } from "@/app/api/notifications/actions";
-import Stats from "@/components/dashboard/misc/Stats";
+import { useEffect, useState } from "react";
+import { 
+  // fetchNotifications, 
+  sendNotification } from "@/app/api/notifications/actions";
 // import { Notification } from "@/types/global";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -29,14 +30,16 @@ export default function NotificationsPage() {
     setLoading(false);
   }
 
-  // useEffect(() => {
-  //   async function loadNotifications() {
-  //     const data = await fetchNotifications();
-  //     // setNotifications(data);
-  //   }
-    
-  //   loadNotifications();
-  // }, []);
+  useEffect(() => {
+    async function loadNotifications() {
+      // const data = await fetchNotifications();
+      // setNotifications(data);
+    }
+
+    // console.log(data);
+
+    loadNotifications();
+  }, []);
 
   // async function handleSend(id: string) {
   //   await sendNotification(id);
@@ -48,8 +51,12 @@ export default function NotificationsPage() {
     <div className="grid gap-4">
       <div className="flex justify-between items-center">
         <div className="grid gap-1">
-          <h2 className="text-xl font-bold">Sent Notifications</h2>
-          <p className="text-sm text-gray-500">List of all notifications sent to users</p>
+          <h2 className="text-xl font-bold">
+            Sent Notifications
+          </h2>
+          <p className="text-sm text-gray-500">
+            List of all notifications sent to users
+          </p>
         </div>
 
         <div>
@@ -63,18 +70,6 @@ export default function NotificationsPage() {
               </SheetHeader>
 
               <div className="grid gap-4 py-8">
-                {/* <div className="grid gap-4">
-                  <Label htmlFor="recipientToken">
-                    Recipient
-                  </Label>
-                  <Input 
-                    id="recipientToken" 
-                    value={expoTokens}
-                    className="col-span-3" 
-                    placeholder="Enter a users token"
-                  />
-                </div> */}
-
                 <div className="grid gap-4">
                   <Label htmlFor="title">Title</Label>
                   <Input 
@@ -96,17 +91,6 @@ export default function NotificationsPage() {
                     placeholder="Enter a message"
                   />
                 </div>
-
-                {/* <div className="grid gap-4">
-                  <Label htmlFor="ttl">TTL (seconds)</Label>
-                  <Input 
-                    id="ttl" 
-                    value={ttl} 
-                    onChange={(e) => setTtl(e.target.value)}
-                    className="col-span-3" 
-                    placeholder="Enter a time-to-live value"
-                  />
-                </div> */}
               </div>
               <SheetFooter>
                 <SheetClose asChild>
@@ -124,8 +108,6 @@ export default function NotificationsPage() {
           </Sheet>
         </div>
       </div>
-
-      <Stats />
 
       {/* <div className="h-96 overflow-y-auto">
         {notifications.length === 0 && (
@@ -150,6 +132,8 @@ export default function NotificationsPage() {
                   <td className="p-2">{notif.body}</td>
                   <td className="p-2">{notif.status}</td>
                   <td className="p-2">{notif.sent_at ? new Date(notif.sent_at).toLocaleString() : '—'}</td>
+                  <td className="p-2">{notif.delivered_count}</td>
+                  <td className="p-2">{notif.failed_count}</td>
                 </tr>
               ))}
             </tbody>

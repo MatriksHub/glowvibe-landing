@@ -6,10 +6,10 @@ import React from 'react'
 function Hero() {
   return (
     <div className='bg-primary w-full h-full flex justify-center items-center lg:h-screen'>
-      <div className='container mx-auto max-w-[90%] flex justify-center items-center px-4 pt-28 pb-20 sm:pt-15 sm:pb-15 md:pt-36 md:pb-28 lg:py-32 4xl:max-w-[95%] 4xl:py-48'>
+      <div className='container mx-auto max-w-[90%] flex justify-center items-center px-4 py-24 sm:py-20 md:py-28 lg:py-20 4xl:max-w-[95%] 4xl:py-48'>
         <div className='flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-0'>
           <div className='text-center lg:text-start lg:w-1/2'>
-            <div className='grid gap-4 4xl:gap-8'>
+            <div className='pt-10 grid gap-4 lg:pt-0 4xl:gap-8'>
               <h1 className='text-white font-bold text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-tight lg:leading-tight 3xl:leading-snug 4xl:text-9xl'>
                 A safe and anonymous space
               </h1>
@@ -46,13 +46,13 @@ function Hero() {
           </div>
 
           {/* hero image */}
-          <div className=' flex justify-center items-center lg:w-1/2 lg:px-0'>
+          <div className='flex justify-center items-center lg:w-1/2 lg:px-0'>
             <Image
               src='/923shots_so.png'
               alt='hero image'
-              width={200}
-              height={200}
-              className=' lg:w-3/4 4xl:w-3/4 4xl:w-3/4' 
+              width={250}
+              height={100}
+              className='w-auto h-auto' 
             />
           </div>
         </div>

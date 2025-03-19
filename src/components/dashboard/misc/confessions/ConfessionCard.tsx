@@ -34,14 +34,14 @@ interface ConfessionCardProps {
 export default function ConfessionCard({ confess }: ConfessionCardProps) {
   const { 
     id, title, confession, approved, 
-    username, expert_advice, created_at
+    username, expert_answers, created_at
   } = confess;
   const [expanded, setExpanded] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
   const [newConfession, setNewConfession] = useState(confession);
   const [isEditing, setIsEditing] = useState(false);
   const [isApproved, setIsApproved] = useState(approved);
-  const [expertAdvice, setExpertAdvice] = useState("");
+  const [expertAnswers, setExpertAnswers] = useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   
@@ -71,8 +71,8 @@ export default function ConfessionCard({ confess }: ConfessionCardProps) {
   };
 
   // handle expert answer
-  const handleAddExpertAdvice = async (): Promise<void> => {
-    const response = await addExpertAdvice(confess.id, expertAdvice);
+  const handleAddExpertAnswers = async (): Promise<void> => {
+    const response = await addExpertAdvice(confess.id, expertAnswers);
 
     if (response) {
       toast.success("Glow Tip added successfully");
@@ -181,13 +181,13 @@ export default function ConfessionCard({ confess }: ConfessionCardProps) {
           </div>
         )}
 
-        {expertAdvice && (
+        {expertAnswers && (
           <Card className="grid gap-2 rounded-lg p-4 mt-4 border-2 border-secondary ">
             <h5 className="text-[14px] font-semibold text-secondary">
               Glow Tip:
             </h5>
 
-            <p className="text-[14px] font-400">{expert_advice}</p>
+            <p className="text-[14px] font-400">{expert_answers}</p>
           </Card>
         )}
       </CardContent>
@@ -225,13 +225,13 @@ export default function ConfessionCard({ confess }: ConfessionCardProps) {
           
           <Textarea 
             placeholder="Write your expert advice here..."
-            value={expertAdvice}
-            onChange={(e) => setExpertAdvice(e.target.value)}
+            value={expertAnswers}
+            onChange={(e) => setExpertAnswers(e.target.value)}
             className="w-full mt-2"
           />
 
           <DialogFooter>
-            <Button onClick={handleAddExpertAdvice} className="bg-secondary text-white">
+            <Button onClick={handleAddExpertAnswers} className="bg-secondary text-white">
               Submit Answer
             </Button>
           </DialogFooter>

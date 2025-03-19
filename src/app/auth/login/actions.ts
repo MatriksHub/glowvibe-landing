@@ -1,65 +1,72 @@
 'use server'
 
-import { User } from "@/types/global";
+import { supabaseClient } from '@/utils/supabase/client';
 import { createSupabaseServerClient } from "@/utils/supabase/server";
-import { supabaseClient } from "@/utils/supabase/client";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation';
 
-export async function loginAction(email: string, password: string): Promise<User> {
+
+export async function sendOtp(email: string) {
   const supabase = await createSupabaseServerClient();
 
-  const { data, error} = await supabase.auth.signInWithPassword({email, password});
+  const { error } = await supabase.auth.signInWithOtp({email});
 
   console.log(`Login error: ${error}`); 
 
   if (error) {
-    throw new Error('Login failed: ' + error.message);
+    return { success: false, error: error.message};
+  } 
+
+  return { success: true };
+}
+
+export async function verifyOtp(email: string, otp: string) {
+  const supabase = await createSupabaseServerClient();
+ const { data, error } = await supabase.auth.verifyOtp({
+    email,
+    token: otp,
+    type: 'email',
+  });
+
+  // console.log('errorrr', error)
+  // console.log('data from verify', data)
+
+  if (error) { 
+    return { success: false, error: 'Invalid or expired verification code.'};
   }
 
-  const user = data.user;
-
-  if (!user) {
-    throw new Error("User authentication failed.");
-  }
-
-  // Fetch user role
-  const { data: userRole, error: roleError } = await supabaseClient
+  const { data: profile, error: roleError } = await supabaseClient
     .from("profiles")
-    .select()
-    .eq("id", user.id)
+    .select("*")
+    .eq("id", data.user?.id)
     .eq("isAdmin", true)
     .single();
 
-    // console.log(`Data: ${JSON.stringify(userRole, null, 2)}`)
-    // console.log(`UserData: ${userRole}`)
-    // console.log(`Error: ${roleError}`)
-
   if (roleError) {
-    throw new Error("You are not authorized to view this page.");
+    return { 
+      success: false, 
+      error: "You are not authorized to view this page."
+    };
   }
 
-  // // Store user role in a cookie
-  // const cookieStore = await cookies();
-
-  // cookieStore.set(
-  //   "user_role", 
-  //   userRole.role, 
-  //   { 
-  //     path: "/", 
-  //     httpOnly: true, 
-  //     secure: true 
-  //   }
-  // );
-
-  // Redirect based on role
-    return redirect("/dashboard");
+  const user = {
+    id: profile.id,
+    email: profile.email,
+    username: profile.username,
+    isAdmin: profile.isAdmin,
+  }
   
-   
+  console.log(`user data with profile: ${JSON.stringify(user, null, 2)}`);
+
+  if (user.isAdmin === 'true') {
+    redirect('/dashboard');
+  } else {
+    redirect('/unauthorized')
+  }
+
+  
+
+  return user;
 }
-
-
-
 
 
 
