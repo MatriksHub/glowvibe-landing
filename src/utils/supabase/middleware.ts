@@ -31,7 +31,7 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const protectedRoutes = ['/dashboard'];
+  const protectedRoutes = ['/ganuki', '/dashboard'];
   const path = request.nextUrl.pathname;
 
   if (

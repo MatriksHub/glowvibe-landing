@@ -7,10 +7,10 @@ import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { sendOtp, verifyOtp } from "@/app/auth/login/actions"
 import { toast } from "react-toastify"
-import { useRouter } from "next/navigation"
+// import { useRouter } from "next/navigation"
 
 export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRef<"div">) {
-  const router = useRouter();
+  // const router = useRouter();
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
   const [step, setStep] = useState(1);
@@ -42,9 +42,9 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
 
     try {
       const user = await verifyOtp(email, otp);
-      console.log(`login user : ${user}`)
+      console.log(`login user : ${JSON.stringify(user, null, 2)}`)
       toast.success('Successfuly logged in')
-      router.push("/dashboard");
+
       console.log('User isAdmin aunthenticated successfully');
     } catch (error) {
       if (error instanceof Error) {
