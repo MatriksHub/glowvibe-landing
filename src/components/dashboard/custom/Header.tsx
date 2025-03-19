@@ -7,7 +7,9 @@ import { usePathname } from "next/navigation";
 
 
 const Header = () => {
+  
   const { user, logout } = useUser();
+  console.warn(`this is profile page: ${JSON.stringify(user, null, 2)}`);
 
   const pathname = usePathname(); // Get current route
   const formattedTitle = pathname

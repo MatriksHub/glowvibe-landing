@@ -7,10 +7,10 @@ import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { sendOtp, verifyOtp } from "@/app/auth/login/actions"
 import { toast } from "react-toastify"
-// import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 
 export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRef<"div">) {
-  // const router = useRouter();
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
   const [step, setStep] = useState(1);
@@ -18,6 +18,17 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
   const [error, setError] = useState('');
 
   const handleSendOtp = async (e: React.FormEvent) => {
+    if ( !email  ) {
+      setError("Email field is required.");
+      return false;
+    }
+  
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email");
+      return false;
+    }
+
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -43,15 +54,19 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
     try {
       const user = await verifyOtp(email, otp);
       console.log(`login user : ${JSON.stringify(user, null, 2)}`)
-      toast.success('Successfuly logged in')
 
-      console.log('User isAdmin aunthenticated successfully');
+      if (user.success) {
+        toast.success('Successfuly logged in');
+      } else {
+        router.push("/unauthorized")
+      }
+
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
       } else {
-        setError('Invalid OTP');
-        toast.error('InVALID OTP')
+        setError('Invalid or expired verification code');
+        toast.error('Invalid or expired verification code')
       }
     } finally {
       setLoading(false);
@@ -90,7 +105,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="mt-1 w-full p-2 border border-gray-300 rounded focus:ring-purple-500 focus:border-purple-500 text-gray-700"
+                      className="w-full border border-gray-300 rounded focus:ring-purple-500 focus:border-purple-500 text-gray-700"
                     />
                   </div>
 
@@ -114,15 +129,15 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
               ) : (
                 <>
                   <div className="grid gap-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="otp">OTP</Label>
                     <Input 
-                      id="email" 
+                      id="otp" 
                       type="text"
                       placeholder="Enter OTP" 
                       required 
                       value={otp}
                       onChange={(e) => setOtp(e.target.value)}
-                      className="mt-1 w-full p-2 border border-gray-300 rounded focus:ring-purple-500 focus:border-purple-500 text-gray-700"
+                      className="w-full border border-gray-300 rounded focus:ring-purple-500 focus:border-purple-500 text-gray-700"
                     />
                   </div>
 

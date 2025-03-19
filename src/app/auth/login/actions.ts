@@ -36,7 +36,7 @@ export async function verifyOtp(email: string, otp: string) {
 
   const { data: profile, error: roleError } = await supabaseClient
     .from("profiles")
-    .select("isAdmin")
+    .select('*')
     .eq("id", data.user?.id)
     .eq("isAdmin", true)
     .single();
@@ -51,10 +51,11 @@ export async function verifyOtp(email: string, otp: string) {
   const user = {
     id: data?.user?.id,
     email: data?.user?.email,
-    isAdmin: profile.isAdmin ?? false,
+    username: profile?.username,
+    isAdmin: profile?.isAdmin,
   }
   
-  // console.log(`user data with profile: ${JSON.stringify(user, null, 2)}`);
+  console.log(`Login user action data with profile: ${JSON.stringify(user, null, 2)}`);
 
   if (user.isAdmin !== true) {
     redirect('/unauthorized');

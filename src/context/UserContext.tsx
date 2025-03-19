@@ -29,7 +29,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
     const fetchUser = async () => {
       setLoading(true);
 
-      const { data, error } = await supabaseClient.auth.getUser();
+      const { data: user, error } = await supabaseClient.auth.getUser();
 
       if (error) {
         if (error.message === 'Auth session missing!') {
@@ -41,7 +41,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
         return;
       }
 
-      if (error || !data?.user) {
+      if (!user) {
         setUser(null);
         setLoading(false);
         return;
@@ -50,18 +50,20 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
       const { data: profile, error: profileError } = await supabaseClient
         .from('profiles')
         .select("*")
-        .eq('id', data?.user?.id)
+        .eq("id", user.user.id)
         .eq('isAdmin', true)
       .single();
       
       if (profileError || !profile) {
         setUser(null);
       } else {
+        console.warn(`this is context profile: ${JSON.stringify(profile, null, 2)}`);
+
         setUser({
-          id: profile.id,
-          email: profile.email,
-          username: profile.username,
-          isAdmin: profile.isAdmin,
+          id: user?.user.id,
+          email: user.user.email!,
+          username: profile?.username,
+          isAdmin: profile?.isAdmin,
         })
       }
 
@@ -69,7 +71,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     fetchUser();
-  }, []);
+  }, [user]);
 
   const logout = async () => {
     await supabaseClient.auth.signOut();
