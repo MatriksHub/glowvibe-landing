@@ -6,12 +6,12 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
-import { useUser } from "@/context/UserContext"
+// import { useUser } from "@/context/UserContext"
 import { verifyAction } from "@/app/auth/verify/actions"
 
 export function VerifyForm({ className, ...props }: React.ComponentPropsWithoutRef<"div">) {
   const router = useRouter();
-  const { setUser } = useUser();
+  // const { setUser } = useUser();
   const [code, setCode] = useState(["", "", "", "", "", ""]);
   const [loading, setLoading] = useState(false);
   
@@ -33,7 +33,8 @@ export function VerifyForm({ className, ...props }: React.ComponentPropsWithoutR
     try {
       const user = await verifyAction(email, code.join(''));
 
-      setUser(user);
+      // setUser(user);
+      console.log(`verify ${user}`)
 
       router.push('/dashboard');
     } catch (err) {

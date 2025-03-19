@@ -41,7 +41,8 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
     setError("");
 
     try {
-      await verifyOtp(email, otp);
+      const user = await verifyOtp(email, otp);
+      console.log(`login user : ${user}`)
       toast.success('Successfuly logged in')
       router.push("/dashboard");
       console.log('User isAdmin aunthenticated successfully');
