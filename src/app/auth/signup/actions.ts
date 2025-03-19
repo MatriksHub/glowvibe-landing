@@ -1,6 +1,6 @@
 'use server';
 
-import { createClient } from '@/utils/supabase/server';
+import { createSupabaseServerClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
 
 export async function registerAction(
@@ -9,7 +9,7 @@ export async function registerAction(
   name: string
 ) {
 
-  const supabase = await createClient();
+  const supabase = await createSupabaseServerClient();
 
   const { error: regError } = await supabase.auth.signUp({
     email,
