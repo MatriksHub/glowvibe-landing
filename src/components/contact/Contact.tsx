@@ -22,34 +22,34 @@ function Contact() {
         <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[85px] xl:max-w-[90%] 3xl:max-w-[80%]'>
             <div className='flex flex-col justify-between items-center  gap-10 lg:gap-0 lg:flex-row lg:justify-between lg:items-center'>
                 <div className='w-full grid gap-6 lg:w-[50%]'>
-                    <h1 className='text-[30px] w-[70%] leading-[120%] lg:text-[47px] font-bold text-start'>
+                    <h1 className='font-bold text-start'>
                         Contact
                     </h1>
 
                     <div className='grid gap-2'>
-                        <div className='grid gap-4 text-[14px] font-normal'>
+                        <div className='grid gap-4  lg:text-[18px] font-normal'>
                             <p>
                                 Hi there!
                             </p>
 
                             <p>
-                                Welcome to Glowvibe support centre.
+                                Welcome to GlowVibe support centre.
                             </p>
 
                             <p>
                                 Is there an issue or question you&apos;d like to discuss with us?
                             </p>
 
-                            <p className='lg:w-[80%]'>
+                            <p className='md:w-[80%] lg:w-[80%]'>
                                 Most users find answers they need in our GlowVibe Help Lines across social media, so we recommend exploring it first:
                             </p>
 
                             <div className='flex flex-col gap-2'>
-                                <h4 className='font-semibold text-[16px]'>
+                                <h4 className='font-semibold'>
                                 Follow us
                                 </h4>
 
-                                <div className='flex text-[30px] gap-6 pl-4'>
+                                <div className='flex text-[30px] gap-6'>
                                     <Link 
                                         href='https://www.instagram.com/glowvibeapp/' 
                                         target='_blank' 
@@ -71,25 +71,16 @@ function Contact() {
                             <p>If you still need assistance, please reach out to us:</p>
 
                             <div className='grid gap-2'>
-                                <h4 className='font-semibold text-[16px]'>
-                                    Email
-                                </h4>
-
-                                <ul className='pl-[20px] list-disc'>
+                                <ul>
                                     <li className='flex items-center gap-1 list-disc'>
-                                        <h4 className='font-semibold'>
-                                            Glowvibe Nigeria:
+                                        <h4 className=''>
+                                            Email:
                                         </h4>
-                                        <Link href="#" className='text-secondary font-semibold underline'>
-                                            hello@glowvibapp.com
+                                        <Link href="mailto:hello@glowVibeapp.com" className='text-secondary underline'>
+                                            hello@glowvibeapp.com
                                         </Link>
                                     </li>
                                 </ul>
-                            </div>
-
-                            <div className='grid'>
-                                <p>Cheers,</p>
-                                <p>Micheal</p>
                             </div>
                         </div>
                     </div>
@@ -97,9 +88,9 @@ function Contact() {
 
                 <div className='w-full grid gap-4 lg:w-[50%] lg:gap-4 lg:p-4'>
                     <div className='grid gap-1'>
-                        <h6 className='text-[20px] text-start leading-[27px] font-semibold w-full'>
+                        <h3 className='text-start font-semibold w-full'>
                             Feedbacks 
-                        </h6>
+                        </h3>
                         <p className='font-normal w-full'>
                             Have feedbacks? We would love to here from you! 
                         </p>
@@ -118,7 +109,7 @@ function Contact() {
                         </div>
                         <div className='flex flex-col w-full gap-4 lg:flex-row lg:gap-4'>
                             <div className='grid gap-2 w-full'>
-                                <Label htmlFor="firstName" className='text-dark text-[16px] block font-medium'>
+                                <Label htmlFor="firstName" className='text-dark text-[14px] block font-medium'>
                                     First Name
                                 </Label>
                                 <Input 
@@ -133,7 +124,7 @@ function Contact() {
                             <div className='grid gap-2 w-full'>
                                 <Label 
                                     htmlFor="lastname"
-                                    className='text-dark text-[16px] block font-medium'>
+                                    className='text-dark text-[14px] block font-medium'>
                                     Last Name
                                 </Label>
                                 <Input 
@@ -150,7 +141,7 @@ function Contact() {
                         <div className='grid gap-2'>
                             <Label 
                                 htmlFor="email" 
-                                className='text-dark text-[16px] block font-medium'>
+                                className='text-dark text-[14px] block font-medium'>
                                     Email
                             </Label>
                             <Input 
@@ -166,7 +157,7 @@ function Contact() {
                         <div className='grid gap-2'>
                             <Label
                                 htmlFor="message" 
-                                className='text-dark text-[16px] block font-medium'>
+                                className='text-dark text-[14px] block font-medium'>
                                     Message
                             </Label>
                             <Textarea 

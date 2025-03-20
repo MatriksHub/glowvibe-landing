@@ -45,17 +45,18 @@ export function useContactFormLogic() {
 
     const handleSubmit = useCallback(async(e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
-        setLoading(true);
-        setError('');
-
+       
         if (!ValidateForm()) {
             setLoading(false);
             return;
-        }
+        };
+        
+        setLoading(true);
+        setError('');
 
         try {
             setLoading(true);
-            const response = await fetch("/api/contact", {
+            const response = await fetch("/api/contacts", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(formData),
@@ -66,13 +67,15 @@ export function useContactFormLogic() {
             if (data.success) {
                 toast.success('Feedback submitted successfully')
             } else {
-                toast.error('Feedback submission failed')
+                toast.error('Feedback submission failed');
+                setError('Feedback submission failed')
             }
         } catch (error) {
             toast.error(`An error occured. ${error}`);
             setError(`${error}`);
         } finally {
             setLoading(false);
+            setError('');
         }
       },
       [formData, ValidateForm]

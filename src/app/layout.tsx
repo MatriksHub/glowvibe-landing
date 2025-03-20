@@ -1,19 +1,20 @@
 'use client'
 
 // import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Poppins } from "next/font/google";
 import "./globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 import {ToastContainer} from 'react-toastify'
 import { UserProvider } from "@/context/UserContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ['300', '400', '500', '600', '700'],
   subsets: ["latin"],
 });
 
@@ -34,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${outfit.variable} ${poppins.variable} antialiased`}
       >
         <main>
           <ToastContainer position="top-center" limit={1} />

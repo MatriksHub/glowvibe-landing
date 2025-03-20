@@ -40,9 +40,8 @@ async function sendConfirmationEmail(email: string, firstName: string) {
     },
   });
   try {
-    const commsEmail = "hello@glowvibeapp.com";
     const mailOptions = {
-      from: `"Glowvibe" <${commsEmail}>`,
+      from: `"Glowvibe" <${process.env.COMMS_EMAIL}>`,
       to: email,
       subject: "Booking Confirmation",
       text: `Hello ${firstName},\n\nThank you for your feedback! We will contact you soon.\n\nBest regards,\nGlowvibe`,
