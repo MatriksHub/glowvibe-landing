@@ -3,14 +3,13 @@ import React from 'react'
 
 function About() {
   return (
-    <div className='bg-[#f9f9f9] h-[100ch] py-[120px] flex justify-center items-center lg:h-[100vh] lg:py-0' id="about">
-      <div className='container mx-auto max-w-[90%] px-4'>
+    <div className='bg-[#f9f9f9] h-full flex justify-center items-center lg:h-screen' id="about">
+      <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[80px] xl:max-w-[90%] 3xl:max-w-[80%]'>
         <div className='flex flex-col gap-10'>
           {/* about glow vibes */}
           <div className='flex flex-col justify-center items-center gap-4 lg:flex-row lg:justify-between lg:items-center'>
             <div className='w-full lg:w-[50%]'>
-              <h1 className='text-dark text-[45px] w-[70%] leading-[50px] lg:text-[57px] lg:leading-[65px] font-bold text-start'>
-                
+              <h1 className='text-dark text-[35px] w-[70%] leading-[50px] lg:text-[47px] lg:leading-[65px] font-bold text-start'>
                 ❔ What is GlowVibe?
               </h1>
             </div>
@@ -24,7 +23,7 @@ function About() {
             {/* why glow vibes */}
           <div className='flex flex-col justify-between items-center gap-4 lg:flex-row lg:justify-between lg:items-center'>
             <div className='w-full lg:w-[50%]'>
-              <h1 className='text-[45px] w-[70%] leading-[50px] lg:text-[57px] lg:leading-[65px] font-bold text-start text-dark'>
+              <h1 className='text-dark text-[35px] w-[70%] leading-[50px] lg:text-[47px] lg:leading-[65px] font-bold text-start'>
                 💬 Why GlowVibe?
               </h1>
             </div>

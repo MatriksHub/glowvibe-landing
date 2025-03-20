@@ -5,6 +5,8 @@ import { Button } from '../ui/button';
 import { Textarea } from '../ui/textarea';
 import { Input } from '../ui/input';
 import { useContactFormLogic } from './useContactFormLogic';
+import Link from 'next/link';
+import { LuInstagram, LuTwitter } from 'react-icons/lu';
 
 function Contact() {
     const {
@@ -16,18 +18,93 @@ function Contact() {
     } = useContactFormLogic();
 
   return (
-    <div className='bg-[#ffffff] h-[100ch] p-[20px] flex items-center justify-center lg:min-h-[100ch]'>
-        <div className='container mx-auto'>
-            <div className='flex flex-col justify-between items-center  gap-2 lg:flex-row lg:justify-between lg:items-center h-screen'>
-                <div className='w-full lg:w-[50%]'>
-                    <h1 className='text-[38px] w-[70%] leading-[120%] lg:text-[57px] font-bold text-start'>
+    <div className='bg-[#ffffff] h-auto flex items-center justify-center lg:h-full'>
+        <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[85px] xl:max-w-[90%] 3xl:max-w-[80%]'>
+            <div className='flex flex-col justify-between items-center  gap-10 lg:gap-0 lg:flex-row lg:justify-between lg:items-center'>
+                <div className='w-full grid gap-6 lg:w-[50%]'>
+                    <h1 className='text-[30px] w-[70%] leading-[120%] lg:text-[47px] font-bold text-start'>
                         Contact
                     </h1>
+
+                    <div className='grid gap-2'>
+                        <div className='grid gap-4 text-[14px] font-normal'>
+                            <p>
+                                Hi there!
+                            </p>
+
+                            <p>
+                                Welcome to Glowvibe support centre.
+                            </p>
+
+                            <p>
+                                Is there an issue or question you&apos;d like to discuss with us?
+                            </p>
+
+                            <p className='lg:w-[80%]'>
+                                Most users find answers they need in our GlowVibe Help Lines across social media, so we recommend exploring it first:
+                            </p>
+
+                            <div className='flex flex-col gap-2'>
+                                <h4 className='font-semibold text-[16px]'>
+                                Follow us
+                                </h4>
+
+                                <div className='flex text-[30px] gap-6 pl-4'>
+                                    <Link 
+                                        href='https://www.instagram.com/glowvibeapp/' 
+                                        target='_blank' 
+                                        rel='noreferrer'
+                                    >
+                                        <LuInstagram />
+                                    </Link>
+
+                                    <Link 
+                                        href='https://x.com/glowvibeapp/' 
+                                        target='_blank' 
+                                        rel='noreferrer'
+                                    >
+                                        <LuTwitter />
+                                    </Link>                    
+                                </div>
+                            </div>
+
+                            <p>If you still need assistance, please reach out to us:</p>
+
+                            <div className='grid gap-2'>
+                                <h4 className='font-semibold text-[16px]'>
+                                    Email
+                                </h4>
+
+                                <ul className='pl-[20px] list-disc'>
+                                    <li className='flex items-center gap-1 list-disc'>
+                                        <h4 className='font-semibold'>
+                                            Glowvibe Nigeria:
+                                        </h4>
+                                        <Link href="#" className='text-secondary font-semibold underline'>
+                                            hello@glowvibapp.com
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className='grid'>
+                                <p>Cheers,</p>
+                                <p>Micheal</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className='w-full flex flex-col gap-2 justify-center items-center lg:w-[50%] lg:gap-6 lg:p-4'>
-                    <h6 className='text-[14px] text-start leading-[27px] lg:text-[18px] lg:leading-[25px] font-400 w-full'>
-                        Have questions? We would love to here from you! 
-                    </h6>
+
+                <div className='w-full grid gap-4 lg:w-[50%] lg:gap-4 lg:p-4'>
+                    <div className='grid gap-1'>
+                        <h6 className='text-[20px] text-start leading-[27px] font-semibold w-full'>
+                            Feedbacks 
+                        </h6>
+                        <p className='font-normal w-full'>
+                            Have feedbacks? We would love to here from you! 
+                        </p>
+                    </div>
+
                     <form 
                         onSubmit={handleSubmit} 
                         className='flex flex-col gap-4 w-full'>
@@ -50,7 +127,7 @@ function Contact() {
                                     id="firstName" 
                                     value={formData.firstName}
                                     onChange={(e) => handleInputChange("firstName", e.target.value)}
-                                    placeholder='Enter your frist name' className=' w-[100%]  block'  
+                                    placeholder='Enter your frist name' className='w-[100%]  block'  
                                 />
                             </div>
                             <div className='grid gap-2 w-full'>
@@ -103,7 +180,7 @@ function Contact() {
                             />
                         </div>
 
-                        <div>
+                        <div className='mt-4'>
                             <Button
                                 type='submit' 
                                 className='bg-secondary rounded-md text-primary p-4'

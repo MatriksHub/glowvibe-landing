@@ -6,7 +6,7 @@ import React from 'react'
 function Hero() {
   return (
     <div className='bg-primary w-full h-full flex justify-center items-center lg:h-screen'>
-      <div className='container mx-auto max-w-[90%] flex justify-center items-center px-4 py-24 sm:py-20 md:py-28 lg:py-20 4xl:max-w-[95%] 4xl:py-48'>
+      <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[80px] xl:max-w-[90%] 3xl:max-w-[80%]'>
         <div className='flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-0'>
           <div className='text-center lg:text-start lg:w-1/2'>
             <div className='pt-10 grid gap-4 lg:pt-0 4xl:gap-8'>

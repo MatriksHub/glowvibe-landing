@@ -82,12 +82,12 @@ p {
 
 .notScrolled {
   position: fixed;
-  height: 100px;
+  /* height: 74px; */
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 12px;
+  padding: 20px 0px;
   /* background: var(--shade-color); */
   background-color: var(--primary);
   z-index: 20;
@@ -136,36 +136,35 @@ p {
 }
 
 .notScrolled .nav-cta {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 19px;
   font-weight: 400;
   letter-spacing: 0.85px;
   /* border-radius: 5px; */
   color: var(--light);
-  padding: 15px 20px;
+  padding: 10px 20px;
   transition: all ease-in-out .3s;
 }
 
 .notScrolled .nav-cta:hover {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 19px;
   font-weight: 400;
   letter-spacing: 0.85px;
   /* border-radius: 5px; */
   text-transform: capitalize;
-  color: var(--light);
-  padding: 15px 20px;
+  color: var(--dark);
+  padding: 10px 20px;
   transition: all ease-in-out .3s;
 }
 
 .isScrolled {
   position: fixed;
-  height: 80px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 20px 0px;
   z-index: 20;
   background: var(--primary);
   /* box-shadow: 1px 1px 5px 1px var(--neutral-color); */
@@ -231,24 +230,24 @@ p {
 }
 
 .isScrolled .nav-cta {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 19px;
   font-weight: 400;
   letter-spacing: 0.85px;
   /* border-radius: 5px; */
   color: var(--light);
-  padding: 15px 20px;
+  padding: 10px 20px;
   transition: all ease-in-out .3s;
 }
 
 .isScrolled .nav-cta:hover {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 19px;
   font-weight: 400;
   letter-spacing: 0.85px;
   /* border-radius: 5px; */
-  color: var(--shade);
-  padding: 15px 20px;
+  color: var(--dark);
+  padding: 10px 20px;
 }
 
 .hideMenuNav {
