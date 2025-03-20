@@ -60,7 +60,7 @@ export async function verifyOtp(email: string, otp: string) {
   if (user.isAdmin !== true) {
     redirect('/unauthorized');
   } else {
-    redirect('/ganuki');
+    redirect('/dashboard');
   }
 }
 
