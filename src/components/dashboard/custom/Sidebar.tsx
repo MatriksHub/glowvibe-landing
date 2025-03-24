@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import {useState} from 'react';
 import { 
-  BanknoteIcon, ChevronLeftIcon, HomeIcon, Settings, User2Icon, WrenchIcon 
+   ChevronLeftIcon, HomeIcon, PersonStandingIcon, Settings, User2Icon
 } from 'lucide-react';
 import Image from 'next/image';
 import { BiNotification, BiShield } from 'react-icons/bi';
@@ -44,17 +44,17 @@ export default function Sidebar() {
           />
         </Link>
 
-        <Link href='/dashboard/revenue'>
+        {/* <Link href='/dashboard/revenue'>
           <SidebarItem 
             Icon={BanknoteIcon} 
             label="Revenue" 
             collapsed={collapsed}           
           />
-        </Link>
+        </Link> */}
 
         <Link href='/dashboard/users'>
           <SidebarItem 
-            Icon={WrenchIcon} 
+            Icon={PersonStandingIcon} 
             label="Users" 
             collapsed={collapsed} 
           />

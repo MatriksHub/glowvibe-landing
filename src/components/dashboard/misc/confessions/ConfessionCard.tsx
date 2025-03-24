@@ -45,7 +45,7 @@ export default function ConfessionCard({ confess }: ConfessionCardProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   
-  const truncatedText = confession.length > 100 ? confession.substring(0, 100) + "..." : confession;
+  const truncatedText = confession.length > 300 ? confession.substring(0, 300) + "..." : confession;
 
   // handle approval
   async function handleApprove(): Promise<void> {
@@ -99,48 +99,49 @@ export default function ConfessionCard({ confess }: ConfessionCardProps) {
   };
 
   return (
-    <Card className="relative flex flex-col justify-between h-[450px]">
-      <CardHeader className="flex flex-row justify-between items-start">
-        <div className="grid gap-2">
-          <span className="text-[16px] text-black capitalize font-bold">{username}</span>
-          <span className="text-[12px] text-gray-500">
-            {new Date(created_at).toLocaleString()}
-          </span>
-        </div>
+    <Card className="flex flex-col">
+      <CardHeader className="flex flex-col">
+        <div className="flex flex-row justify-between items-start">
+          <div className="grid gap-2">
+            <span className="text-[16px] text-black capitalize font-bold">{username}</span>
+            <span className="text-[12px] text-gray-500">
+              {new Date(created_at).toLocaleString()}
+            </span>
+          </div>
 
-        <div className="flex justify-end items-end">
-          {isEditing ? (
-            <div className="flex justify-between gap-2">
+          <div className="flex justify-end items-end">
+            {isEditing ? (
+              <div className="flex justify-between gap-2">
+                <Button 
+                  onClick={handleSave} 
+                  disabled={isLoading}
+                  className="text-sm"
+                >
+                  {isLoading ? "Saving..." : "Save"}
+                </Button>
+                <Button 
+                  variant='outline' 
+                  onClick={() => setIsEditing(false)}
+                  className="text-sm"
+                >
+                  Cancel
+                </Button>
+              </div>
+            ) : (
               <Button 
-                onClick={handleSave} 
-                disabled={isLoading}
-                className="text-sm"
+                variant='link' 
+                onClick={() => setIsEditing(true)}
+                className="text-sm text-secondary"
               >
-                {isLoading ? "Saving..." : "Save"}
+                Edit
               </Button>
-              <Button 
-                variant='outline' 
-                onClick={() => setIsEditing(false)}
-                className="text-sm"
-              >
-                Cancel
-              </Button>
-            </div>
-          ) : (
-            <Button 
-              variant='link' 
-              onClick={() => setIsEditing(true)}
-              className="text-sm text-secondary"
-            >
-              Edit
-            </Button>
-          )}
+            )}
+          </div>
         </div>
+        <hr className="border-t-1 border-shade" />
       </CardHeader>
       
-      <hr className="border-t-1 border-shade" />
-
-      <CardContent className="mt-4 h-[350px]">
+      <CardContent>
         {isEditing ? (
           <div className="grid gap-4">
             <div className="grid gap-2">
@@ -169,7 +170,7 @@ export default function ConfessionCard({ confess }: ConfessionCardProps) {
             <p className="text-gray-700 font-500 text-[14px] leading-normal ">
               {expanded ? confession : truncatedText}
               
-              {confession.length > 50 && (
+              {confession.length > 250 && (
                 <button 
                   onClick={() => setExpanded(!expanded)} 
                   className="text-purple-500 ml-2"
@@ -192,7 +193,7 @@ export default function ConfessionCard({ confess }: ConfessionCardProps) {
         )}
       </CardContent>
       
-      <CardFooter className="w-full absolute bottom-0 flex justify-between items-center">
+      <CardFooter className="w-full flex justify-between items-center">
         {!isApproved ? (
           <>
             <Button variant="outline" className="bg-green-500 text-sm text-white" onClick={handleApprove}>

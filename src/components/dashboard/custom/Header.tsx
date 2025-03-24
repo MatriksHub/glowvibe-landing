@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 
 
 const Header = () => {
-  
   const { user, logout } = useUser();
   console.warn(`this is profile page: ${JSON.stringify(user, null, 2)}`);
 
@@ -19,7 +18,7 @@ const Header = () => {
     .replace(/\b\w/g, (char) => char.toUpperCase()) || "";
  
   return (
-    <header className="w-full p-[20px]">
+    <header className="p-[20px]">
       <div className="h-[70px] flex items-center justify-between border-b border-b-shade pb-[15px]">
         <h1 className="text-lg font-bold">{formattedTitle}</h1>
 

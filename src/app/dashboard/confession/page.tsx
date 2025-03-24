@@ -1,7 +1,6 @@
 'use client'
 
 import ConfessionCard from '@/components/dashboard/misc/confessions/ConfessionCard';
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { Confession } from '@/types/global';
 import { useEffect, useState } from 'react';
 
@@ -23,8 +22,7 @@ function ConfessionPage() {
     <div className='flex py-4 pt-0'>
       <div className='space-y-4'>
         <div className='flex-1 bg-muted/50'>
-          <ScrollArea className='h-[700px] lg:h-[400px]'>
-            <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 xl:grid-cols-3'>
+            <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 xl:grid-cols-3 2xl:grid-cols-5 3xl:grid-cols-6'>
               {confessions.map((confess) => {
                 return (
                   <ConfessionCard 
@@ -34,7 +32,6 @@ function ConfessionPage() {
                 )
               })}
             </div>
-          </ScrollArea>
         </div> 
       </div>
     </div>

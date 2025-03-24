@@ -46,13 +46,13 @@ export default function AdminLayout({ children }: LayoutProps) {
     <html>
       <body className="antialiased">
         <main className="lg:h-screen">
-          <div className="flex justify-between max-h-screen">
-            <div className="sticky h-screen flex-col top-0 hidden md:flex shrink-0 flex-grow max-w-[340px] border-r-[1.5px] border-grey-90 transition-all bg-gray-98 ">
+          <div className="flex h-screen">
+            <div className="sticky h-screen flex-col top-0 md:flex transition-all">
               <Sidebar />
             </div>
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full ">
               <Header />
-              <div className="p-6 ">
+              <div className="p-6 overflow-y-auto">
                 {loading? <LoadingScreen /> : children}
               </div>
             </div>
