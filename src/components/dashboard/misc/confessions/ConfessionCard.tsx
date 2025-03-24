@@ -26,6 +26,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+// import Link from "next/link";
 
 interface ConfessionCardProps {
   confess: Confession;
@@ -171,6 +172,9 @@ export default function ConfessionCard({ confess }: ConfessionCardProps) {
               {expanded ? confession : truncatedText}
               
               {confession.length > 300 && (
+                // <Link href={`/dashboard/confession/${confession.slug}`} className="text-purple-500 ml-2">
+                //   Read More
+                // </Link>
                 <button 
                   onClick={() => setExpanded(!expanded)} 
                   className="text-purple-500 ml-2"

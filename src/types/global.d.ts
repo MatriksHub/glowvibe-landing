@@ -70,5 +70,67 @@ export type SendNotificationResponse = {
     success: boolean;
     tickets: string;
 };
+
+export type Json = string | number | boolean | null | { [key: string]: Json } | Json[];
+
+export interface Database {
+  public: {
+    Tables: {
+      confessions: {
+        Row: {
+          id: string;
+          title: string;
+          confession: string;
+          created_at: string;
+          user_id: string;
+          approved: boolean;
+          expert_advice: string | null;
+        };
+        Insert: {
+          id?: string;
+          title: string;
+          confession: string;
+          created_at?: string;
+          user_id: string;
+          approved?: boolean;
+          expert_advice?: string | null;
+        };
+        Update: {
+          id?: string;
+          title?: string;
+          confession?: string;
+          created_at?: string;
+          user_id?: string;
+          approved?: boolean;
+          expert_advice?: string | null;
+        };
+      };
+      profiles: {
+        Row: {
+          id: string;
+          username: string;
+          email: string;
+          isAdmin: boolean;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          username: string;
+          email: string;
+          isAdmin?: boolean;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          username?: string;
+          email?: string;
+          isAdmin?: boolean;
+          created_at?: string;
+        };
+      };
+    };
+  };
+}
+
   
   
