@@ -16,22 +16,27 @@ export default function Sidebar() {
   }
 
   return (
-    <section className={`flex flex-col p-[20px] min-h-screen bg-[#2e0536]  text-white ${collapsed ? 'w-20' : 'w-64'} transition-width duration-300`}>
+    <section className={`flex flex-col p-[20px] h-screen bg-[#2e0536]  text-white ${collapsed ? 'w-20' : 'w-60'} transition-width duration-300`}>
       <div className='h-[70px] flex items-center justify-between pb-[15px] border-b-[1px] border-shade'>
         {!collapsed && 
           <Link href='/dashboard' legacyBehavior>
             <Image
               src='/glowvibewhite.png'
               alt='logo'
-              width={150}
+              width={100}
               height={50}
-              className='w-3/4'
+              className='w-[100px]'
             />
           </Link>
         }
 
-        <button onClick={toggleSidebar} className='focus:outline-none'>
-          <ChevronLeftIcon className='w-8 h-8 text-shade' />
+        <button 
+          onClick={toggleSidebar}
+          className='focus:outline-none'
+        >
+          <ChevronLeftIcon 
+            className='w-8 h-8 text-white' 
+          />
         </button>
       </div>
 

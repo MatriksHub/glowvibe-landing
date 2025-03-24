@@ -1,9 +1,10 @@
 'use client'
 
-import { Button } from "@/components/ui/button";
 import { useUser } from "@/context/UserContext";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { usePathname } from "next/navigation";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { BiExit } from "react-icons/bi";
 
 
 const Header = () => {
@@ -22,8 +23,8 @@ const Header = () => {
       <div className="h-[70px] flex items-center justify-between border-b border-b-shade pb-[15px]">
         <h1 className="text-lg font-bold">{formattedTitle}</h1>
 
-        <div className="">
-          <div className="flex justify-center items-center gap-8">
+        <DropdownMenu>
+          <DropdownMenuTrigger className="border-0">
             <div className="flex items-center gap-2">
               <div>
                 <Avatar>
@@ -37,22 +38,28 @@ const Header = () => {
                   Welcome,
                 </p>
                 <h3 className="text-[16px] font-500">
-                  {user?.username}
+                  {user?.email}
                 </h3>
               </div>
             </div>
+          </DropdownMenuTrigger>
 
-            <div>
-              <Button 
-                variant='outline'              
-                onClick={logout} 
-                className={`w-full text-center px-[15px] py-2 rounded bg-red-500 text-white hover:bg-red-300 hover:text-white`}
+          <DropdownMenuContent className="bg-white border border-shade">
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem 
+              className="bg-white hover:bg-white"
+              onClick={logout}
+            >
+              <BiExit className="h-6 w-6 text-red-500 " />
+              <p              
+                className='w-full text-start bg-none text-red-500 hover:text-red-300 hover:text-white hover:bg-none'
               >
-                Logout
-              </Button>
-            </div>
-          </div>
-        </div>
+                Log Out
+              </p>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </header>
   )

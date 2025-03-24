@@ -47,7 +47,7 @@ export default function AdminLayout({ children }: LayoutProps) {
       <body className="antialiased">
         <main className="lg:h-screen">
           <div className="flex h-screen">
-            <div className="sticky h-screen flex-col top-0 md:flex transition-all">
+            <div className="sticky h-screen flex-col top-0 bottom-0 md:flex transition-all">
               <Sidebar />
             </div>
             <div className="flex flex-col w-full ">

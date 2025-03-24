@@ -170,7 +170,7 @@ export default function ConfessionCard({ confess }: ConfessionCardProps) {
             <p className="text-gray-700 font-500 text-[14px] leading-normal ">
               {expanded ? confession : truncatedText}
               
-              {confession.length > 250 && (
+              {confession.length > 300 && (
                 <button 
                   onClick={() => setExpanded(!expanded)} 
                   className="text-purple-500 ml-2"
