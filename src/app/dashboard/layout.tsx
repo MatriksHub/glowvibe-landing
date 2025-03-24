@@ -52,8 +52,12 @@ export default function AdminLayout({ children }: LayoutProps) {
             </div>
             <div className="flex flex-col w-full ">
               <Header />
-              <div className="p-6 overflow-y-auto">
-                {loading? <LoadingScreen /> : children}
+              <div className="p-5 overflow-y-auto">
+                {loading ? 
+                  <LoadingScreen /> 
+                  : 
+                  children
+                }
               </div>
             </div>
           </div>

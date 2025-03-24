@@ -16,7 +16,7 @@ export default function Sidebar() {
   }
 
   return (
-    <section className={`flex flex-col p-[20px] h-screen bg-[#2e0536]  text-white ${collapsed ? 'w-20' : 'w-60'} transition-width duration-300`}>
+    <section className={`flex flex-col py-[20px] px-[10px] h-screen bg-[#2e0536] text-white lg:px-[20px] ${collapsed ? 'w-16' : 'w-60'} transition-width duration-300`}>
       <div className='h-[70px] flex items-center justify-between pb-[15px] border-b-[1px] border-shade'>
         {!collapsed && 
           <Link href='/dashboard' legacyBehavior>
