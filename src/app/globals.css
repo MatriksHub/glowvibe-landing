@@ -10,14 +10,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --primary: #2e0536;
-  --shade: #F5F5DC;
-  --secondary: #ed2790;
+  --primary: #670066;
   --primary-shade: #f9f9f9;
+  --secondary: #ed2790;
+  --shade: #F5F5DC;
   --grey: #F0F7EE;
+  --gray: #f4f5f9;
   --dark: #000000;
   --light: #ffffff;
-  --accent: #ed2790;
   --foreground: #171717;
 }
 
@@ -78,35 +78,19 @@ p {
 
 .notScrolled {
   position: fixed;
-  /* height: 74px; */
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 0px;
-  /* background: var(--shade-color); */
   background-color: var(--primary);
   z-index: 20;
 }
 
-.notScrolled .logo {
-  font-size: 24px !important;
-  color: var(--primary);
-  text-transform: lowercase;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.notScrolled .logo:hover {
-  font-size: 32px;
-  color: var(--dark) !important;
-}
-
 .notScrolled nav a {
-  color: var(--light);
+  color: var(--dark);
   font-size: 14px;
   line-height: 19px;
-  /* letter-spacing: 1px; */
   font-weight: 400;
   margin: 0 15px;
   text-transform: capitalize;
@@ -118,17 +102,7 @@ p {
   font-size: 14px;
   line-height: 19px;
   font-weight: 400;
-  /* text-transform: capitalize; */
   transition: all .3s ease-in;
-}
-
-.notScrolled nav a:active {
-  color: var(--secondary) !important;
-  font-size: 14px !important;
-  line-height: 22px !important;
-  font-weight: 700 !important;
-  /* border-bottom: solid 3px var(--primary-color) !important; */
-  /* padding-bottom: 4px; */
 }
 
 .notScrolled .nav-cta {
@@ -138,6 +112,7 @@ p {
   letter-spacing: 0.85px;
   /* border-radius: 5px; */
   color: var(--light);
+  margin: 0 0;
   padding: 10px 20px;
   transition: all ease-in-out .3s;
 }
@@ -163,27 +138,11 @@ p {
   padding: 20px 0px;
   z-index: 20;
   background: var(--primary);
-  /* box-shadow: 1px 1px 5px 1px var(--neutral-color); */
-  /* color: var(--dark-color); */
 }
 
-.isScrolled .logo {
-  font-size: 24px !important;
-  color: var(--primary) !important;
-  text-transform: lowercase;
-  font-weight: 700;
-  letter-spacing: 1px;
-
-}
-
-.isScrolled .logo:hover {
-  font-size: 24px;
-  color: var(--primary) !important;
-  
-}
 
 .isScrolled nav a {
-  color: var(--light);
+  color: var(--dark);
   font-size: 14px;
   line-height: 19px;
   letter-spacing: 0.85px;
@@ -200,31 +159,6 @@ p {
   /* text-transform: capitalize; */
 }
 
-.isScrolled nav a:active {
-  color: var(--secondary) !important;
-  font-size: 14px !important;
-  line-height: 19px !important;
-  font-weight: 600 !important;
-  border-bottom: solid 3px var(--primary) !important;
-  padding-bottom: 4px;
-}
-
-.isActiveLink {
-  color: var(--primary) !important;
-  font-size: 16px !important;
-  line-height: 19px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-}
-
-.isNotActiveLink {
-  color: var(--dark) !important;
-  font-size: 16px !important;
-  line-height: 19px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-}
-
 .isScrolled .nav-cta {
   font-size: 12px;
   line-height: 19px;
@@ -232,6 +166,7 @@ p {
   letter-spacing: 0.85px;
   /* border-radius: 5px; */
   color: var(--light);
+  margin: 0 0;
   padding: 10px 20px;
   transition: all ease-in-out .3s;
 }
@@ -274,10 +209,10 @@ p {
 
 @layer base {
   body {
-    @apply  bg-white text-[14px] sm:text-[14px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[1.5] font-normal;
+    @apply  bg-white text-[16px] xl:text-[18px] leading-[1.5] font-normal;
   }
   h1 {
-    @apply text-[38px] xl:text-[47px] leading-[1.1] font-semibold;
+    @apply text-[50px] xl:text-[70px] leading-[1.1] xl:leading-[1] font-semibold;
   }
   h2 {
     @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;

@@ -5,22 +5,22 @@ import React from 'react'
 
 function Hero() {
   return (
-    <div className='bg-primary w-full h-full flex justify-center items-center lg:h-screen'>
-      <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[80px] xl:max-w-[90%] 3xl:max-w-[80%]'>
+    <div className='bg-primary w-full h-full flex justify-center items-center lg:h-screen rounded-b-xl'>
+      <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[80px] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]'>
         <div className='flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-0'>
           <div className='text-center lg:text-start lg:w-1/2'>
             <div className='pt-10 grid gap-4 lg:pt-0 4xl:gap-8'>
-              <h1 className='text-white font-bold text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-tight lg:leading-tight 3xl:leading-snug 4xl:text-9xl'>
-                A safe and anonymous space
+              <h1 className='text-white font-semibold'>
+                A Safe and Anonymous Space
               </h1>
 
-              <p className='text-white font-400 text-lg md:text-xl lg:text-2xl 4xl:text-5xl'>
-                to express yourself, share experiences, and learn from experts—all while staying completely anonymous.
+              <p className='text-white'>
+                Express yourself, share experiences, without fear of stigma or judgment and learn from experts.
               </p>
 
               <div className='mt-6 flex flex-col items-center lg:items-start gap-4 4xl:mt-16'>
                 <div className=''>
-                  <h1 className='text-secondary text-[18px] font-bold'>Coming soon on</h1>
+                  <h1 className='text-secondary text-[18px] font-bold'>Download the App</h1>
                 </div>
                 <div className='w-full flex flex-row items-center justify-center gap-6 lg:justify-start'>
                   <Link href='#'>

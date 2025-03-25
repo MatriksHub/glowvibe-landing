@@ -2,10 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link'
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 
 const Navbar = () => {
+    const pathname = usePathname()
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const closeMobileClicked = () => setIsNavOpen(false);
@@ -25,12 +27,12 @@ const Navbar = () => {
 
   return (
     <div className={isScrolled ? 'isScrolled' : 'notScrolled'}>
-        <div className="container mx-auto max-w-[95%] xl:max-w-[90%] 3xl:max-w-[80%]">
+        <div className="bg-white p-2 rounded-lg container mx-auto max-w-[95%] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]">
             <div className='flex justify-between items-center'>
                 <div className=' md:flex-[2]'>
-                    <Link href="/" className='log' legacyBehavior>
+                    <Link href="/" legacyBehavior>
                         <Image
-                            src='/glowvibeWhite.png'
+                            src='/glowvibeNewLogo.png'
                             alt='glowvibe-logo'
                             width={100}
                             height={50}
@@ -44,17 +46,17 @@ const Navbar = () => {
                         <div className='flex justify-between items-center gap-10'>
                             <ul className='flex justify-center items-center tracking-[0.75px] font-medium'>
                                 <li className='mx-3'>
-                                    <Link href='/'>
+                                    <Link href='/' className={`link ${pathname === '/' ? 'text-secondary font-semibold' : ''}`}>
                                         Home
                                     </Link>
                                 </li>
                                 <li  className='mx-3'>
-                                    <Link href='#about'>
+                                    <Link href='#about' className={`link ${pathname === '#about' ? 'text-secondary font-semibold' : ''}`}>
                                         About
                                     </Link>
                                 </li>
                                 <li  className='mx-3'>
-                                    <Link href='/contact'>
+                                    <Link href='/contact' className={`link ${pathname === '/contact' ? 'text-secondary font-semibold' : ''}`}>
                                         Contact
                                     </Link>
                                 </li>
@@ -79,9 +81,9 @@ const Navbar = () => {
                             className='HAMBURGER-ICON space-y-1.5 cursor-pointer'
                             onClick={() => setIsNavOpen((prev) => !prev)}
                         >
-                            <span className='block h-0.5 w-8 animate-pulse bg-[#ffffff]'></span>
-                            <span className='block h-0.5 w-7 animate-pulse bg-[#ffffff]'></span>
-                            <span className='block h-0.5 w-6 animate-pulse bg-[#ffffff]'></span>
+                            <span className='block h-0.5 w-8 animate-pulse bg-[#000000]'></span>
+                            <span className='block h-0.5 w-7 animate-pulse bg-[#000000]'></span>
+                            <span className='block h-0.5 w-6 animate-pulse bg-[#000000]'></span>
                         </div>
 
                         {/* NAV MENU */}
@@ -107,7 +109,7 @@ const Navbar = () => {
                                 <li className='capitalize ' 
                                     onClick={closeMobileClicked}
                                 >
-                                    <Link href='/' legacyBehavior>
+                                    <Link href='/' legacyBehavior className={`link ${pathname === '/' ? 'text-secondary font-semibold' : ''}`}>
                                         <a>
                                             Home
                                         </a>
@@ -116,7 +118,7 @@ const Navbar = () => {
                                 <li className='capitalize' 
                                     onClick={closeMobileClicked}
                                 >
-                                    <Link href='#about' legacyBehavior>
+                                    <Link href='#about' className={`link ${pathname === '#about' ? 'text-secondary font-semibold' : ''}`} legacyBehavior>
                                         <a target='_blank'>
                                             About
                                         </a>
@@ -126,7 +128,7 @@ const Navbar = () => {
                                 <li className='capitalize' 
                                     onClick={closeMobileClicked}
                                 >
-                                    <Link href='/contact' legacyBehavior>
+                                    <Link href='/contact' className={`link ${pathname === '/contact' ? 'text-secondary font-semibold' : ''}`} legacyBehavior>
                                         <a target='_blank'>
                                             Contact
                                         </a>

@@ -5,8 +5,8 @@ import { LuInstagram, LuTwitter } from 'react-icons/lu'
 
 function Footer() {
   return (
-    <div className='bg-[#000000] text-white h-full flex justify-center items-center'>
-      <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[80px] xl:max-w-[90%] 3xl:max-w-[80%]'>
+    <div className='bg-[#242424] text-white h-full flex justify-center items-center'>
+      <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[80px] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]'>
         <footer className="flex flex-col gap-20 lg:gap-20 lg:justify-between lg:items-center">
           <div className='grid grid-cols-1 gap-14 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-32'>
             <div className='flex flex-col gap-6'>

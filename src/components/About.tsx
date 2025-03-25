@@ -3,8 +3,8 @@ import React from 'react'
 
 function About() {
   return (
-    <div className='bg-[#f9f9f9] h-full flex justify-center items-center lg:h-screen' id="about">
-      <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[80px] xl:max-w-[90%] 3xl:max-w-[80%]'>
+    <div className='bg-neutral h-full flex justify-center items-center lg:h-screen' id="about">
+      <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[80px] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]'>
         <div className='flex flex-col gap-10'>
           {/* about glow vibes */}
           <div className='flex flex-col justify-center items-center gap-4 lg:flex-row lg:justify-between lg:items-center'>
