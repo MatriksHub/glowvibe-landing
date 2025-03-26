@@ -22,55 +22,44 @@ const works = [
     },
   ]
 
-function HowItWorks() {
+function Benefits() {
   return (
     <div className='bg-white w-full h-full flex justify-center items-center lg:h-screen'>
         <div className='container mx-auto max-w-[95%] py-[60px] lg:py-[50px] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]'>
             <div className='flex flex-col gap-10'>
                 <div className='grid text-center gap-4'>
                     <h5 className='text-[16px]'>
-                        <span className=''></span> How It Works
-
+                        <span className=''></span>  
                     </h5>
-                    <div className='flex justify-center items-center w-[300px] mx-auto'>
-                        <h3 className=''>
-                            How it works: <span className='text-primary'>A Step-by-Step Guide</span>
-                        </h3>
-                    </div>
+                    <h3>
+                        Benefits of <span className='text-primary'>GlowVibe App</span>
+                    </h3>
                 </div>
 
-                <div className='grid lg:grid-cols-2 gap-10'>
-                    <div className='flex justify-center items-center'>
-                        <Image 
-                            src='/download.svg'
-                            alt='download'
-                            width={100}
-                            height={50}
-                            className='w-[350px]'
-                        />
-                    </div>
+                <div className='grid lg:grid-cols-3 gap-10'>
 
-                    <div className='pr-6 w-full grid gap-8'>
+                    <div className='p-4 w-full grid gap-6'>
                         {works.map((work, index) => (
                             <div
                                 key={index}
-                                className="w-full flex flex-col lg:flex-row gap-4 "
+                                className="w-full flex justify-start items-center gap-4 "
                             >
-                                <span className="bg-neutral h-[60px] w-[60px] flex p-3 justify-center rounded-full items-center" 
+                                <span className="bg-neutral flex p-3 justify-center rounded-full items-center" 
                                 >
                                     <Image 
                                         src={work.icon}
                                         alt='icons'
                                         width={40}
                                         height={40}
-                                        className='w-[40px] h-[40px]'
+                                        className='w-[30px] h-[30px]'
                                     />
                                 </span>
                                 <Card className='w-full border-0 shadow-none'>
                                     <CardHeader className='text-start p-0'>
-                                        <CardTitle className='font-medium lg:text-[22px]'>{work.title}</CardTitle>
+                                        <CardTitle className='font-medium'>{work.title}</CardTitle>
                                         <CardDescription className='text-start font-normal opacity-60'>
-                                            {work.description}
+                                            {work.description} <br></br>
+                                            {/* {work.description2} */}
                                         </CardDescription> 
                                     </CardHeader>  
                                 </Card>                     
@@ -84,4 +73,4 @@ function HowItWorks() {
   )
 }
 
-export default HowItWorks
+export default Benefits

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { LuInstagram, LuTwitter } from 'react-icons/lu'
+import { LuInstagram, LuMail, LuTwitter } from 'react-icons/lu'
 
 function Footer() {
   return (
@@ -12,25 +12,27 @@ function Footer() {
             <div className='flex flex-col gap-6'>
               <div>
                 <Link href='/'>
-                  <img 
+                  <Image 
                     src='/glowvibeWhite.png'
                     alt='glowvibe logo'
-                    className='h-[50px] w-[150px]'
+                    width={100}
+                    height={100}
+                    className='h-[100px] w-[150px]'
                   />
                 </Link>
               </div>
-              <p>
+              <p className='text-[14px]'>
                 A safe and anonymous space.
               </p>
             </div>
             
             {/* Quick links */}
             <div className='flex flex-col gap-6'>
-              <h3 className='font-bold text-[20px] text-white'>
+              <h4 className='font-semibold text-[20px] text-white'>
                 Quick Links
-              </h3>
-              <ul className='flex flex-col items-start justify-start gap-6'>
-                {/* <li className='capitalize'>
+              </h4>
+              <ul className='flex flex-col items-start text-[14px] justify-start gap-6'>
+                <li className='capitalize'>
                   <Link href='/' legacyBehavior>
                     <a >
                       Home
@@ -43,8 +45,24 @@ function Footer() {
                       About
                     </a>
                   </Link>
-                </li> */}
+                </li>
+
                 <li className='capitalize'>
+                  <Link href='https://erocraves.com' legacyBehavior>
+                    <a target='_blank'>
+                      Shop
+                    </a>
+                  </Link>
+                </li>
+
+                <li className='capitalize'>
+                  <Link href='/contact' legacyBehavior>
+                    <a >
+                      Contact
+                    </a>
+                  </Link>
+                </li>
+                {/* <li className='capitalize'>
                   <Link href='/privacy-policy' legacyBehavior>
                     <a target='_blank' className='text-white/50 text-[14px]'>
                       Privacy Policy
@@ -64,41 +82,64 @@ function Footer() {
                       Content Moderation Policy
                     </a>
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
             
             {/* Social media */}
-            <div className='flex flex-col gap-6'>
-              <div className='flex flex-col gap-6'>
-                <h3 className='font-semibold text-[20px] text-white'>
-                  Follow us
-                </h3>
+            <div className='flex flex-col text-[14px] gap-6'>
+              <h4 className='font-semibold text-[20px] text-white'>
+                Social Media
+              </h4>
+              <ul className='grid gap-4'>
+                <li className='flex items-center gap-2 list-disc'>
+                  <h4>
+                    <LuInstagram className='text-[25px]' />
+                  </h4> 
+                    <Link 
+                        href='https://www.instagram.com/glowvibeapp/' 
+                        target='_blank' 
+                        rel='noreferrer'
+                        className='text-white underline'
+                    >
+                        @glowvibeapp
+                    </Link>
+                </li>
 
-                <div className='flex text-[30px] gap-6'>
+                <li className='flex items-center gap-2 list-disc'>
+                    <h4>
+                        <LuTwitter className='text-[25px]' />
+                    </h4>
+                    <Link 
+                        href='https://x.com/glowvibeapp/' 
+                        target='_blank' 
+                        rel='noreferrer'
+                        className='text-white underline'
+                    >
+                        @glowvibeapp
+                    </Link>                    
+                </li>
+              </ul>
+
+              <ul className='grid gap-2'>
+                <li className='flex items-center gap-2 list-disc'>
+                  <h4>
+                    <LuMail className='text-[25px]' />
+                  </h4>
                   <Link 
-                    href='https://www.instagram.com/glowvibeapp/' 
-                    target='_blank' 
-                    rel='noreferrer'
+                      href="mailto:hello@glowVibeapp.com" 
+                      className='text-white underline'
                   >
-                    <LuInstagram />
+                      hello@glowvibeapp.com
                   </Link>
-
-                  <Link 
-                    href='https://x.com/glowvibeapp/' 
-                    target='_blank' 
-                    rel='noreferrer'
-                  >
-                    <LuTwitter />
-                  </Link>                    
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
 
             {/* coming soon  */}
             <div className='flex flex-col gap-6'>
                 <h3 className='font-semibold text-[20px] text-white'>
-                  Coming soon
+                  Download the App
                 </h3>
                 <div className='flex flex-row  items-start gap-6 lg:flex-col'>
                   <Link href='/'>
@@ -121,11 +162,15 @@ function Footer() {
                 </div>
             </div>
           </div>
-          <div className='flex items-center justify-center'>
-            <p>
+
+          
+
+          <div className='w-full  border-t border-shade pt-[10px] flex flex-col items-center gap-6 lg:justify-between lg:items-center lg:flex-row'>
+            <p className='text-[14px] text-center lg:text-end'>
               © 2025 GlowVibe inc. All rights reserved.
             </p>
-            {/* <ul className='flex flex-row items-center justify-centr gap-6'>
+
+            <ul className='flex flex-row text-center gap-6 lg:text-end'>
               <li className='capitalize'>
                 <Link href='/privacy-policy' legacyBehavior>
                   <a target='_blank' className='text-white/50 text-[12px] underline'>
@@ -147,7 +192,7 @@ function Footer() {
                   </a>
                 </Link>
               </li>
-            </ul> */}
+            </ul>
           </div>
         </footer>
       </div>

@@ -27,17 +27,17 @@ const Navbar = () => {
 
   return (
     <div className={isScrolled ? 'isScrolled' : 'notScrolled'}>
-        <div className="bg-white p-2 rounded-lg container mx-auto max-w-[95%] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]">
+        <div className="bg-white p-[10px] rounded-lg container mx-auto max-w-[95%] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]">
             <div className='flex justify-between items-center'>
                 <div className=' md:flex-[2]'>
                     <Link href="/" legacyBehavior>
                         <Image
-                            src='/glowvibeNewLogo.png'
+                            src='/newlogo.jpg'
                             alt='glowvibe-logo'
                             width={100}
                             height={50}
                             priority
-                            className='h-[50px] w-[120px]'
+                            className='w-[100px]'
                         />
                     </Link>
                 </div>
@@ -55,6 +55,17 @@ const Navbar = () => {
                                         About
                                     </Link>
                                 </li>
+
+                                <li className='capitalize' 
+                                    onClick={closeMobileClicked}
+                                >
+                                    <Link href='https://erocraves.com' className={`link ${pathname === '#' ? 'text-secondary font-semibold' : ''}`} legacyBehavior>
+                                        <a target='_blank'>
+                                            Shop
+                                        </a>
+                                    </Link>
+                                </li>
+                                
                                 <li  className='mx-3'>
                                     <Link href='/contact' className={`link ${pathname === '/contact' ? 'text-secondary font-semibold' : ''}`}>
                                         Contact
@@ -121,6 +132,16 @@ const Navbar = () => {
                                     <Link href='#about' className={`link ${pathname === '#about' ? 'text-secondary font-semibold' : ''}`} legacyBehavior>
                                         <a target='_blank'>
                                             About
+                                        </a>
+                                    </Link>
+                                </li>
+
+                                <li className='capitalize' 
+                                    onClick={closeMobileClicked}
+                                >
+                                    <Link href='https://erocraves.com' className={`link ${pathname === '#' ? 'text-secondary font-semibold' : ''}`} legacyBehavior>
+                                        <a target='_blank'>
+                                            Shop
                                         </a>
                                     </Link>
                                 </li>
