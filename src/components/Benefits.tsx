@@ -25,7 +25,7 @@ const works = [
 function Benefits() {
   return (
     <div className='bg-white w-full h-full flex justify-center items-center lg:h-screen'>
-        <div className='container mx-auto max-w-[95%] py-[60px] lg:py-[50px] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]'>
+        <div className='container mx-auto max-w-[95%] py-[60px] lg:py-[80px] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]'>
             <div className='flex flex-col gap-10'>
                 <div className='grid text-center gap-4'>
                     <h5 className='text-[16px]'>

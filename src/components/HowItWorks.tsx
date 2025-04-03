@@ -25,14 +25,14 @@ const works = [
 function HowItWorks() {
   return (
     <div className='bg-white w-full h-full flex justify-center items-center lg:h-screen'>
-        <div className='container mx-auto max-w-[95%] py-[60px] lg:py-[50px] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]'>
+        <div className='container mx-auto max-w-[95%] py-[60px] lg:py-[80px] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]'>
             <div className='flex flex-col gap-10'>
                 <div className='grid text-center gap-4'>
                     <h5 className='text-[16px]'>
                         <span className=''></span> How It Works
 
                     </h5>
-                    <div className='flex justify-center items-center w-[300px] mx-auto'>
+                    <div className='flex justify-center items-center w-[300px] mx-auto mb-[20px]'>
                         <h3 className=''>
                             How it works: <span className='text-primary'>A Step-by-Step Guide</span>
                         </h3>

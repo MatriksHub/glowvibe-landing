@@ -5,7 +5,7 @@ import React from 'react'
 
 function Hero() {
   return (
-    <div className='bg-primary w-full h-full flex justify-center items-center lg:h-screen rounded-b-xl'>
+    <div className='bg-primary w-full h-full flex justify-center items-center lg:h-screen rounded-b-2xl'>
       <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[80px] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]'>
         <div className='flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-0'>
           <div className='text-center lg:text-start lg:w-1/2'>
@@ -50,9 +50,9 @@ function Hero() {
             <Image
               src='/923shots_so.png'
               alt='hero image'
-              width={250}
+              width={400}
               height={100}
-              className='w-auto h-auto' 
+              className='w-[300px] h-[300px]' 
             />
           </div>
         </div>

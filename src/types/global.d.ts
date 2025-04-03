@@ -84,7 +84,7 @@ export interface Database {
           created_at: string;
           user_id: string;
           approved: boolean;
-          expert_advice: string | null;
+          expert_answers: string | null;
         };
         Insert: {
           id?: string;

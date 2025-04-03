@@ -22,15 +22,19 @@ export default function UsersPage() {
 
   useEffect(() => {
     async function fetchUsers() {
+      setLoading(true);
+
       const { data, error } = await supabaseClient
       .from("profiles")
-      .select("*");
+      .select("*")
+      .order("created_at", { ascending: false});
 
       if (error) {
-        console.error(error)
+        console.error(error);
       } else {
-        setUsers(data)
+        setUsers(data);
       } 
+
       setLoading(false);
     }
     fetchUsers();
@@ -45,8 +49,11 @@ export default function UsersPage() {
       .update({ ban_until: banUntil.toISOString() })
       .eq("id", userId);
 
-    if (error) alert("Error banning user");
-    else alert("User banned for a week");
+    if (error) {
+      toast.error("Error banning user");
+    } else {
+      toast.success("User banned for a week");
+    } 
   }
 
   async function deleteUser(userId: string) {
@@ -60,6 +67,7 @@ export default function UsersPage() {
     if (error) {
       toast.error("Error deleting user")
     } else {
+      toast.success("User deleted successfully")
       setUsers(users.filter((user) => user.id !== userId))
     }
   }
@@ -69,27 +77,34 @@ export default function UsersPage() {
       {loading ? (
         <p>Loading users...</p>
       ) : (
-        <Table>
-          <TableHeader>
+        <div className="w-full rounded-lg overflow-x-auto">
+        <Table className="w-full ">
+          <TableHeader className="bg-primary text-white text-[16px] rounded-lg overflow-x-auto">
             <TableRow>
               <TableHead>Username</TableHead>
               <TableHead>Email</TableHead>
-              <TableHead>Actions</TableHead>
+              <TableHead className="text-center">Actions</TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody>
+
+          <TableBody >
             {users.map((user) => (
-              <TableRow key={user.id}>
+              <TableRow key={user.id} className="bg-white rounded-lg">
                 <TableCell>{user.username}</TableCell>
                 <TableCell>{user.email}</TableCell>
-                <TableCell className="space-x-2">
+                <TableCell className="flex justify-end items-center space-x-4">
                   <Button size="sm" onClick={() => router.push(`/dashboard/users/${user.id}`)}>
                     View
                   </Button>
-                  <Button size="sm" variant="destructive" onClick={() => banUser(user.id)}>
+                  <Button 
+                    size="sm" 
+                    variant="destructive" 
+                    onClick={() => banUser(user.id)}
+                    className="bg-yellow-500 text-white"
+                  >
                     Ban
                   </Button>
-                  <Button size="sm" variant="outline" onClick={() => deleteUser(user.id)}>
+                  <Button size="sm" variant="outline" className="bg-red-500 text-white" onClick={() => deleteUser(user.id)}>
                     Delete
                   </Button>
                 </TableCell>
@@ -97,6 +112,7 @@ export default function UsersPage() {
             ))}
           </TableBody>
         </Table>
+        </div>
       )}
     </div>
   );

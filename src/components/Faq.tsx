@@ -20,31 +20,21 @@ const faqs = [
     },
     {
         title: "5. Who answers my questions?",
-        description: "Your questions can be answered by:",
-        description2: "✅ Health professionals providing expert insights.",
-        description3: "✅ Community members who share real-life experiences.",
+        description: "Your questions can be answered by Health professionals providing expert insights and Community members who share real-life experiences.",
     },
     {
         title: "6. How can I report inappropriate content?",
         description: "If you see misinformation, harassment, or inappropriate content, you can report it using the &apos;Report&apos; button on any post or comment.",
     },
-    {
-        title: "7.  What kind of topics can I discuss?",
-        description: "GlowVibe covers a range of topics, including: Sexual health & wellness Relationships & intimacy Safe sex practices Personal experiences & advice",
-    },
-    {
-        title: "8. How do I join the community?",
-        description: "Simply download the app, create an account,  and start engaging with the community!",
-    },
-    {
-        title: "9. Where can I download GlowVibe?",
-        description: "You can find GlowVibe on the App Store (iOS) and Google Play Store (Android).",
-    },
+    // {
+    //     title: "7.  What kind of topics can I discuss?",
+    //     description: "GlowVibe covers a range of topics, including: Sexual health & wellness Relationships & intimacy Safe sex practices Personal experiences & advice",
+    // },
 ]
 
 function Faq() {
   return (
-    <div className='bg-shade w-full h-auto'>
+    <div className='bg-neutral w-full h-auto pb-[100px]'>
         <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[80px] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]'>
             <div className='grid gap-10'>
                 <div className='grid text-center gap-4'>
