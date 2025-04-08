@@ -5,6 +5,28 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+const NAV_LINKS = [
+    { 
+      name: "Home", 
+      icon: "home", 
+      url: "/" 
+    },
+    { 
+      name: "About", 
+      icon: "about", 
+      url: "#about" 
+    },
+    { 
+      name: "Shop", 
+      icon: "shop", 
+      url: "https://erocraves.com" 
+    },
+    { 
+      name: "Contact", 
+      icon: "contact", 
+      url: "/contact" 
+    },
+  ]
 
 const Navbar = () => {
     const pathname = usePathname()
@@ -27,9 +49,9 @@ const Navbar = () => {
 
   return (
     <div className={isScrolled ? 'isScrolled' : 'notScrolled'}>
-        <div className="bg-white p-[10px] rounded-lg container mx-auto max-w-[95%] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]">
+        <div className="bg-white px-[10px] py-[10px] rounded-lg container mx-auto max-w-[95%] md:max-w-[95%] lg:max-w-[90%] xl:max-w-[90%] 3xl:max-w-[85%]">
             <div className='flex justify-between items-center'>
-                <div className=' md:flex-[2]'>
+                <div className='md:flex-[2] w-[200px]'>
                     <Link href="/" legacyBehavior>
                         <Image
                             src='/newlogo.jpg'
@@ -41,41 +63,30 @@ const Navbar = () => {
                         />
                     </Link>
                 </div>
-                <nav className='lg:flex-[4]'>
+
+                <nav className='lg:flex-[4] flex items-center justify-end'>
                     <div className='DESKTOP-MENU hidden sm:hidden md:hidden lg:flex lg:justify-end lg:items-center'>
                         <div className='flex justify-between items-center gap-10'>
                             <ul className='flex justify-center items-center tracking-[0.75px] font-medium'>
-                                <li className='mx-3'>
-                                    <Link href='/' className={`link ${pathname === '/' ? 'text-secondary font-semibold' : ''}`}>
-                                        Home
-                                    </Link>
-                                </li>
-                                <li  className='mx-3'>
-                                    <Link href='#about' className={`link ${pathname === '#about' ? 'text-secondary font-semibold' : ''}`}>
-                                        About
-                                    </Link>
-                                </li>
-
-                                <li className='capitalize' 
-                                    onClick={closeMobileClicked}
-                                >
-                                    <Link href='https://erocraves.com' className={`link ${pathname === '#' ? 'text-secondary font-semibold' : ''}`} legacyBehavior>
-                                        <a target='_blank'>
-                                            Shop
-                                        </a>
-                                    </Link>
-                                </li>
-                                
-                                <li  className='mx-3'>
-                                    <Link href='/contact' className={`link ${pathname === '/contact' ? 'text-secondary font-semibold' : ''}`}>
-                                        Contact
-                                    </Link>
-                                </li>
+                                {NAV_LINKS.map((link, index) => (
+                                    <li 
+                                        key={index} 
+                                        className='capitalize mx-4 ' 
+                                        onClick={closeMobileClicked}
+                                    >
+                                        <Link href={link.url} legacyBehavior>
+                                            <a className={`link ${pathname === link.url ? 'text-secondary font-semibold transition-all duration-300 ease-in-out cursor-pointer' : ''}`}
+                                            >
+                                                {link.name}
+                                            </a>
+                                        </Link>
+                                    </li>
+                                ))}
                             </ul>
                             <ul>
                                 <li>
                                     <Link href='#download' legacyBehavior>
-                                        <a className='nav-cta bg-secondary text-light rounded-md text-[14px] px-6 py-3 font-bold'>
+                                        <a className='nav-cta inline-block font-poppins bg-secondary text-light rounded-md text-[14px] px-[22px] py-[13px] font-bold'>
                                             Get the App
                                         </a>
                                     </Link>
@@ -84,17 +95,16 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                        {/* MOBILE MENU */}
+                    {/* MOBILE MENU */}
                     <div className='MOBILE-NAV-MENU flex justify-center items-center lg:hidden'>
                         {/* HAMBURGER MENU */}
-
                         <div 
                             className='HAMBURGER-ICON space-y-1.5 cursor-pointer'
                             onClick={() => setIsNavOpen((prev) => !prev)}
                         >
-                            <span className='block h-0.5 w-8 animate-pulse bg-[#000000]'></span>
-                            <span className='block h-0.5 w-7 animate-pulse bg-[#000000]'></span>
-                            <span className='block h-0.5 w-6 animate-pulse bg-[#000000]'></span>
+                            <span className='block h-0.5 w-8 bg-[#000000]'></span>
+                            <span className='block h-0.5 w-7 bg-[#000000]'></span>
+                            <span className='block h-0.5 w-6 bg-[#000000]'></span>
                         </div>
 
                         {/* NAV MENU */}
@@ -103,7 +113,7 @@ const Navbar = () => {
                                 onClick={() => setIsNavOpen(false)}
                             >
                                 <svg
-                                    className='h-8 w-8 text-[#000000] border-2 border-secondary rounded-md animate-pulse'
+                                    className='h-8 w-8 text-[#ffffff] border-2 border-secondary rounded-md '
                                     viewBox='0 0 24 24'
                                     fill='none'
                                     stroke='currentColor'
@@ -116,55 +126,32 @@ const Navbar = () => {
                                 </svg>
                             </div>
 
-                            <ul className='MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-center gap-10'>
-                                <li className='capitalize ' 
-                                    onClick={closeMobileClicked}
-                                >
-                                    <Link href='/' legacyBehavior className={`link ${pathname === '/' ? 'text-secondary font-semibold' : ''}`}>
-                                        <a>
-                                            Home
-                                        </a>
-                                    </Link>
-                                </li>
-                                <li className='capitalize' 
-                                    onClick={closeMobileClicked}
-                                >
-                                    <Link href='#about' className={`link ${pathname === '#about' ? 'text-secondary font-semibold' : ''}`} legacyBehavior>
-                                        <a target='_blank'>
-                                            About
-                                        </a>
-                                    </Link>
-                                </li>
-
-                                <li className='capitalize' 
-                                    onClick={closeMobileClicked}
-                                >
-                                    <Link href='https://erocraves.com' className={`link ${pathname === '#' ? 'text-secondary font-semibold' : ''}`} legacyBehavior>
-                                        <a target='_blank'>
-                                            Shop
-                                        </a>
-                                    </Link>
-                                </li>
-
-                                <li className='capitalize' 
-                                    onClick={closeMobileClicked}
-                                >
-                                    <Link href='/contact' className={`link ${pathname === '/contact' ? 'text-secondary font-semibold' : ''}`} legacyBehavior>
-                                        <a target='_blank'>
-                                            Contact
-                                        </a>
-                                    </Link>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <Link href='#download' legacyBehavior>
-                                        <a className='nav-cta bg-secondary text-light rounded-md text-[14px] px-6 py-3 font-bold'>
-                                            Get the App
-                                        </a>
-                                    </Link>
-                                </li>
-                            </ul>
+                            <div className='MENU-LINK-MOBILE h-[400px] grid gap-8'>
+                                <ul className='MENU-LINK grid gap-4'>
+                                    {NAV_LINKS.map((link, index) => (
+                                        <li 
+                                            key={index} 
+                                            className='capitalize' 
+                                            onClick={closeMobileClicked}
+                                        >
+                                            <Link href={link.url} legacyBehavior>
+                                                <a className={`link ${pathname === link.url ? 'text-secondary font-semibold' : ''}`}>
+                                                    {link.name}
+                                                </a>
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <ul className='MENU-CTA'>
+                                    <li>
+                                        <Link href='#download' legacyBehavior>
+                                            <a className='nav-cta font-poppins bg-secondary text-light rounded-md text-[14px] px-[22px] py-[13px] font-bold'>
+                                                Get the App
+                                            </a>
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </nav>

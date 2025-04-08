@@ -6,7 +6,31 @@ import { Textarea } from '../ui/textarea';
 import { Input } from '../ui/input';
 import { useContactFormLogic } from './useContactFormLogic';
 import Link from 'next/link';
-import { LuInstagram, LuMail, LuTwitter } from 'react-icons/lu';
+import { LuMail } from 'react-icons/lu';
+import { BiLogoInstagram, BiLogoTelegram, BiLogoTiktok, BiLogoTwitter } from 'react-icons/bi';
+
+const SOCIAL_LINKS = [
+    { 
+      name: "Instagram", 
+      icon: "instagram", 
+      url: "https://www.instagram.com/glowvibeapp/" 
+    },
+    { 
+      name: "TikTok", 
+      icon: "tiktok", 
+      url: "https://www.tiktok.com/@glowvibeapp" 
+    },
+    { 
+      name: "Telegram", 
+      icon: "telegram", 
+      url: "https://t.me/glowvibeapp" 
+    },
+    { 
+      name: "Twitter", 
+      icon: "twitter", 
+      url: "https://x.com/glowvibe_app" 
+    },
+  ]
 
 function Contact() {
     const {
@@ -48,33 +72,32 @@ function Contact() {
                                 </p>
 
                                 <ul className='grid gap-4'>
-                                    <li className='flex items-center gap-2 list-disc'>
-                                        <h4>
-                                            <LuInstagram className='text-[25px]' />
-                                        </h4> 
-                                        <Link 
-                                            href='https://www.instagram.com/glowvibeapp/' 
-                                            target='_blank' 
-                                            rel='noreferrer'
-                                            className='text-secondary underline'
-                                        >
-                                            @glowvibeapp
-                                        </Link>
-                                    </li>
-
-                                    <li className='flex items-center gap-2 list-disc'>
-                                        <h4>
-                                            <LuTwitter className='text-[25px]' />
-                                        </h4>
-                                        <Link 
-                                            href='https://x.com/glowvibeapp/' 
-                                            target='_blank' 
-                                            rel='noreferrer'
-                                            className='text-secondary underline'
-                                        >
-                                            @glowvibeapp
-                                        </Link>                    
-                                    </li>
+                                    {SOCIAL_LINKS.map((link) => (
+                                        <li key={link.name} className='flex items-center gap-2 list-disc'>
+                                            <h4>
+                                                {link.icon === 'instagram' && 
+                                                    <BiLogoInstagram className='text-[25px]' />
+                                                }
+                                                {link.icon === 'tiktok' && 
+                                                    <BiLogoTiktok className='text-[25px]' />
+                                                }
+                                                {link.icon === 'telegram' && 
+                                                    <BiLogoTelegram className='text-[25px]' />
+                                                }
+                                                {link.icon === 'twitter' && 
+                                                    <BiLogoTwitter className='text-[25px]' />
+                                                }
+                                            </h4>
+                                            <Link 
+                                                href={link.url} 
+                                                target='_blank' 
+                                                rel='noreferrer'
+                                                className='text-secondary underline'
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        </li>
+                                    ))}
                                 </ul>
 
                                 <p>If you still need assistance, please reach out to us:</p>

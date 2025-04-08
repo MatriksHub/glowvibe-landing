@@ -1,23 +1,48 @@
+
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { LuInstagram, LuMail, LuTwitter } from 'react-icons/lu'
+import { BiLogoInstagram, BiLogoTelegram, BiLogoTiktok, BiLogoTwitter } from 'react-icons/bi'
+
+const SOCIAL_LINKS = [
+  { 
+    name: "Instagram", 
+    icon: "instagram", 
+    url: "https://www.instagram.com/glowvibeapp/" 
+  },
+  { 
+    name: "TikTok", 
+    icon: "tiktok", 
+    url: "https://www.tiktok.com/@glowvibeapp" 
+  },
+  { 
+    name: "Telegram", 
+    icon: "telegram", 
+    url: "https://t.me/glowvibeapp" 
+  },
+  { 
+    name: "Twitter", 
+    icon: "twitter", 
+    url: "https://x.com/glowvibe_app" 
+  },
+]
 
 function Footer() {
   return (
     <div className='bg-[#242424] text-white h-full flex justify-center items-center'>
-      <div className='container mx-auto max-w-[95%] py-[100px] lg:py-[80px] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[85%] 3xl:max-w-[80%]'>
-        <footer className="flex flex-col gap-20 lg:gap-20 lg:justify-between lg:items-center">
-          <div className='grid grid-cols-1 gap-14 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-32'>
-            <div className='flex flex-col gap-6'>
+      <div className='container mx-auto max-w-[95%] py-[50px] lg:py-[50px] md:max-w-[95%] lg:max-w-[90%] xl:max-w-[90%] 3xl:max-w-[85%]'>
+        <footer className="flex flex-col gap-14 lg:gap-14">
+          <div className='grid grid-cols-1 gap-10 lg:grid-cols-4 lg:gap-14'>
+            {/* logo */}
+            <div className='flex flex-col gap-2'>
               <div>
                 <Link href='/'>
                   <Image 
                     src='/glowvibeWhite.png'
                     alt='glowvibe logo'
-                    width={100}
+                    width={500}
                     height={100}
-                    className='h-[100px] w-[150px]'
+                    className='h-[100px] w-[200px] lg:w-[150px] lg:h-[100px]'
                   />
                 </Link>
               </div>
@@ -31,6 +56,7 @@ function Footer() {
               <h4 className='font-semibold text-[20px] text-white'>
                 Quick Links
               </h4>
+
               <ul className='flex flex-col items-start text-[14px] justify-start gap-6'>
                 <li className='capitalize'>
                   <Link href='/' legacyBehavior>
@@ -85,54 +111,48 @@ function Footer() {
                 </li> */}
               </ul>
             </div>
-            
+
             {/* Social media */}
             <div className='flex flex-col text-[14px] gap-6'>
               <h4 className='font-semibold text-[20px] text-white'>
-                Social Media
+                Follow Us
               </h4>
-              <ul className='grid gap-4'>
-                <li className='flex items-center gap-2 list-disc'>
-                  <h4>
-                    <LuInstagram className='text-[25px]' />
-                  </h4> 
-                    <Link 
-                        href='https://www.instagram.com/glowvibeapp/' 
-                        target='_blank' 
-                        rel='noreferrer'
-                        className='text-white underline'
-                    >
-                        @glowvibeapp
-                    </Link>
-                </li>
 
-                <li className='flex items-center gap-2 list-disc'>
-                    <h4>
-                        <LuTwitter className='text-[25px]' />
-                    </h4>
-                    <Link 
-                        href='https://x.com/glowvibeapp/' 
-                        target='_blank' 
-                        rel='noreferrer'
-                        className='text-white underline'
-                    >
-                        @glowvibeapp
-                    </Link>                    
-                </li>
-              </ul>
-
-              <ul className='grid gap-2'>
-                <li className='flex items-center gap-2 list-disc'>
-                  <h4>
-                    <LuMail className='text-[25px]' />
-                  </h4>
-                  <Link 
-                      href="mailto:hello@glowVibeapp.com" 
-                      className='text-white underline'
+              <ul className='grid gap-6'>
+                {SOCIAL_LINKS.map((link) => (
+                  <li 
+                    key={link.name} 
+                    className='flex items-center gap-2 list-disc'
                   >
-                      hello@glowvibeapp.com
-                  </Link>
-                </li>
+                    <h4>
+                      {link.icon === "instagram" && 
+                        <BiLogoInstagram className='text-[25px]' />
+                      }
+
+                      {link.icon === "tiktok" && 
+                        <BiLogoTiktok className='text-[25px]' />
+                      }
+
+                      {link.icon === "telegram" && 
+                        <BiLogoTelegram className='text-[25px]' />
+                      }
+
+                      {link.icon === "twitter" && 
+                        <BiLogoTwitter className='text-[25px]' />
+                      }
+
+                    </h4>
+
+                    <Link 
+                      href={link.url} 
+                      target='_blank' 
+                      rel='noreferrer'
+                      className='text-white underline'
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -141,6 +161,7 @@ function Footer() {
                 <h3 className='font-semibold text-[20px] text-white'>
                   Download the App
                 </h3>
+
                 <div className='flex flex-row  items-start gap-6 lg:flex-col'>
                   <Link href='/'>
                     <Image 
@@ -163,9 +184,7 @@ function Footer() {
             </div>
           </div>
 
-          
-
-          <div className='w-full  border-t border-shade pt-[10px] flex flex-col items-center gap-6 lg:justify-between lg:items-center lg:flex-row'>
+          <div className='w-full border-t border-shade pt-[20px] flex flex-col items-center gap-6 lg:justify-between lg:items-center lg:flex-row'>
             <p className='text-[14px] text-center lg:text-end'>
               © 2025 GlowVibe inc. All rights reserved.
             </p>

@@ -10,7 +10,7 @@ export default {
   theme: {
   	fontFamily: {
   		outfit: 'var(--font-outfit)',
-  		poppins: 'var(--font-poppins'
+  		poppins: 'var(--font-poppins)'
   	},
   	container: {
   		center: true,
@@ -20,7 +20,11 @@ export default {
   		sm: '640px',
   		md: '768px',
   		lg: '960px',
-  		xl: '1200px'
+  		xl: '1200px',
+	    '2xl': '1536px',
+		'3xl': '1920px',
+		'4xl': '2560px',
+		'5xl': '3840px',
   	},
   	extend: {
   		colors: {
