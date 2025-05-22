@@ -47,7 +47,7 @@ function Contact() {
             <div className='grid gap-10 '>
                 <div className='flex justify-center items-center pt-10'>
                     <h2 className='font-bold text-start lg:text-center'>
-                        GlowVibe App Support
+                        AskTaboo App Support
                     </h2>
                 </div>
 
@@ -60,7 +60,7 @@ function Contact() {
                                 </p>
 
                                 <p>
-                                    Welcome to GlowVibe support centre.
+                                    Welcome to AskTaboo support centre.
                                 </p>
 
                                 <p>
@@ -68,7 +68,7 @@ function Contact() {
                                 </p>
 
                                 <p className='md:w-[80%] lg:w-[80%]'>
-                                    Most users find answers they need in our GlowVibe Help Lines across social media, so we recommend exploring it first:
+                                    Most users find answers they need in our AskTaboo Help Lines across social media, so we recommend exploring it first:
                                 </p>
 
                                 <ul className='grid gap-4'>
@@ -111,7 +111,7 @@ function Contact() {
                                             href="mailto:hello@glowVibeapp.com" 
                                             className='text-secondary underline'
                                         >
-                                            hello@glowvibeapp.com
+                                            hello@asktaboo.com
                                         </Link>
                                     </li>
                                 </ul>

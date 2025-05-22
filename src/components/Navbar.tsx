@@ -54,8 +54,8 @@ const Navbar = () => {
                 <div className='md:flex-[2] w-[200px]'>
                     <Link href="/" legacyBehavior>
                         <Image
-                            src='/newlogo.jpg'
-                            alt='glowvibe-logo'
+                            src='/logo.png'
+                            alt='askTaboo-logo'
                             width={100}
                             height={50}
                             priority

@@ -10,13 +10,14 @@ function About() {
           <div className='flex flex-col justify-center items-center gap-4 lg:flex-row lg:justify-between lg:items-center'>
             <div className='w-full lg:w-[50%]'>
               <h3 className='text-dark font-bold text-start'>
-                ❔ What is GlowVibe?
+                ❔ What is AskTaboo?
               </h3>
             </div>
 
             <div className='w-full flex flex-col gap-10 justify-center items-center p-4 lg:w-[50%]'>
               <p className='text-start w-full'>
-                GlowVibe is an innovative mobile platform designed to provide a <span className='font-bold text-primary'>safe, anonymous, and inclusive</span> space for individuals to discuss <span className='font-bold text-primary'>sexual health</span> without fear of stigma or judgment.
+                AskTaboo is a <span className='font-bold text-primary'>safe, anonymous, and inclusive</span> where you can ask your most personal questions about  
+<span className='font-bold text-primary'>sex, health, and relationships</span> — and get expert answers.
               </p>
             </div>
           </div>
@@ -25,25 +26,26 @@ function About() {
           <div className='flex flex-col justify-between items-center gap-4 lg:flex-row lg:justify-between lg:items-center'>
             <div className='w-full lg:w-[50%]'>
               <h3 className='text-dark font-bold text-start'>
-                💬 Why GlowVibe?
+                💬 Why AskTaboo?
               </h3>
             </div>
 
             <div className='w-full flex flex-col gap-10 justify-center items-center p-4 lg:w-[50%]'>
               <ul className='grid gap-2 pl-4 lg:pl-0'>
                 <li className='list-disc text-start w-full'>
-                  <p>Many people hesitate to talk about sexual health due to embarrassment or fear.</p>
+                  <p>Many people struggle to ask taboo questions publicly.</p>
                 </li>
                 <li className='list-disc text-start w-full'>
-                  <p>Misinformation is widespread, making it hard to find accurate advice.</p>
+                  <p>Misinformation spreads easily online.</p>
                 </li>
                 <li className='list-disc text-start w-full'>
-                  <p>Access to expert guidance should be <span className='font-bold text-primary'>easy, anonymous, and supportive.</span></p>
+                  <p>We make it easy, anonymous, and stigma-free to get <span className='font-bold text-primary'>real answers.</span></p>
                 </li>
               </ul>
 
               <p className='text-start w-full'>
-                At GlowVibe, we believe knowledge is empowerment. Whether you are seeking advice, sharing personal experiences, or just curious, this platform offers a <span className='font-bold text-primary'>secure</span> and <span className='font-bold text-primary'>inclusive</span> environment where you can engage freely and confidently.
+                We believe that when people are informed, they feel more confident and make better decisions. AskTaboo empowers users to  
+                <span className='font-bold text-primary'> learn, explore, and grow</span> — privately.
               </p>              
             </div>
           </div>

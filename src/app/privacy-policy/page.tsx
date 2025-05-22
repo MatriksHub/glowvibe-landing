@@ -4,12 +4,12 @@ export default function page() {
   return (
     <div className="container mx-auto py-32 px-4 sm:px-6 lg:px-8">
       <div className="space-y-6">
-        <h1>Privacy Policy for GlowVibe</h1>
+        <h1>Privacy Policy for AskTaboo</h1>
 
         <h5 className="text-foreground">Effective Date: February, 2025</h5>
 
         <p className="text-muted-foreground">
-          At <strong>GlowVibe</strong>, we respect your privacy. This <strong>Privacy Policy</strong> explains how we collect, use, and protect your information.
+          At <strong>AskTaboo</strong>, we respect your privacy. This <strong>Privacy Policy</strong> explains how we collect, use, and protect your information.
         </p>
 
         <div className="space-y-4">
@@ -68,7 +68,7 @@ export default function page() {
               Anonymous posts may be stored for moderation.
               </li>
               <li className="list-disc">
-                Users can request account deletion via <a className="text-secondary font-bold"  href="mailto:hello@glowvibeapp.com">hello@glowvibeapp.com</a>.
+                Users can request account deletion via <a className="text-secondary font-bold"  href="mailto:hello@asktaboo.com">hello@asktaboo.com</a>.
               </li>
             </ul>
           </div>
@@ -89,7 +89,7 @@ export default function page() {
             We may update this Privacy Policy from time to time. Users will be notified of significant changes.
             </p>
             <p className="text-muted-foreground">
-            For questions, contact us at <a className="text-secondary font-bold" href="mailto:hello@glowvibeapp.com">hello@glowvibeapp.com</a>.
+            For questions, contact us at <a className="text-secondary font-bold" href="mailto:hello@asktaboo.com">hello@asktaboo.com</a>.
             </p>
           </div>
         </div>

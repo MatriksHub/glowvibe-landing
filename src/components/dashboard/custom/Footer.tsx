@@ -7,7 +7,7 @@ function Footer() {
         <footer className="flex flex-col gap-20 lg:gap-20 lg:justify-between lg:items-center">
           <div className='flex items-center justify-center'>
             <p>
-              © 2025 GlowVibe inc. All rights reserved.
+              © 2025 AskTaboo inc. All rights reserved.
             </p>
           </div>
         </footer>
