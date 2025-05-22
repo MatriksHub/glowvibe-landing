@@ -230,7 +230,7 @@ p {
     @apply  bg-white text-[16px] xl:text-[18px] leading-[1.5] font-normal;
   }
   h1 {
-    @apply text-[50px] xl:text-[70px] leading-[1.1] xl:leading-[1] font-semibold;
+    @apply text-[38px] md:text-[45px] xl:text-[55px] leading-[1.1] xl:leading-[1] font-semibold;
   }
   h2 {
     @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;

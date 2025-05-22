@@ -6,12 +6,12 @@ import React from 'react'
 function Hero() {
   return (
     <div className='bg-primary w-full h-full flex justify-center items-center lg:h-screen rounded-b-2xl'>
-      <div className='container mx-auto max-w-[95%] py-[100px] lg:pt-[120px] md:max-w-[95%] lg:max-w-[90%] xl:max-w-[90%] 3xl:max-w-[90%]'>
+      <div className='container mx-auto max-w-[95%] pt-[100px] pb-[100px] md:pt-[120px] lg:pt-[150px] md:max-w-[95%] lg:max-w-[90%] xl:max-w-[90%] 3xl:max-w-[90%]'>
         <div className='flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-0'>
           <div className='text-center lg:text-start lg:w-1/2'>
             <div className='pt-10 grid gap-4 lg:pt-0 4xl:gap-8'>
               <h1 className='text-white font-semibold w-full sm:w-3/4 mx-auto lg:w-full'>
-                Got Questions You’re Too Shy to Ask?
+                Got Questions You&apos;re Too Shy to Ask?
               </h1>
 
               <p className='text-white w-full mx-auto sm:w-3/4 lg:w-full'>
@@ -48,11 +48,11 @@ function Hero() {
           {/* hero image */}
           <div className='flex justify-center items-center lg:w-1/2 lg:px-0'>
             <Image
-              src='/923shots_so.png'
+              src='/questions-amico.svg'
               alt='hero image'
               width={400}
               height={100}
-              className='w-[300px] h-[300px]' 
+              className='w-[400px]' 
             />
           </div>
         </div>
