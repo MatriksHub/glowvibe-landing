@@ -4,19 +4,19 @@ export default function page() {
   return (
     <div className="container mx-auto py-32 px-4 sm:px-6 lg:px-8">
       <div className="space-y-6">
-        <h1>Terms of Use for GlowVibe App</h1>
+        <h1>Terms of Use for AskTaboo App</h1>
 
         <h5>Effective Date: February, 2025</h5>
 
         <p className="text-muted-foreground">
-          Welcome to <strong>GlowVibe!</strong> By accessing or using our app, you agree to these <strong>Terms of Use.</strong> If you do not agree, please do not use the app.
+          Welcome to <strong>AskTaboo!</strong> By accessing or using our app, you agree to these <strong>Terms of Use.</strong> If you do not agree, please do not use the app.
         </p>
 
         <div className="space-y-4">
           <div className="space-y-4">
             <h5>1. Acceptance of Terms</h5>
             <p>
-              By using GlowVibe, you agree to abide by these Terms and all applicable laws. We reserve the right to modify these terms at any time.
+              By using AskTaboo, you agree to abide by these Terms and all applicable laws. We reserve the right to modify these terms at any time.
             </p>
           </div>
 
@@ -24,7 +24,7 @@ export default function page() {
             <h5>2. Age Requirement
             </h5>
             <p className="text-muted-foreground">
-              GlowVibe is intended for users <strong>18 years and older</strong>. By using this app, you confirm that you meet this age requirement.
+              AskTaboo is intended for users <strong>18 years and older</strong>. By using this app, you confirm that you meet this age requirement.
             </p>
           </div>
 
@@ -60,7 +60,7 @@ export default function page() {
           <div className="space-y-4">
             <h5>4. Privacy & Anonymity</h5>
             <p>
-              GlowVibe allows users to post anonymously, but we may collect device-related data for security and moderation purposes. Read our <strong>Privacy Policy</strong> for more details.
+              AskTaboo allows users to post anonymously, but we may collect device-related data for security and moderation purposes. Read our <strong>Privacy Policy</strong> for more details.
             </p>
           </div>
 
@@ -75,7 +75,7 @@ export default function page() {
             <h5>6. Disclaimer of Liability</h5>
             <ul className="pl-[20px]">
               <li className="list-disc">
-                GlowVibe is for informational and entertainment purposes only.
+                AskTaboo is for informational and entertainment purposes only.
               </li>
               <li className="list-disc">
                 We do not provide medical or professional advice. Consult a qualified professional for personal concerns.
@@ -90,7 +90,7 @@ export default function page() {
               These Terms shall be governed by the laws of Nigeria
             </p>
             <p className="text-muted-foreground">
-              For any questions, contact <a className="text-secondary" href="mailto:hello@glowVibeapp.com">hello@glowvibeapp.com</a>.
+              For any questions, contact <a className="text-secondary" href="mailto:hello@asktaboo.com">hello@asktaboo.com</a>.
             </p>
           </div>
         </div>

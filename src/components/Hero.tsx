@@ -11,11 +11,11 @@ function Hero() {
           <div className='text-center lg:text-start lg:w-1/2'>
             <div className='pt-10 grid gap-4 lg:pt-0 4xl:gap-8'>
               <h1 className='text-white font-semibold w-full sm:w-3/4 mx-auto lg:w-full'>
-                A Safe and Anonymous Space
+                Got Questions You’re Too Shy to Ask?
               </h1>
 
               <p className='text-white w-full mx-auto sm:w-3/4 lg:w-full'>
-                Express yourself, share experiences, without fear of stigma or judgment and learn from experts.
+                For everything you were too afraid to ask at home, too embarased to ask at school, or that was just too hard to ask a partner.
               </p>
 
               <div className='mt-6 flex flex-col items-center lg:items-start gap-4 4xl:mt-16'>

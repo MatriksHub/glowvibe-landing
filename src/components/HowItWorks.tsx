@@ -7,17 +7,17 @@ import Image from 'next/image'
 const works = [
     {
       title: "Download & Install",
-      description: "Visit the App Store or Google Play Store and search for GlowVibe App. Tap Download and wait for the installation to complete.",
+      description: "Get the AskTaboo app on Google Play or the App Store. It’s free and easy to install.",
       icon: "/icons/icons8-download-48.png"
     },
     {
-      title: "Sign Up or Browse Anonymously",
-      description: "Choose to sign up with an email. No personal details required—your privacy is 100% protected.",
+      title: "Ask Anonymously",
+      description: " Ask your question privately and safely. Your privacy is 100% protected.",
       icon: "/icons/icons8-add-48.png"
     },
     {
-      title: "Ask Questions & Share Experiences",
-      description: "Post anonymously or browse existing conversations. Get expert-driven answers or real-life insights from the community.",
+      title: "Get Answers That Matter",
+      description: "Receive expert-backed responses or community insights.",
       icon: "/icons/icons8-questions-48.png"
     },
   ]

@@ -9,7 +9,7 @@ export default function page() {
         <p className="text-xl font-bold tracking-tight text-foreground">Last Updated: 19th February, 2025</p>
 
         <p className="text-muted-foreground">
-          At GlowVibe, we are committed to fostering a safe and respectful community. This Content Moderation Policy outlines how we handle user-generated content.
+          At AskTaboo, we are committed to fostering a safe and respectful community. This Content Moderation Policy outlines how we handle user-generated content.
         </p>
 
         <div className="space-y-4">
@@ -59,10 +59,10 @@ export default function page() {
             <h2 className="text-xl font-bold">4. Appeals</h2>
             
             <p className="text-muted-foreground">
-            Users can appeal content moderation decisions by contacting  <a className="text-secondary font-bold" href="mailto:hello@glowvibeapp.com">hello@glowvibeapp.com</a>.
+            Users can appeal content moderation decisions by contacting  <a className="text-secondary font-bold" href="mailto:hello@asktaboo.com">hello@asktaboo.com</a>.
             </p>
             <p className="text-muted-foreground">
-            We strive to ensure that GlowVibe remains a welcoming space for all users.
+            We strive to ensure that asktaboo remains a welcoming space for all users.
             </p>
           </div>
         </div>

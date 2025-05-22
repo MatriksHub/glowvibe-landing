@@ -3,33 +3,27 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './
 
 const faqs = [
     {
-      title: "1. What is GlowVibe?",
-      description: "GlowVibe is a safe, anonymous, and supportive platform where users can discuss sexual health, share experiences, and get expert advice without fear of stigma or judgment.",
+      title: "1. What is AskTaboo?",
+      description: "A platform for asking sensitive health and relationship questions anonymously.",
     },
     {
-      title: "2. Is GlowVibe free to use?",
-      description: "Yes! GlowVibe offers free access to community discussions, expert-driven content, and anonymous support.",
+      title: "2. Is AskTaboo free ?",
+      description: "Yes. The core features — anonymous questions and expert/community answers — are free.",
     },
     {
-      title: "3. How does GlowVibe protect my privacy?",
-      description: "Your privacy is our priority. No real names, personal details, or tracking—everything is completely anonymous and secure.",
+      title: "3. Who answers the questions?",
+      description: " Licensed professionals, educators, and trained volunteers. They provide accurate and reliable information.",
     },
     {
-        title: "4. Can I ask questions anonymously?",
-        description: "Absolutely! You can post questions, experiences, and discussions without revealing any personal information.",
+        title: "4. Can I really stay anonymous?",
+        description: "Absolutely!  Yes. No names, no photos, needed to ask a question. Your privacy is our priority.",
     },
+   
     {
-        title: "5. Who answers my questions?",
-        description: "Your questions can be answered by Health professionals providing expert insights and Community members who share real-life experiences.",
-    },
-    {
-        title: "6. How can I report inappropriate content?",
+        title: "5. How can I report inappropriate content?",
         description: "If you see misinformation, harassment, or inappropriate content, you can report it using the &apos;Report&apos; button on any post or comment.",
     },
-    // {
-    //     title: "7.  What kind of topics can I discuss?",
-    //     description: "GlowVibe covers a range of topics, including: Sexual health & wellness Relationships & intimacy Safe sex practices Personal experiences & advice",
-    // },
+    
 ]
 
 function Faq() {

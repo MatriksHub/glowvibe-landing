@@ -38,8 +38,8 @@ function Footer() {
               <div>
                 <Link href='/'>
                   <Image 
-                    src='/glowvibeWhite.png'
-                    alt='glowvibe logo'
+                    src='/logowhite.png'
+                    alt='askTaboo logo'
                     width={500}
                     height={100}
                     className='h-[100px] w-[200px] lg:w-[150px] lg:h-[100px]'
@@ -47,7 +47,7 @@ function Footer() {
                 </Link>
               </div>
               <p className='text-[14px]'>
-                A safe and anonymous space.
+                For everything you were too afraid to ask at home, too embarased to ask at school, or that was just too hard to ask a partner.
               </p>
             </div>
             
@@ -186,7 +186,7 @@ function Footer() {
 
           <div className='w-full border-t border-shade pt-[20px] flex flex-col items-center gap-6 lg:justify-between lg:items-center lg:flex-row'>
             <p className='text-[14px] text-center lg:text-end'>
-              © 2025 GlowVibe inc. All rights reserved.
+              © 2025 AskTaboo inc. All rights reserved.
             </p>
 
             <ul className='flex flex-row text-center gap-6 lg:text-end'>
